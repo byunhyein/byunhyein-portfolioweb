@@ -1,0 +1,6 @@
+<svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="1200" height="692" viewBox="0 0 1200 692" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Contact / Card Border Inner">
+<path id="Contact / Card Border Fill" opacity="0.5" d="M1172 12H28C12.536 12 0 24.536 0 40V664C0 679.464 12.536 692 28 692H1172C1187.46 692 1200 679.464 1200 664V40C1200 24.536 1187.46 12 1172 12Z" fill="white"/>
+<path id="Contact / Card Border Stroke" d="M1172 0H28C12.536 0 0 12.7573 0 28.4941V663.506C0 679.243 12.536 692 28 692H1172C1187.46 692 1200 679.243 1200 663.506V28.4941C1200 12.7573 1187.46 0 1172 0Z" fill="white"/>
+</g>
+</svg>

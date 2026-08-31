@@ -1,0 +1,18 @@
+<svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="737" height="735.26" viewBox="0 0 737 735.26" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Contact / Gradient Shape Left" opacity="0.96">
+<path d="M0 0.260249C142.072 -4.73975 247.64 62.2603 254.546 205.26C260.466 316.26 205.216 367.26 174.631 416.26C126.286 495.26 235.801 613.26 405.498 735.26H0V0.260249Z" fill="url(#paint0_linear_0_87)"/>
+<path d="M0 345.26C184.497 291.26 350.248 336.26 507.119 450.26C622.553 533.26 684.709 630.26 737 735.26L0 735.26V345.26Z" fill="url(#paint1_linear_0_87)"/>
+</g>
+<defs>
+<linearGradient id="paint0_linear_0_87" x1="1.18778e-06" y1="75.2602" x2="718.497" y2="685.684" gradientUnits="userSpaceOnUse">
+<stop stop-color="#FFC487"/>
+<stop offset="0.55" stop-color="#F682B4"/>
+<stop offset="1" stop-color="#E953C7"/>
+</linearGradient>
+<linearGradient id="paint1_linear_0_87" x1="5.89232e-06" y1="75.2602" x2="718.497" y2="685.684" gradientUnits="userSpaceOnUse">
+<stop stop-color="#FFC487"/>
+<stop offset="0.55" stop-color="#F682B4"/>
+<stop offset="1" stop-color="#E953C7"/>
+</linearGradient>
+</defs>
+</svg>

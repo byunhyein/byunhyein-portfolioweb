@@ -1,0 +1,13 @@
+<svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="196" height="196" viewBox="0 0 196 196" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Contact / CTA Button Group">
+<path id="Contact / CTA Button BG" d="M98 196C152.124 196 196 152.124 196 98C196 43.8761 152.124 0 98 0C43.8761 0 0 43.8761 0 98C0 152.124 43.8761 196 98 196Z" fill="url(#paint0_linear_0_80)"/>
+<path id="Contact / CTA Button Arrow" d="M68 127L128 67M128 111V67H84" stroke="white" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<defs>
+<linearGradient id="paint0_linear_0_80" x1="10" y1="13" x2="160" y2="198" gradientUnits="userSpaceOnUse">
+<stop stop-color="#FFBE85"/>
+<stop offset="0.48" stop-color="#E655CE"/>
+<stop offset="1" stop-color="#8B75F2"/>
+</linearGradient>
+</defs>
+</svg>
