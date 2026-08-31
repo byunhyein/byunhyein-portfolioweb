@@ -778,25 +778,53 @@ button {
   accent-color: var(--color-primary);
 }
 
-#skills > div[aria-hidden="true"] {
+.skills-marquee {
   position: absolute;
   bottom: 0;
   left: 0;
-  display: flex;
-  width: max-content;
-  height: 9rem;
-  align-items: center;
-  gap: var(--space-5);
-  color: var(--color-secondary);
-  font-family: var(--font-family-serif);
-  font-size: var(--font-size-32);
-  white-space: nowrap;
+  display: grid;
+  width: 100%;
+  height: 11rem;
+  align-content: center;
+  gap: .35rem;
+  overflow: hidden;
 }
 
-#skills > div[aria-hidden="true"] img {
+.skills-marquee__row {
+  width: 100%;
+  overflow: hidden;
+}
+
+.skills-marquee__track {
+  display: flex;
+  width: max-content;
+  animation: skills-marquee-left 28s linear infinite;
+  will-change: transform;
+}
+
+.skills-marquee__row--small .skills-marquee__track {
+  animation-direction: reverse;
+  animation-duration: 23s;
+}
+
+.skills-marquee__track img {
   width: auto;
-  height: 5rem;
+  flex: none;
   background: transparent;
+}
+
+.skills-marquee__row--large img {
+  width: auto;
+  height: 5.25rem;
+}
+
+.skills-marquee__row--small img {
+  height: 3.2rem;
+}
+
+@keyframes skills-marquee-left {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
 }
 
 /* Portfolio */
@@ -1268,8 +1296,17 @@ button {
     grid-template-columns: repeat(3, 1fr);
   }
 
-  #skills > div[aria-hidden="true"] {
-    display: none;
+  .skills-marquee {
+    height: 7rem;
+    gap: .15rem;
+  }
+
+  .skills-marquee__row--large img {
+    height: 3.2rem;
+  }
+
+  .skills-marquee__row--small img {
+    height: 2rem;
   }
 
   #portfolio .swiper,
