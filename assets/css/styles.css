@@ -495,8 +495,8 @@ button {
   position: absolute;
   bottom: 2.0625rem;
   left: max(calc((100% - var(--layout-content-width)) / 2), var(--space-6));
-  width: 31rem;
-  height: 48.5rem;
+  width: 33rem;
+  height: 50.5rem;
   object-fit: contain;
   background: transparent;
 }
@@ -517,12 +517,20 @@ button {
   overflow: visible;
 }
 
+.hero-morph--small {
+  top: 10rem;
+  left: calc(50% - 11rem);
+  width: 7rem;
+  transform: rotate(6deg);
+  opacity: .82;
+}
+
 .hero-morph--side {
-  top: 9rem;
-  right: auto;
-  left: calc(50% - 18rem);
+  top: 33rem;
+  right: max(calc((100% - var(--layout-content-width)) / 2 - 1rem), 2rem);
+  left: auto;
   width: 12.5rem;
-  transform: rotate(-7deg) scale(.68);
+  transform: rotate(-7deg);
   transform-origin: center;
   opacity: .9;
 }
@@ -1150,10 +1158,16 @@ button {
   }
 
   .hero-morph--side {
-    top: 9rem;
-    right: auto;
-    left: calc(50% - 16rem);
-    width: 9.5rem;
+    top: 32rem;
+    right: 1.5rem;
+    left: auto;
+    width: 9rem;
+  }
+
+  .hero-morph--small {
+    top: 10rem;
+    left: 39%;
+    width: 5.75rem;
   }
 
   #experience {
@@ -1205,7 +1219,8 @@ button {
     opacity: var(--opacity-40);
   }
 
-  .hero-morph--side {
+  .hero-morph--side,
+  .hero-morph--small {
     display: none;
   }
 

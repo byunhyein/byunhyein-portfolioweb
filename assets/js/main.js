@@ -72,14 +72,6 @@ const initializeHeroMorphs = () => {
         duration: 1.35,
         ease: "power2.inOut",
       })
-      .to(container, {
-        top: "8rem",
-        left: "calc(100% - 15rem)",
-        scale: .84,
-        rotation: 6,
-        duration: 1.35,
-        ease: "power2.inOut",
-      }, "<")
       .to(shine, { strokeDashoffset: -126, duration: 1.35, ease: "sine.inOut" }, "<")
       .to(dot, { scale: .96, transformOrigin: "193px 404px", duration: .675, yoyo: true, repeat: 1, ease: "sine.inOut" }, "<")
       .to({}, { duration: .9 })
@@ -88,25 +80,9 @@ const initializeHeroMorphs = () => {
         duration: 1.35,
         ease: "power2.inOut",
       })
-      .to(container, {
-        top: "27rem",
-        left: "calc(100% - 18rem)",
-        scale: 1.05,
-        rotation: -7,
-        duration: 1.35,
-        ease: "power2.inOut",
-      }, "<")
       .to(shine, { strokeDashoffset: -12, duration: 1.35, ease: "sine.inOut" }, "<")
       .to(dot, { scale: .96, transformOrigin: "193px 404px", duration: .675, yoyo: true, repeat: 1, ease: "sine.inOut" }, "<")
-      .to({}, { duration: .9 })
-      .to(container, {
-        top: "9rem",
-        left: "calc(50% - 18rem)",
-        scale: .68,
-        rotation: -7,
-        duration: 1.2,
-        ease: "power2.inOut",
-      });
+      .to({}, { duration: .9 });
 
     if (prefersReducedMotion) {
       timeline.pause(0);
