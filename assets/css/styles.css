@@ -779,6 +779,7 @@ button {
 }
 
 .skills-marquee {
+  --marquee-item-gap: 3.5rem;
   position: absolute;
   bottom: 0;
   left: 0;
@@ -802,12 +803,19 @@ button {
   will-change: transform;
 }
 
+.skills-marquee__set {
+  display: flex;
+  flex: none;
+  gap: var(--marquee-item-gap);
+  padding-right: var(--marquee-item-gap);
+}
+
 .skills-marquee__row--small .skills-marquee__track {
   animation-direction: reverse;
   animation-duration: 23s;
 }
 
-.skills-marquee__track img {
+.skills-marquee__set img {
   width: auto;
   flex: none;
   background: transparent;
@@ -1297,6 +1305,7 @@ button {
   }
 
   .skills-marquee {
+    --marquee-item-gap: 2rem;
     height: 7rem;
     gap: .15rem;
   }
