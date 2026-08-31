@@ -495,10 +495,47 @@ button {
   position: absolute;
   bottom: 2.0625rem;
   left: max(calc((100% - var(--layout-content-width)) / 2), var(--space-6));
-  width: 23.5rem;
-  height: 40.75rem;
+  width: 28.5rem;
+  height: 45.5rem;
   object-fit: contain;
   background: transparent;
+}
+
+.hero-morph {
+  position: absolute;
+  z-index: 0;
+  width: 11.5rem;
+  aspect-ratio: 5 / 6;
+  pointer-events: none;
+  filter: drop-shadow(0 1.25rem 2.5rem rgb(143 111 208 / 16%));
+}
+
+.hero-morph svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.hero-morph--primary {
+  top: 8.5rem;
+  left: calc(50% - 17rem);
+}
+
+.hero-morph--small {
+  top: 12.5rem;
+  left: calc(50% + 2rem);
+  width: 7rem;
+  transform: rotate(8deg);
+  opacity: .82;
+}
+
+.hero-morph--side {
+  top: 28rem;
+  right: max(calc((100% - var(--layout-content-width)) / 2 - 4rem), 2rem);
+  width: 13.5rem;
+  transform: rotate(-7deg);
+  opacity: .9;
 }
 
 #hero-title {
@@ -1170,6 +1207,25 @@ button {
     height: auto;
     transform: translateX(-50%);
     opacity: var(--opacity-40);
+  }
+
+  .hero-morph--primary {
+    top: 16.25rem;
+    left: 1rem;
+    width: 5.5rem;
+    opacity: .7;
+  }
+
+  .hero-morph--small {
+    top: 17rem;
+    right: 1.5rem;
+    left: auto;
+    width: 4.25rem;
+    opacity: .64;
+  }
+
+  .hero-morph--side {
+    display: none;
   }
 
   #hero-title {
