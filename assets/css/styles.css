@@ -1054,8 +1054,8 @@ button {
 #contact {
   display: grid;
   place-items: center;
-  min-height: 88.25rem;
-  padding: var(--space-80) max(calc((100% - var(--layout-content-width)) / 2), var(--space-6));
+  min-height: var(--layout-section-height);
+  padding: 6.5rem max(calc((100% - var(--layout-content-width)) / 2), var(--space-6));
   background: #fff8fb;
 }
 
@@ -1391,7 +1391,7 @@ button {
 
   #contact {
     min-height: auto;
-    padding-block: 10rem;
+    padding-block: 5rem;
   }
 
   .contact-card {
