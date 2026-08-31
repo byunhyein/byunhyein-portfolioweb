@@ -504,7 +504,7 @@ button {
 .hero-morph {
   position: absolute;
   z-index: 0;
-  width: 11.5rem;
+  width: 8rem;
   aspect-ratio: 5 / 6;
   pointer-events: none;
   filter: drop-shadow(0 1.25rem 2.5rem rgb(143 111 208 / 16%));
@@ -517,23 +517,10 @@ button {
   overflow: visible;
 }
 
-.hero-morph--primary {
-  top: 8.5rem;
-  left: calc(50% - 17rem);
-}
-
-.hero-morph--small {
-  top: 12.5rem;
-  left: calc(50% + 2rem);
-  width: 7rem;
-  transform: rotate(8deg);
-  opacity: .82;
-}
-
 .hero-morph--side {
-  top: 28rem;
-  right: max(calc((100% - var(--layout-content-width)) / 2 - 4rem), 2rem);
-  width: 13.5rem;
+  top: 8rem;
+  right: max(calc((100% - var(--layout-content-width)) / 2 - 1rem), 2rem);
+  width: 12.5rem;
   transform: rotate(-7deg);
   opacity: .9;
 }
@@ -1160,6 +1147,12 @@ button {
     left: 48%;
   }
 
+  .hero-morph--side {
+    top: 8rem;
+    right: 1.5rem;
+    width: 9.5rem;
+  }
+
   #experience {
     gap: var(--space-6);
   }
@@ -1207,21 +1200,6 @@ button {
     height: auto;
     transform: translateX(-50%);
     opacity: var(--opacity-40);
-  }
-
-  .hero-morph--primary {
-    top: 16.25rem;
-    left: 1rem;
-    width: 5.5rem;
-    opacity: .7;
-  }
-
-  .hero-morph--small {
-    top: 17rem;
-    right: 1.5rem;
-    left: auto;
-    width: 4.25rem;
-    opacity: .64;
   }
 
   .hero-morph--side {
