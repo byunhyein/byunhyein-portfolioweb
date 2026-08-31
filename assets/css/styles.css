@@ -495,8 +495,8 @@ button {
   position: absolute;
   bottom: 2.0625rem;
   left: max(calc((100% - var(--layout-content-width)) / 2), var(--space-6));
-  width: 28.5rem;
-  height: 45.5rem;
+  width: 31rem;
+  height: 48.5rem;
   object-fit: contain;
   background: transparent;
 }
@@ -518,10 +518,12 @@ button {
 }
 
 .hero-morph--side {
-  top: 8rem;
-  right: max(calc((100% - var(--layout-content-width)) / 2 - 1rem), 2rem);
+  top: 9rem;
+  right: auto;
+  left: calc(50% - 18rem);
   width: 12.5rem;
-  transform: rotate(-7deg);
+  transform: rotate(-7deg) scale(.68);
+  transform-origin: center;
   opacity: .9;
 }
 
@@ -1148,8 +1150,9 @@ button {
   }
 
   .hero-morph--side {
-    top: 8rem;
-    right: 1.5rem;
+    top: 9rem;
+    right: auto;
+    left: calc(50% - 16rem);
     width: 9.5rem;
   }
 
