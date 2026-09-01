@@ -1,0 +1,807 @@
+﻿{
+    "document":  {
+                     "id":  "0:0",
+                     "name":  "Document",
+                     "type":  "DOCUMENT",
+                     "scrollBehavior":  "SCROLLS",
+                     "children":  [
+                                      {
+                                          "id":  "7170:109",
+                                          "name":  "코드 변환 페이지",
+                                          "type":  "CANVAS",
+                                          "scrollBehavior":  "SCROLLS",
+                                          "children":  "    ",
+                                          "backgroundColor":  "@{r=0.89803922176361084; g=0.89803922176361084; b=0.89803922176361084; a=1.0}",
+                                          "prototypeStartNodeID":  null,
+                                          "flowStartingPoints":  "",
+                                          "prototypeDevice":  "@{type=NONE; rotation=NONE}"
+                                      },
+                                      {
+                                          "id":  "6908:128",
+                                          "name":  "포트폴리오 ",
+                                          "type":  "CANVAS",
+                                          "scrollBehavior":  "SCROLLS",
+                                          "children":  "                              ",
+                                          "backgroundColor":  "@{r=0.89803922176361084; g=0.89803922176361084; b=0.89803922176361084; a=1.0}",
+                                          "prototypeStartNodeID":  null,
+                                          "flowStartingPoints":  "",
+                                          "prototypeDevice":  "@{type=NONE; rotation=NONE}"
+                                      },
+                                      {
+                                          "id":  "7064:53",
+                                          "name":  "연습 페이지",
+                                          "type":  "CANVAS",
+                                          "scrollBehavior":  "SCROLLS",
+                                          "children":  "   ",
+                                          "backgroundColor":  "@{r=0.89803922176361084; g=0.89803922176361084; b=0.89803922176361084; a=1.0}",
+                                          "prototypeStartNodeID":  null,
+                                          "flowStartingPoints":  "",
+                                          "prototypeDevice":  "@{type=NONE; rotation=NONE}"
+                                      },
+                                      {
+                                          "id":  "6983:227",
+                                          "name":  "Minimal Elementor – Design System",
+                                          "type":  "CANVAS",
+                                          "scrollBehavior":  "SCROLLS",
+                                          "children":  " ",
+                                          "backgroundColor":  "@{r=0.96078431606292725; g=0.96078431606292725; b=0.96078431606292725; a=1.0}",
+                                          "prototypeStartNodeID":  null,
+                                          "flowStartingPoints":  "",
+                                          "prototypeDevice":  "@{type=NONE; rotation=NONE}"
+                                      }
+                                  ]
+                 },
+    "components":  {
+                       "7102:55":  {
+                                       "key":  "fb42b848d856f10fc2bf23d29fba96b2f3100ed7",
+                                       "name":  "heroicons-solid/envelope",
+                                       "description":  "",
+                                       "remote":  true,
+                                       "documentationLinks":  [
+
+                                                              ]
+                                   },
+                       "7068:43":  {
+                                       "key":  "ed423dbe72c7967f312b72f7175aac452bb05a3d",
+                                       "name":  "button",
+                                       "description":  "",
+                                       "remote":  false,
+                                       "documentationLinks":  [
+
+                                                              ]
+                                   },
+                       "7065:1441":  {
+                                         "key":  "849d171dff3baa9334c23d3fa1965895ded5c1e6",
+                                         "name":  "Default color=Highlighted, Default Style=No underline, State=Default",
+                                         "description":  "",
+                                         "remote":  true,
+                                         "componentSetId":  "7065:1432",
+                                         "documentationLinks":  [
+
+                                                                ]
+                                     },
+                       "7103:51":  {
+                                       "key":  "45fd039855a09997d63c2bc6f0b2990bcec0a360",
+                                       "name":  "Projects / Feature Container",
+                                       "description":  "",
+                                       "remote":  false,
+                                       "documentationLinks":  [
+
+                                                              ]
+                                   },
+                       "7046:195":  {
+                                        "key":  "0b0a2d910766abe4421c97a41192beeecea256ba",
+                                        "name":  "Pagination Dots / Default",
+                                        "description":  "",
+                                        "remote":  false,
+                                        "documentationLinks":  [
+
+                                                               ]
+                                    },
+                       "7042:21":  {
+                                       "key":  "6197c347cedb76bd32162b1fc6b0460aa2d6fa35",
+                                       "name":  "Slider Showcase / Next Button",
+                                       "description":  "",
+                                       "remote":  false,
+                                       "documentationLinks":  [
+
+                                                              ]
+                                   },
+                       "7035:2":  {
+                                      "key":  "f51fe49bc77d4c0f297eb62cc75be453f9fc48e9",
+                                      "name":  "photoshop",
+                                      "description":  "",
+                                      "remote":  false,
+                                      "documentationLinks":  [
+
+                                                             ]
+                                  },
+                       "7035:3":  {
+                                      "key":  "2b0bc38b21d2e9a07d5328240083cc162ebfaa02",
+                                      "name":  "illustrator",
+                                      "description":  "",
+                                      "remote":  false,
+                                      "documentationLinks":  [
+
+                                                             ]
+                                  },
+                       "7035:4":  {
+                                      "key":  "cbee2e52a3ea67c0de41cd2ce833032fcd311d24",
+                                      "name":  "figma",
+                                      "description":  "",
+                                      "remote":  false,
+                                      "documentationLinks":  [
+
+                                                             ]
+                                  },
+                       "7040:60":  {
+                                       "key":  "ef3c4c4fe9882ac832af168d5422039aac165995",
+                                       "name":  "html/css",
+                                       "description":  "",
+                                       "remote":  false,
+                                       "documentationLinks":  [
+
+                                                              ]
+                                   },
+                       "7035:5":  {
+                                      "key":  "d8d5a0c23d6b0efcbc9fab891110153332fb3330",
+                                      "name":  "html",
+                                      "description":  "",
+                                      "remote":  false,
+                                      "documentationLinks":  [
+
+                                                             ]
+                                  },
+                       "7035:6":  {
+                                      "key":  "f26bb72d6f760f2092616b2c4e73136dd197dacd",
+                                      "name":  "css",
+                                      "description":  "",
+                                      "remote":  false,
+                                      "documentationLinks":  [
+
+                                                             ]
+                                  },
+                       "7035:7":  {
+                                      "key":  "545b2536a4df1c7d11647ce84553bc1de4db3a86",
+                                      "name":  "js",
+                                      "description":  "",
+                                      "remote":  false,
+                                      "documentationLinks":  [
+
+                                                             ]
+                                  },
+                       "7035:8":  {
+                                      "key":  "814eb243e3c41039b168e34103ba65891e2f969a",
+                                      "name":  "python",
+                                      "description":  "",
+                                      "remote":  false,
+                                      "documentationLinks":  [
+
+                                                             ]
+                                  },
+                       "7040:72":  {
+                                       "key":  "289f4193b76f27e623aa9429224800fc75cfcd7c",
+                                       "name":  "git/github",
+                                       "description":  "",
+                                       "remote":  false,
+                                       "documentationLinks":  [
+
+                                                              ]
+                                   },
+                       "7035:9":  {
+                                      "key":  "bceb2c1e12e6aebd40f8012ea20313b47303acff",
+                                      "name":  "git",
+                                      "description":  "",
+                                      "remote":  false,
+                                      "documentationLinks":  [
+
+                                                             ]
+                                  },
+                       "7035:10":  {
+                                       "key":  "63bfbdba3f4eb39be7b46ec6d5e5a53171388dc5",
+                                       "name":  "github",
+                                       "description":  "",
+                                       "remote":  false,
+                                       "documentationLinks":  [
+
+                                                              ]
+                                   },
+                       "7035:11":  {
+                                       "key":  "4d8f791731fbeeec2698bcb0a83e38cd6374be05",
+                                       "name":  "premiere",
+                                       "description":  "",
+                                       "remote":  false,
+                                       "documentationLinks":  [
+
+                                                              ]
+                                   },
+                       "7035:12":  {
+                                       "key":  "b6250380e65da056d9cd8527b82d33f83333f054",
+                                       "name":  "aftereffects",
+                                       "description":  "",
+                                       "remote":  false,
+                                       "documentationLinks":  [
+
+                                                              ]
+                                   },
+                       "7055:24":  {
+                                       "key":  "3b2fbf666fcac0d16d001975c145387118393d93",
+                                       "name":  "Slider Showcase / Next Button White",
+                                       "description":  "",
+                                       "remote":  false,
+                                       "documentationLinks":  [
+
+                                                              ]
+                                   },
+                       "7057:27":  {
+                                       "key":  "a7134ed48377883b09e326a647d09696b838a278",
+                                       "name":  "Pagination Dots / White",
+                                       "description":  "",
+                                       "remote":  false,
+                                       "documentationLinks":  [
+
+                                                              ]
+                                   },
+                       "7090:3816":  {
+                                         "key":  "adaea1830a3a0a7ea524aa153fedbde5c8e22754",
+                                         "name":  "flow=col",
+                                         "description":  "",
+                                         "remote":  true,
+                                         "componentSetId":  "7090:3815",
+                                         "documentationLinks":  [
+
+                                                                ]
+                                     },
+                       "7097:58":  {
+                                       "key":  "6eff0a7bc5347cfff75c175bb95b48792989f467",
+                                       "name":  "Close Button",
+                                       "description":  "",
+                                       "remote":  false,
+                                       "documentationLinks":  [
+
+                                                              ]
+                                   }
+                   },
+    "componentSets":  {
+                          "7065:1432":  {
+                                            "key":  "ac4badc5bb06f6e2063665a748540f1c039436e9",
+                                            "name":  "Links",
+                                            "description":  "",
+                                            "remote":  true
+                                        },
+                          "7090:3815":  {
+                                            "key":  "f8c046e33b701a70735a4a5599e2a012f4e5261d",
+                                            "name":  "Title",
+                                            "description":  "",
+                                            "remote":  true
+                                        }
+                      },
+    "schemaVersion":  0,
+    "styles":  {
+                   "6933:4":  {
+                                  "key":  "cfb0952379b6f4a72e9383029578cd264942fce5",
+                                  "name":  "essentials.pixfort.com/White",
+                                  "styleType":  "FILL",
+                                  "remote":  true,
+                                  "description":  ""
+                              },
+                   "6933:8":  {
+                                  "key":  "f2d686fe81c368659bec688b331c0e7516c7a9b2",
+                                  "name":  "essentials.pixfort.com/Athens Gray",
+                                  "styleType":  "FILL",
+                                  "remote":  true,
+                                  "description":  ""
+                              },
+                   "6933:36":  {
+                                   "key":  "bdf7ecb39443e7d831bcf96a1fa1728856938883",
+                                   "name":  "essentials.pixfort.com/Shark",
+                                   "styleType":  "FILL",
+                                   "remote":  true,
+                                   "description":  ""
+                               },
+                   "6933:13":  {
+                                   "key":  "9f12b9042905836bcd7eae3b37124e7570ec02c9",
+                                   "name":  "essentials.pixfort.com/Abbey",
+                                   "styleType":  "FILL",
+                                   "remote":  true,
+                                   "description":  ""
+                               },
+                   "6933:100":  {
+                                    "key":  "38361f5e6cff8aec66526a8f538e11d53b580ef9",
+                                    "name":  "essentials.pixfort.com/Charade 30%",
+                                    "styleType":  "FILL",
+                                    "remote":  true,
+                                    "description":  ""
+                                },
+                   "7090:3812":  {
+                                     "key":  "84fb9b208747008d121666ea2c23d4dcdde1a52c",
+                                     "name":  "Gray/20",
+                                     "styleType":  "FILL",
+                                     "remote":  true,
+                                     "description":  ""
+                                 },
+                   "6933:112":  {
+                                    "key":  "14cfc3e3af0dab0213317520b136cdfa1bdd9a5f",
+                                    "name":  "essentials.pixfort.com/Malibu",
+                                    "styleType":  "FILL",
+                                    "remote":  true,
+                                    "description":  ""
+                                },
+                   "6933:111":  {
+                                    "key":  "dc1f28a0c673900ae90ad063e35a4426ceb693a2",
+                                    "name":  "essentials.pixfort.com/Titan White 15%",
+                                    "styleType":  "FILL",
+                                    "remote":  true,
+                                    "description":  ""
+                                },
+                   "2924:22":  {
+                                   "key":  "8ed822807237c1fcbc75785d896a9d9960833917",
+                                   "name":  "color/Seashell Peach",
+                                   "styleType":  "FILL",
+                                   "remote":  false,
+                                   "description":  ""
+                               },
+                   "2924:23":  {
+                                   "key":  "70be1e758bc8c8a7f7c76c6b9ac8ef485ebce93c",
+                                   "name":  "color/Conifer",
+                                   "styleType":  "FILL",
+                                   "remote":  false,
+                                   "description":  ""
+                               },
+                   "2924:39":  {
+                                   "key":  "1f4e8296321ded96d163f083da59ac1861e22d64",
+                                   "name":  "color/Fruit Salad",
+                                   "styleType":  "FILL",
+                                   "remote":  false,
+                                   "description":  ""
+                               },
+                   "2924:40":  {
+                                   "key":  "4a64c18a732bbf2fa2ef96a7e3a5d895e6a3800f",
+                                   "name":  "color/Black",
+                                   "styleType":  "FILL",
+                                   "remote":  false,
+                                   "description":  ""
+                               },
+                   "2924:41":  {
+                                   "key":  "f9f66e639f41fd633159f715e58fbf454b4721c6",
+                                   "name":  "color/Bright Sun",
+                                   "styleType":  "FILL",
+                                   "remote":  false,
+                                   "description":  ""
+                               },
+                   "2924:42":  {
+                                   "key":  "0bb282ec8bf71a73b66577af618268319d7501e3",
+                                   "name":  "color/Flamingo",
+                                   "styleType":  "FILL",
+                                   "remote":  false,
+                                   "description":  ""
+                               },
+                   "2924:43":  {
+                                   "key":  "d65d61598eea10a53251f1b28031f6af6676d515",
+                                   "name":  "color/Mauvelous",
+                                   "styleType":  "FILL",
+                                   "remote":  false,
+                                   "description":  ""
+                               },
+                   "2924:64":  {
+                                   "key":  "0b95720298606b15da42bd1f979c33220a46982d",
+                                   "name":  "color/Viking",
+                                   "styleType":  "FILL",
+                                   "remote":  false,
+                                   "description":  ""
+                               },
+                   "2924:65":  {
+                                   "key":  "4b430552fb5c171c3fb7ed5ab9bbd164459bbccc",
+                                   "name":  "color/Champagne",
+                                   "styleType":  "FILL",
+                                   "remote":  false,
+                                   "description":  ""
+                               },
+                   "2924:77":  {
+                                   "key":  "2d134ef36d8a7c37fc1e5286e778a387d66315b2",
+                                   "name":  "color/Witch Haze",
+                                   "styleType":  "FILL",
+                                   "remote":  false,
+                                   "description":  ""
+                               },
+                   "2924:96":  {
+                                   "key":  "f52ad405df0d999a578c22d4ec49caab1cd34831",
+                                   "name":  "color/Snowy Mint",
+                                   "styleType":  "FILL",
+                                   "remote":  false,
+                                   "description":  ""
+                               },
+                   "2924:104":  {
+                                    "key":  "b58fc3ff6fdb7f88b5f04a464905d7a6fdb0a4ca",
+                                    "name":  "color/White Pointer",
+                                    "styleType":  "FILL",
+                                    "remote":  false,
+                                    "description":  ""
+                                },
+                   "2924:114":  {
+                                    "key":  "4a711cc81dda7a6bbc18d7df153edd15b101f4dd",
+                                    "name":  "color/Fog",
+                                    "styleType":  "FILL",
+                                    "remote":  false,
+                                    "description":  ""
+                                },
+                   "2924:123":  {
+                                    "key":  "aa04a002760e0fbd6bc4daabbf645a2adeed1145",
+                                    "name":  "color/Green Haze",
+                                    "styleType":  "FILL",
+                                    "remote":  false,
+                                    "description":  ""
+                                },
+                   "2924:127":  {
+                                    "key":  "eaed639142b746a47f30bd2a33b13f70ed6d5015",
+                                    "name":  "color/Shark",
+                                    "styleType":  "FILL",
+                                    "remote":  false,
+                                    "description":  ""
+                                },
+                   "2924:141":  {
+                                    "key":  "e46e20adbff42929860f841c2b10626b214295cc",
+                                    "name":  "color/Salem",
+                                    "styleType":  "FILL",
+                                    "remote":  false,
+                                    "description":  ""
+                                },
+                   "2924:142":  {
+                                    "key":  "73ff1a902a1dddcd508ff70f81418dc7c5c582f6",
+                                    "name":  "color/White",
+                                    "styleType":  "FILL",
+                                    "remote":  false,
+                                    "description":  ""
+                                },
+                   "2924:145":  {
+                                    "key":  "d38a9460ed12865125294aed8475cd88b9ce0cb4",
+                                    "name":  "color/Sushi",
+                                    "styleType":  "FILL",
+                                    "remote":  false,
+                                    "description":  ""
+                                },
+                   "2924:152":  {
+                                    "key":  "b9e5b5acbb6acb8e822fbfeb2c27ea3fb6d05c42",
+                                    "name":  "font/Arial/Narrow",
+                                    "styleType":  "TEXT",
+                                    "remote":  false,
+                                    "description":  ""
+                                },
+                   "2924:155":  {
+                                    "key":  "9872e39f330999df9f24996d486808673a143bf9",
+                                    "name":  "color/Sushi",
+                                    "styleType":  "FILL",
+                                    "remote":  false,
+                                    "description":  ""
+                                },
+                   "2924:162":  {
+                                    "key":  "a2f6d8299bcfa28cfd93265abef2be9aa965b039",
+                                    "name":  "font/Inter/Regular underline",
+                                    "styleType":  "TEXT",
+                                    "remote":  false,
+                                    "description":  ""
+                                },
+                   "2924:170":  {
+                                    "key":  "63071afe2c11afd0527441a2a37619638decc0ee",
+                                    "name":  "font/Inter/Medium",
+                                    "styleType":  "TEXT",
+                                    "remote":  false,
+                                    "description":  ""
+                                },
+                   "2924:173":  {
+                                    "key":  "8ec030b37a3329265b17097995c6c43a7ff8ef8b",
+                                    "name":  "color/White 0.2%",
+                                    "styleType":  "FILL",
+                                    "remote":  false,
+                                    "description":  ""
+                                },
+                   "2924:226":  {
+                                    "key":  "1942a4b5e6e3f66308a9c0a406aa4c94614ebc95",
+                                    "name":  "color/White Black",
+                                    "styleType":  "FILL",
+                                    "remote":  false,
+                                    "description":  ""
+                                },
+                   "2924:249":  {
+                                    "key":  "37ad1733cec66e216035a17515de2aacab3ff05d",
+                                    "name":  "color/Blue",
+                                    "styleType":  "FILL",
+                                    "remote":  false,
+                                    "description":  ""
+                                },
+                   "2924:250":  {
+                                    "key":  "d0bb3198b2dbda84874361ce6a20541a2212b7fa",
+                                    "name":  "font/Semantic/Link underline",
+                                    "styleType":  "TEXT",
+                                    "remote":  false,
+                                    "description":  ""
+                                },
+                   "2924:253":  {
+                                    "key":  "d825f1c398504c481bdba7c5cec753291110d845",
+                                    "name":  "color/Mine Shaft",
+                                    "styleType":  "FILL",
+                                    "remote":  false,
+                                    "description":  ""
+                                },
+                   "2924:266":  {
+                                    "key":  "85f39c172e55df8d8b7229da65db6522a3f3d64a",
+                                    "name":  "font/Semantic/Heading 1",
+                                    "styleType":  "TEXT",
+                                    "remote":  false,
+                                    "description":  ""
+                                },
+                   "2924:267":  {
+                                    "key":  "881019a40f4ebc8b5ce35fba50efd96fde7639a2",
+                                    "name":  "color/Amaranth",
+                                    "styleType":  "FILL",
+                                    "remote":  false,
+                                    "description":  ""
+                                },
+                   "2924:273":  {
+                                    "key":  "f16aca14b18a0559870dce32c93b31f4815445dc",
+                                    "name":  "font/Inter/Regular",
+                                    "styleType":  "TEXT",
+                                    "remote":  false,
+                                    "description":  ""
+                                },
+                   "2924:325":  {
+                                    "key":  "eab7e1602dea7841bea92ab2d1e746fc977849ad",
+                                    "name":  "font/Caveat/Bold",
+                                    "styleType":  "TEXT",
+                                    "remote":  false,
+                                    "description":  ""
+                                },
+                   "2924:330":  {
+                                    "key":  "c8df93b4bbaea7891734dfe3b0375d34efdca40a",
+                                    "name":  "font/Semantic/Heading 2",
+                                    "styleType":  "TEXT",
+                                    "remote":  false,
+                                    "description":  ""
+                                },
+                   "2924:334":  {
+                                    "key":  "aae2ba0f3349f4286cdf9c38ba35ddab5536f7f0",
+                                    "name":  "color/Spring Wood",
+                                    "styleType":  "FILL",
+                                    "remote":  false,
+                                    "description":  ""
+                                },
+                   "2924:339":  {
+                                    "key":  "fc64b6fcb2e3fbe0012d57ad2847d2fff8d58e37",
+                                    "name":  "font/Semantic/Heading 4",
+                                    "styleType":  "TEXT",
+                                    "remote":  false,
+                                    "description":  ""
+                                },
+                   "2924:342":  {
+                                    "key":  "359b031b2bdaf67777512290d66b18e10a4b8ec1",
+                                    "name":  "font/Semantic/Link",
+                                    "styleType":  "TEXT",
+                                    "remote":  false,
+                                    "description":  ""
+                                },
+                   "2924:372":  {
+                                    "key":  "e871db0c0e8329408bd0a413e5e5a8013b7b84c3",
+                                    "name":  "color/Black 10%",
+                                    "styleType":  "FILL",
+                                    "remote":  false,
+                                    "description":  ""
+                                },
+                   "2924:443":  {
+                                    "key":  "794053746aefdb090928b5c73e71693832a9528f",
+                                    "name":  "font/Inter/Regular",
+                                    "styleType":  "TEXT",
+                                    "remote":  false,
+                                    "description":  ""
+                                },
+                   "2924:507":  {
+                                    "key":  "97ef717896797411c1d4a136d6d45dfc426c3e4e",
+                                    "name":  "font/Inter/Regular",
+                                    "styleType":  "TEXT",
+                                    "remote":  false,
+                                    "description":  ""
+                                },
+                   "2924:550":  {
+                                    "key":  "22e42a1dfeb1dd84da4ab4fa7b4347262833cb33",
+                                    "name":  "font/Semantic/Button",
+                                    "styleType":  "TEXT",
+                                    "remote":  false,
+                                    "description":  ""
+                                },
+                   "2924:595":  {
+                                    "key":  "172018dd89f65361cd1a02653e7deec1fbb7514f",
+                                    "name":  "color/Log Cabin",
+                                    "styleType":  "FILL",
+                                    "remote":  false,
+                                    "description":  ""
+                                },
+                   "2924:599":  {
+                                    "key":  "f8733363f9db0add9e9aeb6fdc1d9009d036a614",
+                                    "name":  "color/White",
+                                    "styleType":  "FILL",
+                                    "remote":  false,
+                                    "description":  ""
+                                },
+                   "2924:606":  {
+                                    "key":  "68555628e3518005e5c4b13b8d4f154bc0d8b47c",
+                                    "name":  "color/White 10%",
+                                    "styleType":  "FILL",
+                                    "remote":  false,
+                                    "description":  ""
+                                },
+                   "2924:609":  {
+                                    "key":  "01e5f8422a2746708ab6c1ab20c65ced91bd5369",
+                                    "name":  "color/White 50%",
+                                    "styleType":  "FILL",
+                                    "remote":  false,
+                                    "description":  ""
+                                },
+                   "2924:610":  {
+                                    "key":  "a610eaff2c1ceeda86c104ebaebde5c5c8b94f75",
+                                    "name":  "font/Inter/Regular",
+                                    "styleType":  "TEXT",
+                                    "remote":  false,
+                                    "description":  ""
+                                },
+                   "2924:628":  {
+                                    "key":  "a2e6b05a684f3a71f97a323d0edaad7c39664ecc",
+                                    "name":  "font/Semantic/Link",
+                                    "styleType":  "TEXT",
+                                    "remote":  false,
+                                    "description":  ""
+                                },
+                   "2924:637":  {
+                                    "key":  "6ecd64bbae792805f581a12847b9f5d84e526374",
+                                    "name":  "font/Semantic/Link",
+                                    "styleType":  "TEXT",
+                                    "remote":  false,
+                                    "description":  ""
+                                },
+                   "6983:120":  {
+                                    "key":  "edf8c3d7c6f101897d4a60bed629e0c55a64bca7",
+                                    "name":  "Minimal Elementor/Hero Heading",
+                                    "styleType":  "TEXT",
+                                    "remote":  false,
+                                    "description":  ""
+                                },
+                   "6983:121":  {
+                                    "key":  "64984e19be3006011c4bee99b56864ffde001805",
+                                    "name":  "Minimal Elementor/Display Large",
+                                    "styleType":  "TEXT",
+                                    "remote":  false,
+                                    "description":  ""
+                                },
+                   "6983:122":  {
+                                    "key":  "9d94a14146db6db8ea843f20b02f0ad56fa7c96d",
+                                    "name":  "Minimal Elementor/Display Medium",
+                                    "styleType":  "TEXT",
+                                    "remote":  false,
+                                    "description":  ""
+                                },
+                   "6983:123":  {
+                                    "key":  "c5c2b2eb49d05c74eb9a3c0f65dde474346fd027",
+                                    "name":  "Minimal Elementor/Display Small",
+                                    "styleType":  "TEXT",
+                                    "remote":  false,
+                                    "description":  ""
+                                },
+                   "6983:124":  {
+                                    "key":  "2d0e4ff0e6fa241111cbd3b0f4599f2d52d0b19c",
+                                    "name":  "Minimal Elementor/Heading 1",
+                                    "styleType":  "TEXT",
+                                    "remote":  false,
+                                    "description":  ""
+                                },
+                   "6983:125":  {
+                                    "key":  "db82ff3a312bb1aa9f63d91685618d8688348e18",
+                                    "name":  "Minimal Elementor/Heading 2",
+                                    "styleType":  "TEXT",
+                                    "remote":  false,
+                                    "description":  ""
+                                },
+                   "6983:126":  {
+                                    "key":  "066f1dbe14ae684c0b8fa916000bd8fc8761d251",
+                                    "name":  "Minimal Elementor/Heading 3",
+                                    "styleType":  "TEXT",
+                                    "remote":  false,
+                                    "description":  ""
+                                },
+                   "6983:127":  {
+                                    "key":  "17d45b781a78e2290363f894d38b0dc0ffc56259",
+                                    "name":  "Minimal Elementor/Heading 4",
+                                    "styleType":  "TEXT",
+                                    "remote":  false,
+                                    "description":  ""
+                                },
+                   "6983:128":  {
+                                    "key":  "ae408c0c5c9ab4e48ffb86a0bcbdb33029173d10",
+                                    "name":  "Minimal Elementor/Subtitle",
+                                    "styleType":  "TEXT",
+                                    "remote":  false,
+                                    "description":  ""
+                                },
+                   "6983:129":  {
+                                    "key":  "6faea354a1d577492523acdd12fb047511d059d1",
+                                    "name":  "Minimal Elementor/Body",
+                                    "styleType":  "TEXT",
+                                    "remote":  false,
+                                    "description":  ""
+                                },
+                   "6983:130":  {
+                                    "key":  "c37aa69ac0534a741f096abacf418e7eed09a932",
+                                    "name":  "Minimal Elementor/Body Strong",
+                                    "styleType":  "TEXT",
+                                    "remote":  false,
+                                    "description":  ""
+                                },
+                   "6983:131":  {
+                                    "key":  "f6ce1ac5f08a8dd86c262cf3f2cc60a5b24746b9",
+                                    "name":  "Minimal Elementor/Label",
+                                    "styleType":  "TEXT",
+                                    "remote":  false,
+                                    "description":  ""
+                                },
+                   "6983:132":  {
+                                    "key":  "4f6d64ca43da0c2a338f4f8c679e5a5a852ae5a8",
+                                    "name":  "Minimal Elementor/Card Subtle",
+                                    "styleType":  "EFFECT",
+                                    "remote":  false,
+                                    "description":  ""
+                                },
+                   "6983:133":  {
+                                    "key":  "039f7a503a1b1a5b504e934862462fba8695555d",
+                                    "name":  "Minimal Elementor/Card Elevated",
+                                    "styleType":  "EFFECT",
+                                    "remote":  false,
+                                    "description":  ""
+                                },
+                   "6933:59":  {
+                                   "key":  "68e7798b773de50d09abaa8eb0ed1587958de6f7",
+                                   "name":  "essentials.pixfort.com/Athens Gray",
+                                   "styleType":  "FILL",
+                                   "remote":  true,
+                                   "description":  ""
+                               },
+                   "6933:127":  {
+                                    "key":  "dae3296b05acbcd89cc287beb5c84e5bc169fe2b",
+                                    "name":  "essentials.pixfort.com/White 80%",
+                                    "styleType":  "FILL",
+                                    "remote":  true,
+                                    "description":  ""
+                                },
+                   "6933:130":  {
+                                    "key":  "a0666ca6fed4cb81a4204b0bfb8fd7411713efc0",
+                                    "name":  "essentials.pixfort.com/Charade 20%",
+                                    "styleType":  "FILL",
+                                    "remote":  true,
+                                    "description":  ""
+                                },
+                   "6933:132":  {
+                                    "key":  "ba3254bbfe44f2c3547505b36457f975004e3262",
+                                    "name":  "essentials.pixfort.com/Black",
+                                    "styleType":  "FILL",
+                                    "remote":  true,
+                                    "description":  ""
+                                },
+                   "6933:138":  {
+                                    "key":  "88a59b1e9f0e5fb8e57ccc8bca76d88f3a07daf8",
+                                    "name":  "essentials.pixfort.com/Mine Shaft",
+                                    "styleType":  "FILL",
+                                    "remote":  true,
+                                    "description":  ""
+                                },
+                   "6933:135":  {
+                                    "key":  "11201c685d45ff971597428fae8b0d780818d0b3",
+                                    "name":  "essentials.pixfort.com/Athens Gray",
+                                    "styleType":  "FILL",
+                                    "remote":  true,
+                                    "description":  ""
+                                }
+               },
+    "name":  "취업 포트폴리오 만들기",
+    "lastModified":  "2026-09-01T07:15:26Z",
+    "thumbnailUrl":  "https://s3-alpha.figma.com/thumbnails/6f2f079b-dbd6-45fe-8951-0f3a9f624d27?X-Amz-Algorithm=AWS4-HMAC-SHA256\u0026X-Amz-Credential=AKIAQ4GOSFWCVT66BXVV%2F20260830%2Fus-west-2%2Fs3%2Faws4_request\u0026X-Amz-Date=20260830T120000Z\u0026X-Amz-Expires=604800\u0026X-Amz-SignedHeaders=host\u0026X-Amz-Signature=81df4159b285b3fed5c411b7684d5c64f476ab865ad6ebabf6c7a62b5c6a3af4",
+    "version":  "2394150166444150595",
+    "role":  "owner",
+    "editorType":  "figma",
+    "linkAccess":  "edit"
+}

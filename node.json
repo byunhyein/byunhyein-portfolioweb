@@ -1,0 +1,1047 @@
+﻿{
+    "name":  "취업 포트폴리오 만들기",
+    "lastModified":  "2026-09-01T06:53:42Z",
+    "thumbnailUrl":  "https://s3-alpha.figma.com/thumbnails/475622e5-f1d6-414d-8b11-bb7cb241318e?X-Amz-Algorithm=AWS4-HMAC-SHA256\u0026X-Amz-Credential=AKIAQ4GOSFWCVT66BXVV%2F20260830%2Fus-west-2%2Fs3%2Faws4_request\u0026X-Amz-Date=20260830T120000Z\u0026X-Amz-Expires=604800\u0026X-Amz-SignedHeaders=host\u0026X-Amz-Signature=ecbbb1c326465a94039dd38921c15e1973d7cd414d1d99f6d358be3300643254",
+    "version":  "2394150166444150595",
+    "role":  "owner",
+    "editorType":  "figma",
+    "linkAccess":  "edit",
+    "nodes":  {
+                  "7170:110":  {
+                                   "document":  {
+                                                    "id":  "7170:110",
+                                                    "name":  "PORTFOLIO / Desktop / Draft 2",
+                                                    "type":  "FRAME",
+                                                    "scrollBehavior":  "SCROLLS",
+                                                    "children":  [
+                                                                     {
+                                                                         "id":  "7170:111",
+                                                                         "name":  "Page Wrapper",
+                                                                         "type":  "GROUP",
+                                                                         "scrollBehavior":  "SCROLLS",
+                                                                         "children":  [
+                                                                                          {
+                                                                                              "id":  "7170:112",
+                                                                                              "name":  "Hero / Background Image",
+                                                                                              "type":  "RECTANGLE",
+                                                                                              "scrollBehavior":  "SCROLLS",
+                                                                                              "blendMode":  "PASS_THROUGH",
+                                                                                              "fills":  [
+                                                                                                            {
+                                                                                                                "blendMode":  "NORMAL",
+                                                                                                                "type":  "IMAGE",
+                                                                                                                "scaleMode":  "FILL",
+                                                                                                                "imageRef":  "e2fae217942085e372a270199ed1634ab9ea7d41"
+                                                                                                            }
+                                                                                                        ],
+                                                                                              "strokes":  [
+
+                                                                                                          ],
+                                                                                              "strokeWeight":  1.0,
+                                                                                              "strokeAlign":  "INSIDE",
+                                                                                              "absoluteBoundingBox":  {
+                                                                                                                          "x":  9.4759950637817383,
+                                                                                                                          "y":  2.4771883487701416,
+                                                                                                                          "width":  1901.0482177734375,
+                                                                                                                          "height":  891.11633300781250
+                                                                                                                      },
+                                                                                              "absoluteRenderBounds":  {
+                                                                                                                           "x":  9.4759950637817383,
+                                                                                                                           "y":  2.4771883487701416,
+                                                                                                                           "width":  1901.0482177734375,
+                                                                                                                           "height":  891.11633300781250
+                                                                                                                       },
+                                                                                              "preserveRatio":  true,
+                                                                                              "targetAspectRatio":  {
+                                                                                                                        "x":  1920.0,
+                                                                                                                        "y":  900.0
+                                                                                                                    },
+                                                                                              "constraints":  {
+                                                                                                                  "vertical":  "TOP",
+                                                                                                                  "horizontal":  "LEFT"
+                                                                                                              },
+                                                                                              "effects":  [
+
+                                                                                                          ],
+                                                                                              "interactions":  [
+
+                                                                                                               ],
+                                                                                              "complexStrokeProperties":  {
+                                                                                                                              "strokeType":  "BASIC"
+                                                                                                                          }
+                                                                                          },
+                                                                                          {
+                                                                                              "id":  "7170:113",
+                                                                                              "name":  "Page Layout",
+                                                                                              "type":  "FRAME",
+                                                                                              "scrollBehavior":  "SCROLLS",
+                                                                                              "boundVariables":  {
+                                                                                                                     "rectangleCornerRadii":  {
+                                                                                                                                                  "RECTANGLE_TOP_LEFT_CORNER_RADIUS":  {
+                                                                                                                                                                                           "type":  "VARIABLE_ALIAS",
+                                                                                                                                                                                           "id":  "VariableID:aadf0bc4976782200a63a540c9f45106e3299678/227:3631"
+                                                                                                                                                                                       },
+                                                                                                                                                  "RECTANGLE_TOP_RIGHT_CORNER_RADIUS":  {
+                                                                                                                                                                                            "type":  "VARIABLE_ALIAS",
+                                                                                                                                                                                            "id":  "VariableID:aadf0bc4976782200a63a540c9f45106e3299678/227:3631"
+                                                                                                                                                                                        },
+                                                                                                                                                  "RECTANGLE_BOTTOM_LEFT_CORNER_RADIUS":  {
+                                                                                                                                                                                              "type":  "VARIABLE_ALIAS",
+                                                                                                                                                                                              "id":  "VariableID:aadf0bc4976782200a63a540c9f45106e3299678/227:3631"
+                                                                                                                                                                                          },
+                                                                                                                                                  "RECTANGLE_BOTTOM_RIGHT_CORNER_RADIUS":  {
+                                                                                                                                                                                               "type":  "VARIABLE_ALIAS",
+                                                                                                                                                                                               "id":  "VariableID:aadf0bc4976782200a63a540c9f45106e3299678/227:3631"
+                                                                                                                                                                                           }
+                                                                                                                                              },
+                                                                                                                     "fills":  [
+                                                                                                                                   {
+                                                                                                                                       "type":  "VARIABLE_ALIAS",
+                                                                                                                                       "id":  "VariableID:08b6a6f834f176fbe135a3151ecef006edba7602/1664:24"
+                                                                                                                                   }
+                                                                                                                               ]
+                                                                                                                 },
+                                                                                              "children":  [
+                                                                                                               {
+                                                                                                                   "id":  "7170:114",
+                                                                                                                   "name":  "Page Content",
+                                                                                                                   "type":  "FRAME",
+                                                                                                                   "scrollBehavior":  "SCROLLS",
+                                                                                                                   "boundVariables":  {
+                                                                                                                                          "fills":  ""
+                                                                                                                                      },
+                                                                                                                   "children":  [
+                                                                                                                                    "@{id=7170:115; name=Footer; type=FRAME; scrollBehavior=SCROLLS; boundVariables=; children=System.Object[]; blendMode=PASS_THROUGH; clipsContent=True; background=System.Object[]; fills=System.Object[]; strokes=System.Object[]; strokeWeight=1.0; strokeAlign=INSIDE; backgroundColor=; absoluteBoundingBox=; absoluteRenderBounds=; constraints=; layoutAlign=INHERIT; layoutGrow=0.0; layoutPositioning=ABSOLUTE; layoutSizingHorizontal=FIXED; layoutSizingVertical=FIXED; effects=System.Object[]; interactions=System.Object[]; complexStrokeProperties=}",
+                                                                                                                                    "@{id=7170:135; name=Main Content; type=FRAME; scrollBehavior=SCROLLS; boundVariables=; children=System.Object[]; blendMode=PASS_THROUGH; clipsContent=False; background=System.Object[]; fills=System.Object[]; strokes=System.Object[]; strokeWeight=1.0; strokeAlign=INSIDE; backgroundColor=; layoutMode=VERTICAL; counterAxisSizingMode=FIXED; primaryAxisSizingMode=FIXED; layoutWrap=NO_WRAP; absoluteBoundingBox=; absoluteRenderBounds=; constraints=; layoutAlign=STRETCH; layoutGrow=0.0; layoutSizingHorizontal=FILL; layoutSizingVertical=FIXED; effects=System.Object[]; interactions=System.Object[]; complexStrokeProperties=}"
+                                                                                                                                ],
+                                                                                                                   "blendMode":  "PASS_THROUGH",
+                                                                                                                   "clipsContent":  false,
+                                                                                                                   "background":  [
+                                                                                                                                      "@{blendMode=NORMAL; type=SOLID; color=; boundVariables=}"
+                                                                                                                                  ],
+                                                                                                                   "fills":  [
+                                                                                                                                 "@{blendMode=NORMAL; type=SOLID; color=; boundVariables=}"
+                                                                                                                             ],
+                                                                                                                   "strokes":  [
+
+                                                                                                                               ],
+                                                                                                                   "strokeWeight":  1.0,
+                                                                                                                   "strokeAlign":  "INSIDE",
+                                                                                                                   "backgroundColor":  {
+                                                                                                                                           "r":  1.0,
+                                                                                                                                           "g":  1.0,
+                                                                                                                                           "b":  1.0,
+                                                                                                                                           "a":  1.0
+                                                                                                                                       },
+                                                                                                                   "layoutMode":  "VERTICAL",
+                                                                                                                   "counterAxisSizingMode":  "FIXED",
+                                                                                                                   "primaryAxisSizingMode":  "FIXED",
+                                                                                                                   "layoutWrap":  "NO_WRAP",
+                                                                                                                   "absoluteBoundingBox":  {
+                                                                                                                                               "x":  0.0,
+                                                                                                                                               "y":  0.0,
+                                                                                                                                               "width":  1920.0,
+                                                                                                                                               "height":  7436.0
+                                                                                                                                           },
+                                                                                                                   "absoluteRenderBounds":  {
+                                                                                                                                                "x":  -20.0,
+                                                                                                                                                "y":  -16.0,
+                                                                                                                                                "width":  1960.0,
+                                                                                                                                                "height":  7452.0
+                                                                                                                                            },
+                                                                                                                   "constraints":  {
+                                                                                                                                       "vertical":  "TOP",
+                                                                                                                                       "horizontal":  "LEFT_RIGHT"
+                                                                                                                                   },
+                                                                                                                   "layoutAlign":  "STRETCH",
+                                                                                                                   "layoutGrow":  0.0,
+                                                                                                                   "layoutSizingHorizontal":  "FILL",
+                                                                                                                   "layoutSizingVertical":  "FIXED",
+                                                                                                                   "effects":  [
+
+                                                                                                                               ],
+                                                                                                                   "interactions":  [
+
+                                                                                                                                    ],
+                                                                                                                   "complexStrokeProperties":  {
+                                                                                                                                                   "strokeType":  "BASIC"
+                                                                                                                                               }
+                                                                                                               }
+                                                                                                           ],
+                                                                                              "blendMode":  "PASS_THROUGH",
+                                                                                              "clipsContent":  false,
+                                                                                              "background":  [
+                                                                                                                 {
+                                                                                                                     "blendMode":  "NORMAL",
+                                                                                                                     "type":  "SOLID",
+                                                                                                                     "color":  {
+                                                                                                                                   "r":  1.0,
+                                                                                                                                   "g":  1.0,
+                                                                                                                                   "b":  1.0,
+                                                                                                                                   "a":  1.0
+                                                                                                                               },
+                                                                                                                     "boundVariables":  {
+                                                                                                                                            "color":  "@{type=VARIABLE_ALIAS; id=VariableID:08b6a6f834f176fbe135a3151ecef006edba7602/1664:24}"
+                                                                                                                                        }
+                                                                                                                 }
+                                                                                                             ],
+                                                                                              "fills":  [
+                                                                                                            {
+                                                                                                                "blendMode":  "NORMAL",
+                                                                                                                "type":  "SOLID",
+                                                                                                                "color":  {
+                                                                                                                              "r":  1.0,
+                                                                                                                              "g":  1.0,
+                                                                                                                              "b":  1.0,
+                                                                                                                              "a":  1.0
+                                                                                                                          },
+                                                                                                                "boundVariables":  {
+                                                                                                                                       "color":  "@{type=VARIABLE_ALIAS; id=VariableID:08b6a6f834f176fbe135a3151ecef006edba7602/1664:24}"
+                                                                                                                                   }
+                                                                                                            }
+                                                                                                        ],
+                                                                                              "strokes":  [
+
+                                                                                                          ],
+                                                                                              "strokeWeight":  1.0,
+                                                                                              "strokeAlign":  "INSIDE",
+                                                                                              "backgroundColor":  {
+                                                                                                                      "r":  1.0,
+                                                                                                                      "g":  1.0,
+                                                                                                                      "b":  1.0,
+                                                                                                                      "a":  1.0
+                                                                                                                  },
+                                                                                              "overflowDirection":  "VERTICAL_SCROLLING",
+                                                                                              "layoutMode":  "VERTICAL",
+                                                                                              "counterAxisSizingMode":  "FIXED",
+                                                                                              "primaryAxisSizingMode":  "FIXED",
+                                                                                              "layoutWrap":  "NO_WRAP",
+                                                                                              "absoluteBoundingBox":  {
+                                                                                                                          "x":  0.0,
+                                                                                                                          "y":  0.0,
+                                                                                                                          "width":  1920.0,
+                                                                                                                          "height":  7436.0
+                                                                                                                      },
+                                                                                              "absoluteRenderBounds":  {
+                                                                                                                           "x":  -20.0,
+                                                                                                                           "y":  -16.0,
+                                                                                                                           "width":  1960.0,
+                                                                                                                           "height":  7452.0
+                                                                                                                       },
+                                                                                              "constraints":  {
+                                                                                                                  "vertical":  "TOP",
+                                                                                                                  "horizontal":  "LEFT_RIGHT"
+                                                                                                              },
+                                                                                              "layoutSizingHorizontal":  "FIXED",
+                                                                                              "layoutSizingVertical":  "FIXED",
+                                                                                              "effects":  [
+
+                                                                                                          ],
+                                                                                              "interactions":  [
+
+                                                                                                               ],
+                                                                                              "complexStrokeProperties":  {
+                                                                                                                              "strokeType":  "BASIC"
+                                                                                                                          }
+                                                                                          }
+                                                                                      ],
+                                                                         "blendMode":  "PASS_THROUGH",
+                                                                         "clipsContent":  false,
+                                                                         "background":  [
+
+                                                                                        ],
+                                                                         "fills":  [
+
+                                                                                   ],
+                                                                         "strokes":  [
+
+                                                                                     ],
+                                                                         "strokeWeight":  1.0,
+                                                                         "strokeAlign":  "INSIDE",
+                                                                         "backgroundColor":  {
+                                                                                                 "r":  0.0,
+                                                                                                 "g":  0.0,
+                                                                                                 "b":  0.0,
+                                                                                                 "a":  0.0
+                                                                                             },
+                                                                         "absoluteBoundingBox":  {
+                                                                                                     "x":  0.0,
+                                                                                                     "y":  0.0,
+                                                                                                     "width":  1920.0,
+                                                                                                     "height":  7436.0
+                                                                                                 },
+                                                                         "absoluteRenderBounds":  {
+                                                                                                      "x":  -20.0,
+                                                                                                      "y":  -16.0,
+                                                                                                      "width":  1960.0,
+                                                                                                      "height":  7452.0
+                                                                                                  },
+                                                                         "constraints":  {
+                                                                                             "vertical":  "TOP",
+                                                                                             "horizontal":  "LEFT"
+                                                                                         },
+                                                                         "effects":  [
+
+                                                                                     ],
+                                                                         "interactions":  [
+
+                                                                                          ],
+                                                                         "complexStrokeProperties":  {
+                                                                                                         "strokeType":  "BASIC"
+                                                                                                     }
+                                                                     },
+                                                                     {
+                                                                         "id":  "7170:643",
+                                                                         "name":  "⚠ Stray / Works Pagination Dots",
+                                                                         "type":  "INSTANCE",
+                                                                         "scrollBehavior":  "SCROLLS",
+                                                                         "componentId":  "7057:27",
+                                                                         "overrides":  [
+                                                                                           {
+                                                                                               "id":  "7170:643",
+                                                                                               "overriddenFields":  [
+                                                                                                                        "layoutPositioning",
+                                                                                                                        "name"
+                                                                                                                    ]
+                                                                                           }
+                                                                                       ],
+                                                                         "children":  [
+                                                                                          {
+                                                                                              "id":  "I7170:643;7057:28",
+                                                                                              "name":  "Slider Showcase / Pagination Dot 1",
+                                                                                              "type":  "RECTANGLE",
+                                                                                              "scrollBehavior":  "SCROLLS",
+                                                                                              "boundVariables":  {
+                                                                                                                     "opacity":  {
+                                                                                                                                     "type":  "VARIABLE_ALIAS",
+                                                                                                                                     "id":  "VariableID:f7390618eceabe0bad3697a4f6e14b087f0900dd/1:826"
+                                                                                                                                 },
+                                                                                                                     "rectangleCornerRadii":  {
+                                                                                                                                                  "RECTANGLE_TOP_LEFT_CORNER_RADIUS":  {
+                                                                                                                                                                                           "type":  "VARIABLE_ALIAS",
+                                                                                                                                                                                           "id":  "VariableID:c2b2a2c892d0bf5938e9624dd9670745bf0cd5ae/1:924"
+                                                                                                                                                                                       },
+                                                                                                                                                  "RECTANGLE_TOP_RIGHT_CORNER_RADIUS":  {
+                                                                                                                                                                                            "type":  "VARIABLE_ALIAS",
+                                                                                                                                                                                            "id":  "VariableID:c2b2a2c892d0bf5938e9624dd9670745bf0cd5ae/1:924"
+                                                                                                                                                                                        },
+                                                                                                                                                  "RECTANGLE_BOTTOM_LEFT_CORNER_RADIUS":  {
+                                                                                                                                                                                              "type":  "VARIABLE_ALIAS",
+                                                                                                                                                                                              "id":  "VariableID:c2b2a2c892d0bf5938e9624dd9670745bf0cd5ae/1:924"
+                                                                                                                                                                                          },
+                                                                                                                                                  "RECTANGLE_BOTTOM_RIGHT_CORNER_RADIUS":  {
+                                                                                                                                                                                               "type":  "VARIABLE_ALIAS",
+                                                                                                                                                                                               "id":  "VariableID:c2b2a2c892d0bf5938e9624dd9670745bf0cd5ae/1:924"
+                                                                                                                                                                                           }
+                                                                                                                                              }
+                                                                                                                 },
+                                                                                              "blendMode":  "PASS_THROUGH",
+                                                                                              "opacity":  0.60000002384185791,
+                                                                                              "fills":  [
+                                                                                                            {
+                                                                                                                "blendMode":  "NORMAL",
+                                                                                                                "type":  "SOLID",
+                                                                                                                "color":  {
+                                                                                                                              "r":  1.0,
+                                                                                                                              "g":  1.0,
+                                                                                                                              "b":  1.0,
+                                                                                                                              "a":  1.0
+                                                                                                                          }
+                                                                                                            }
+                                                                                                        ],
+                                                                                              "strokes":  [
+
+                                                                                                          ],
+                                                                                              "strokeWeight":  1.0,
+                                                                                              "strokeAlign":  "INSIDE",
+                                                                                              "cornerRadius":  3.50,
+                                                                                              "cornerSmoothing":  0.0,
+                                                                                              "absoluteBoundingBox":  {
+                                                                                                                          "x":  931.0,
+                                                                                                                          "y":  5279.0,
+                                                                                                                          "width":  20.0,
+                                                                                                                          "height":  7.0
+                                                                                                                      },
+                                                                                              "absoluteRenderBounds":  {
+                                                                                                                           "x":  931.0,
+                                                                                                                           "y":  5279.0,
+                                                                                                                           "width":  20.0,
+                                                                                                                           "height":  7.0
+                                                                                                                       },
+                                                                                              "constraints":  {
+                                                                                                                  "vertical":  "SCALE",
+                                                                                                                  "horizontal":  "SCALE"
+                                                                                                              },
+                                                                                              "effects":  [
+
+                                                                                                          ],
+                                                                                              "interactions":  [
+
+                                                                                                               ],
+                                                                                              "complexStrokeProperties":  {
+                                                                                                                              "strokeType":  "BASIC"
+                                                                                                                          }
+                                                                                          },
+                                                                                          {
+                                                                                              "id":  "I7170:643;7057:29",
+                                                                                              "name":  "Slider Showcase / Pagination Dot 2",
+                                                                                              "type":  "RECTANGLE",
+                                                                                              "scrollBehavior":  "SCROLLS",
+                                                                                              "boundVariables":  {
+                                                                                                                     "opacity":  {
+                                                                                                                                     "type":  "VARIABLE_ALIAS",
+                                                                                                                                     "id":  "VariableID:e52a4c673cb0a32e430f65e861f8f31484053545/1:552"
+                                                                                                                                 },
+                                                                                                                     "rectangleCornerRadii":  {
+                                                                                                                                                  "RECTANGLE_TOP_LEFT_CORNER_RADIUS":  {
+                                                                                                                                                                                           "type":  "VARIABLE_ALIAS",
+                                                                                                                                                                                           "id":  "VariableID:c2b2a2c892d0bf5938e9624dd9670745bf0cd5ae/1:924"
+                                                                                                                                                                                       },
+                                                                                                                                                  "RECTANGLE_TOP_RIGHT_CORNER_RADIUS":  {
+                                                                                                                                                                                            "type":  "VARIABLE_ALIAS",
+                                                                                                                                                                                            "id":  "VariableID:c2b2a2c892d0bf5938e9624dd9670745bf0cd5ae/1:924"
+                                                                                                                                                                                        },
+                                                                                                                                                  "RECTANGLE_BOTTOM_LEFT_CORNER_RADIUS":  {
+                                                                                                                                                                                              "type":  "VARIABLE_ALIAS",
+                                                                                                                                                                                              "id":  "VariableID:c2b2a2c892d0bf5938e9624dd9670745bf0cd5ae/1:924"
+                                                                                                                                                                                          },
+                                                                                                                                                  "RECTANGLE_BOTTOM_RIGHT_CORNER_RADIUS":  {
+                                                                                                                                                                                               "type":  "VARIABLE_ALIAS",
+                                                                                                                                                                                               "id":  "VariableID:c2b2a2c892d0bf5938e9624dd9670745bf0cd5ae/1:924"
+                                                                                                                                                                                           }
+                                                                                                                                              }
+                                                                                                                 },
+                                                                                              "blendMode":  "PASS_THROUGH",
+                                                                                              "opacity":  0.40000000596046448,
+                                                                                              "fills":  [
+                                                                                                            {
+                                                                                                                "blendMode":  "NORMAL",
+                                                                                                                "type":  "SOLID",
+                                                                                                                "color":  {
+                                                                                                                              "r":  1.0,
+                                                                                                                              "g":  1.0,
+                                                                                                                              "b":  1.0,
+                                                                                                                              "a":  1.0
+                                                                                                                          }
+                                                                                                            }
+                                                                                                        ],
+                                                                                              "strokes":  [
+
+                                                                                                          ],
+                                                                                              "strokeWeight":  1.0,
+                                                                                              "strokeAlign":  "INSIDE",
+                                                                                              "cornerRadius":  3.50,
+                                                                                              "cornerSmoothing":  0.0,
+                                                                                              "absoluteBoundingBox":  {
+                                                                                                                          "x":  963.0,
+                                                                                                                          "y":  5279.0,
+                                                                                                                          "width":  7.0,
+                                                                                                                          "height":  7.0
+                                                                                                                      },
+                                                                                              "absoluteRenderBounds":  {
+                                                                                                                           "x":  963.0,
+                                                                                                                           "y":  5279.0,
+                                                                                                                           "width":  7.0,
+                                                                                                                           "height":  7.0
+                                                                                                                       },
+                                                                                              "constraints":  {
+                                                                                                                  "vertical":  "SCALE",
+                                                                                                                  "horizontal":  "SCALE"
+                                                                                                              },
+                                                                                              "effects":  [
+
+                                                                                                          ],
+                                                                                              "interactions":  [
+
+                                                                                                               ],
+                                                                                              "complexStrokeProperties":  {
+                                                                                                                              "strokeType":  "BASIC"
+                                                                                                                          }
+                                                                                          },
+                                                                                          {
+                                                                                              "id":  "I7170:643;7057:30",
+                                                                                              "name":  "Slider Showcase / Pagination Dot 3",
+                                                                                              "type":  "RECTANGLE",
+                                                                                              "scrollBehavior":  "SCROLLS",
+                                                                                              "boundVariables":  {
+                                                                                                                     "opacity":  {
+                                                                                                                                     "type":  "VARIABLE_ALIAS",
+                                                                                                                                     "id":  "VariableID:e52a4c673cb0a32e430f65e861f8f31484053545/1:552"
+                                                                                                                                 },
+                                                                                                                     "rectangleCornerRadii":  {
+                                                                                                                                                  "RECTANGLE_TOP_LEFT_CORNER_RADIUS":  {
+                                                                                                                                                                                           "type":  "VARIABLE_ALIAS",
+                                                                                                                                                                                           "id":  "VariableID:c2b2a2c892d0bf5938e9624dd9670745bf0cd5ae/1:924"
+                                                                                                                                                                                       },
+                                                                                                                                                  "RECTANGLE_TOP_RIGHT_CORNER_RADIUS":  {
+                                                                                                                                                                                            "type":  "VARIABLE_ALIAS",
+                                                                                                                                                                                            "id":  "VariableID:c2b2a2c892d0bf5938e9624dd9670745bf0cd5ae/1:924"
+                                                                                                                                                                                        },
+                                                                                                                                                  "RECTANGLE_BOTTOM_LEFT_CORNER_RADIUS":  {
+                                                                                                                                                                                              "type":  "VARIABLE_ALIAS",
+                                                                                                                                                                                              "id":  "VariableID:c2b2a2c892d0bf5938e9624dd9670745bf0cd5ae/1:924"
+                                                                                                                                                                                          },
+                                                                                                                                                  "RECTANGLE_BOTTOM_RIGHT_CORNER_RADIUS":  {
+                                                                                                                                                                                               "type":  "VARIABLE_ALIAS",
+                                                                                                                                                                                               "id":  "VariableID:c2b2a2c892d0bf5938e9624dd9670745bf0cd5ae/1:924"
+                                                                                                                                                                                           }
+                                                                                                                                              }
+                                                                                                                 },
+                                                                                              "blendMode":  "PASS_THROUGH",
+                                                                                              "opacity":  0.40000000596046448,
+                                                                                              "fills":  [
+                                                                                                            {
+                                                                                                                "blendMode":  "NORMAL",
+                                                                                                                "type":  "SOLID",
+                                                                                                                "color":  {
+                                                                                                                              "r":  1.0,
+                                                                                                                              "g":  1.0,
+                                                                                                                              "b":  1.0,
+                                                                                                                              "a":  1.0
+                                                                                                                          }
+                                                                                                            }
+                                                                                                        ],
+                                                                                              "strokes":  [
+
+                                                                                                          ],
+                                                                                              "strokeWeight":  1.0,
+                                                                                              "strokeAlign":  "INSIDE",
+                                                                                              "cornerRadius":  3.50,
+                                                                                              "cornerSmoothing":  0.0,
+                                                                                              "absoluteBoundingBox":  {
+                                                                                                                          "x":  982.0,
+                                                                                                                          "y":  5279.0,
+                                                                                                                          "width":  7.0,
+                                                                                                                          "height":  7.0
+                                                                                                                      },
+                                                                                              "absoluteRenderBounds":  {
+                                                                                                                           "x":  982.0,
+                                                                                                                           "y":  5279.0,
+                                                                                                                           "width":  7.0,
+                                                                                                                           "height":  7.0
+                                                                                                                       },
+                                                                                              "constraints":  {
+                                                                                                                  "vertical":  "SCALE",
+                                                                                                                  "horizontal":  "SCALE"
+                                                                                                              },
+                                                                                              "effects":  [
+
+                                                                                                          ],
+                                                                                              "interactions":  [
+
+                                                                                                               ],
+                                                                                              "complexStrokeProperties":  {
+                                                                                                                              "strokeType":  "BASIC"
+                                                                                                                          }
+                                                                                          }
+                                                                                      ],
+                                                                         "blendMode":  "PASS_THROUGH",
+                                                                         "clipsContent":  false,
+                                                                         "background":  [
+
+                                                                                        ],
+                                                                         "fills":  [
+
+                                                                                   ],
+                                                                         "strokes":  [
+
+                                                                                     ],
+                                                                         "strokeWeight":  1.0,
+                                                                         "strokeAlign":  "INSIDE",
+                                                                         "backgroundColor":  {
+                                                                                                 "r":  0.0,
+                                                                                                 "g":  0.0,
+                                                                                                 "b":  0.0,
+                                                                                                 "a":  0.0
+                                                                                             },
+                                                                         "absoluteBoundingBox":  {
+                                                                                                     "x":  931.0,
+                                                                                                     "y":  5279.0,
+                                                                                                     "width":  58.0,
+                                                                                                     "height":  7.0
+                                                                                                 },
+                                                                         "absoluteRenderBounds":  {
+                                                                                                      "x":  931.0,
+                                                                                                      "y":  5279.0,
+                                                                                                      "width":  58.0,
+                                                                                                      "height":  7.0
+                                                                                                  },
+                                                                         "constraints":  {
+                                                                                             "vertical":  "TOP",
+                                                                                             "horizontal":  "CENTER"
+                                                                                         },
+                                                                         "effects":  [
+
+                                                                                     ],
+                                                                         "interactions":  [
+
+                                                                                          ],
+                                                                         "complexStrokeProperties":  {
+                                                                                                         "strokeType":  "BASIC"
+                                                                                                     }
+                                                                     },
+                                                                     {
+                                                                         "id":  "7170:644",
+                                                                         "name":  "⚠ Stray / Experience Career Title",
+                                                                         "type":  "TEXT",
+                                                                         "scrollBehavior":  "SCROLLS",
+                                                                         "boundVariables":  {
+                                                                                                "fills":  [
+                                                                                                              {
+                                                                                                                  "type":  "VARIABLE_ALIAS",
+                                                                                                                  "id":  "VariableID:56a3c835767ee6acae89825669d444a041363ae8/227:3442"
+                                                                                                              }
+                                                                                                          ],
+                                                                                                "fontFamily":  [
+                                                                                                                   {
+                                                                                                                       "type":  "VARIABLE_ALIAS",
+                                                                                                                       "id":  "VariableID:57291a438fa1442715ace99334afb55e32b4509f/1669:705"
+                                                                                                                   }
+                                                                                                               ]
+                                                                                            },
+                                                                         "blendMode":  "PASS_THROUGH",
+                                                                         "fills":  [
+                                                                                       {
+                                                                                           "blendMode":  "NORMAL",
+                                                                                           "type":  "SOLID",
+                                                                                           "color":  {
+                                                                                                         "r":  0.0,
+                                                                                                         "g":  0.0,
+                                                                                                         "b":  0.0,
+                                                                                                         "a":  1.0
+                                                                                                     },
+                                                                                           "boundVariables":  {
+                                                                                                                  "color":  {
+                                                                                                                                "type":  "VARIABLE_ALIAS",
+                                                                                                                                "id":  "VariableID:56a3c835767ee6acae89825669d444a041363ae8/227:3442"
+                                                                                                                            }
+                                                                                                              }
+                                                                                       }
+                                                                                   ],
+                                                                         "strokes":  [
+
+                                                                                     ],
+                                                                         "strokeWeight":  1.0,
+                                                                         "strokeAlign":  "INSIDE",
+                                                                         "absoluteBoundingBox":  {
+                                                                                                     "x":  387.0,
+                                                                                                     "y":  2067.0,
+                                                                                                     "width":  56.0,
+                                                                                                     "height":  42.0
+                                                                                                 },
+                                                                         "absoluteRenderBounds":  {
+                                                                                                      "x":  388.093750,
+                                                                                                      "y":  2073.468750,
+                                                                                                      "width":  51.144592285156250,
+                                                                                                      "height":  28.4218750
+                                                                                                  },
+                                                                         "constraints":  {
+                                                                                             "vertical":  "TOP",
+                                                                                             "horizontal":  "LEFT"
+                                                                                         },
+                                                                         "characters":  "경력",
+                                                                         "characterStyleOverrides":  [
+
+                                                                                                     ],
+                                                                         "styleOverrideTable":  {
+
+                                                                                                },
+                                                                         "lineTypes":  [
+                                                                                           "NONE"
+                                                                                       ],
+                                                                         "lineIndentations":  [
+                                                                                                  0
+                                                                                              ],
+                                                                         "style":  {
+                                                                                       "fontFamily":  "Pretendard Variable",
+                                                                                       "fontPostScriptName":  "PretendardVariable-Bold",
+                                                                                       "fontStyle":  "Bold",
+                                                                                       "fontWeight":  700,
+                                                                                       "textAutoResize":  "WIDTH_AND_HEIGHT",
+                                                                                       "fontSize":  32.0,
+                                                                                       "textAlignHorizontal":  "LEFT",
+                                                                                       "textAlignVertical":  "TOP",
+                                                                                       "letterSpacing":  -0.23040000915527345,
+                                                                                       "lineHeightPx":  41.599998474121094,
+                                                                                       "lineHeightPercent":  108.93617248535156,
+                                                                                       "lineHeightPercentFontSize":  130.0,
+                                                                                       "lineHeightUnit":  "FONT_SIZE_%"
+                                                                                   },
+                                                                         "layoutVersion":  5,
+                                                                         "effects":  [
+
+                                                                                     ],
+                                                                         "interactions":  [
+
+                                                                                          ],
+                                                                         "complexStrokeProperties":  {
+                                                                                                         "strokeType":  "BASIC"
+                                                                                                     }
+                                                                     },
+                                                                     {
+                                                                         "id":  "7170:645",
+                                                                         "name":  "⚠ Stray / Experience Timeline Dot",
+                                                                         "type":  "ELLIPSE",
+                                                                         "scrollBehavior":  "SCROLLS",
+                                                                         "blendMode":  "PASS_THROUGH",
+                                                                         "fills":  [
+                                                                                       {
+                                                                                           "blendMode":  "NORMAL",
+                                                                                           "type":  "SOLID",
+                                                                                           "color":  {
+                                                                                                         "r":  1.0,
+                                                                                                         "g":  1.0,
+                                                                                                         "b":  1.0,
+                                                                                                         "a":  1.0
+                                                                                                     }
+                                                                                       }
+                                                                                   ],
+                                                                         "strokes":  [
+                                                                                         {
+                                                                                             "opacity":  0.89999997615814209,
+                                                                                             "blendMode":  "NORMAL",
+                                                                                             "type":  "SOLID",
+                                                                                             "color":  {
+                                                                                                           "r":  0.50999999046325684,
+                                                                                                           "g":  0.44999998807907104,
+                                                                                                           "b":  0.98000001907348633,
+                                                                                                           "a":  1.0
+                                                                                                       }
+                                                                                         }
+                                                                                     ],
+                                                                         "strokeWeight":  4.0,
+                                                                         "strokeAlign":  "INSIDE",
+                                                                         "absoluteBoundingBox":  {
+                                                                                                     "x":  1033.0,
+                                                                                                     "y":  2082.0,
+                                                                                                     "width":  16.0,
+                                                                                                     "height":  16.0
+                                                                                                 },
+                                                                         "absoluteRenderBounds":  {
+                                                                                                      "x":  1025.0,
+                                                                                                      "y":  2077.0,
+                                                                                                      "width":  32.0,
+                                                                                                      "height":  32.0
+                                                                                                  },
+                                                                         "constraints":  {
+                                                                                             "vertical":  "TOP",
+                                                                                             "horizontal":  "LEFT"
+                                                                                         },
+                                                                         "effects":  [
+                                                                                         {
+                                                                                             "type":  "DROP_SHADOW",
+                                                                                             "visible":  true,
+                                                                                             "color":  {
+                                                                                                           "r":  0.50999999046325684,
+                                                                                                           "g":  0.44999998807907104,
+                                                                                                           "b":  0.98000001907348633,
+                                                                                                           "a":  0.21999999880790710
+                                                                                                       },
+                                                                                             "blendMode":  "NORMAL",
+                                                                                             "offset":  {
+                                                                                                            "x":  0.0,
+                                                                                                            "y":  3.0
+                                                                                                        },
+                                                                                             "radius":  8.0,
+                                                                                             "showShadowBehindNode":  true
+                                                                                         }
+                                                                                     ],
+                                                                         "arcData":  {
+                                                                                         "startingAngle":  0.0,
+                                                                                         "endingAngle":  6.2831854820251465,
+                                                                                         "innerRadius":  0.0
+                                                                                     },
+                                                                         "interactions":  [
+
+                                                                                          ],
+                                                                         "complexStrokeProperties":  {
+                                                                                                         "strokeType":  "BASIC"
+                                                                                                     }
+                                                                     }
+                                                                 ],
+                                                    "blendMode":  "PASS_THROUGH",
+                                                    "clipsContent":  false,
+                                                    "background":  [
+
+                                                                   ],
+                                                    "fills":  [
+
+                                                              ],
+                                                    "strokes":  [
+
+                                                                ],
+                                                    "strokeWeight":  1.0,
+                                                    "strokeAlign":  "INSIDE",
+                                                    "backgroundColor":  {
+                                                                            "r":  0.0,
+                                                                            "g":  0.0,
+                                                                            "b":  0.0,
+                                                                            "a":  0.0
+                                                                        },
+                                                    "absoluteBoundingBox":  {
+                                                                                "x":  0.0,
+                                                                                "y":  0.0,
+                                                                                "width":  1920.0,
+                                                                                "height":  7436.0
+                                                                            },
+                                                    "absoluteRenderBounds":  {
+                                                                                 "x":  -20.0,
+                                                                                 "y":  -16.0,
+                                                                                 "width":  1960.0,
+                                                                                 "height":  7452.0
+                                                                             },
+                                                    "constraints":  {
+                                                                        "vertical":  "TOP",
+                                                                        "horizontal":  "LEFT"
+                                                                    },
+                                                    "effects":  [
+
+                                                                ],
+                                                    "interactions":  [
+
+                                                                     ],
+                                                    "complexStrokeProperties":  {
+                                                                                    "strokeType":  "BASIC"
+                                                                                }
+                                                },
+                                   "components":  {
+                                                      "7102:55":  {
+                                                                      "key":  "fb42b848d856f10fc2bf23d29fba96b2f3100ed7",
+                                                                      "name":  "heroicons-solid/envelope",
+                                                                      "description":  "",
+                                                                      "remote":  true,
+                                                                      "documentationLinks":  [
+
+                                                                                             ]
+                                                                  },
+                                                      "7068:43":  {
+                                                                      "key":  "ed423dbe72c7967f312b72f7175aac452bb05a3d",
+                                                                      "name":  "button",
+                                                                      "description":  "",
+                                                                      "remote":  false,
+                                                                      "documentationLinks":  [
+
+                                                                                             ]
+                                                                  },
+                                                      "7065:1441":  {
+                                                                        "key":  "849d171dff3baa9334c23d3fa1965895ded5c1e6",
+                                                                        "name":  "Default color=Highlighted, Default Style=No underline, State=Default",
+                                                                        "description":  "",
+                                                                        "remote":  true,
+                                                                        "componentSetId":  "7065:1432",
+                                                                        "documentationLinks":  [
+
+                                                                                               ]
+                                                                    },
+                                                      "7103:51":  {
+                                                                      "key":  "45fd039855a09997d63c2bc6f0b2990bcec0a360",
+                                                                      "name":  "Projects / Feature Container",
+                                                                      "description":  "",
+                                                                      "remote":  false,
+                                                                      "documentationLinks":  [
+
+                                                                                             ]
+                                                                  },
+                                                      "7046:195":  {
+                                                                       "key":  "0b0a2d910766abe4421c97a41192beeecea256ba",
+                                                                       "name":  "Pagination Dots / Default",
+                                                                       "description":  "",
+                                                                       "remote":  false,
+                                                                       "documentationLinks":  [
+
+                                                                                              ]
+                                                                   },
+                                                      "7042:21":  {
+                                                                      "key":  "6197c347cedb76bd32162b1fc6b0460aa2d6fa35",
+                                                                      "name":  "Slider Showcase / Next Button",
+                                                                      "description":  "",
+                                                                      "remote":  false,
+                                                                      "documentationLinks":  [
+
+                                                                                             ]
+                                                                  },
+                                                      "7035:2":  {
+                                                                     "key":  "f51fe49bc77d4c0f297eb62cc75be453f9fc48e9",
+                                                                     "name":  "photoshop",
+                                                                     "description":  "",
+                                                                     "remote":  false,
+                                                                     "documentationLinks":  [
+
+                                                                                            ]
+                                                                 },
+                                                      "7035:3":  {
+                                                                     "key":  "2b0bc38b21d2e9a07d5328240083cc162ebfaa02",
+                                                                     "name":  "illustrator",
+                                                                     "description":  "",
+                                                                     "remote":  false,
+                                                                     "documentationLinks":  [
+
+                                                                                            ]
+                                                                 },
+                                                      "7035:4":  {
+                                                                     "key":  "cbee2e52a3ea67c0de41cd2ce833032fcd311d24",
+                                                                     "name":  "figma",
+                                                                     "description":  "",
+                                                                     "remote":  false,
+                                                                     "documentationLinks":  [
+
+                                                                                            ]
+                                                                 },
+                                                      "7040:60":  {
+                                                                      "key":  "ef3c4c4fe9882ac832af168d5422039aac165995",
+                                                                      "name":  "html/css",
+                                                                      "description":  "",
+                                                                      "remote":  false,
+                                                                      "documentationLinks":  [
+
+                                                                                             ]
+                                                                  },
+                                                      "7035:5":  {
+                                                                     "key":  "d8d5a0c23d6b0efcbc9fab891110153332fb3330",
+                                                                     "name":  "html",
+                                                                     "description":  "",
+                                                                     "remote":  false,
+                                                                     "documentationLinks":  [
+
+                                                                                            ]
+                                                                 },
+                                                      "7035:6":  {
+                                                                     "key":  "f26bb72d6f760f2092616b2c4e73136dd197dacd",
+                                                                     "name":  "css",
+                                                                     "description":  "",
+                                                                     "remote":  false,
+                                                                     "documentationLinks":  [
+
+                                                                                            ]
+                                                                 },
+                                                      "7035:7":  {
+                                                                     "key":  "545b2536a4df1c7d11647ce84553bc1de4db3a86",
+                                                                     "name":  "js",
+                                                                     "description":  "",
+                                                                     "remote":  false,
+                                                                     "documentationLinks":  [
+
+                                                                                            ]
+                                                                 },
+                                                      "7035:8":  {
+                                                                     "key":  "814eb243e3c41039b168e34103ba65891e2f969a",
+                                                                     "name":  "python",
+                                                                     "description":  "",
+                                                                     "remote":  false,
+                                                                     "documentationLinks":  [
+
+                                                                                            ]
+                                                                 },
+                                                      "7040:72":  {
+                                                                      "key":  "289f4193b76f27e623aa9429224800fc75cfcd7c",
+                                                                      "name":  "git/github",
+                                                                      "description":  "",
+                                                                      "remote":  false,
+                                                                      "documentationLinks":  [
+
+                                                                                             ]
+                                                                  },
+                                                      "7035:9":  {
+                                                                     "key":  "bceb2c1e12e6aebd40f8012ea20313b47303acff",
+                                                                     "name":  "git",
+                                                                     "description":  "",
+                                                                     "remote":  false,
+                                                                     "documentationLinks":  [
+
+                                                                                            ]
+                                                                 },
+                                                      "7035:10":  {
+                                                                      "key":  "63bfbdba3f4eb39be7b46ec6d5e5a53171388dc5",
+                                                                      "name":  "github",
+                                                                      "description":  "",
+                                                                      "remote":  false,
+                                                                      "documentationLinks":  [
+
+                                                                                             ]
+                                                                  },
+                                                      "7035:11":  {
+                                                                      "key":  "4d8f791731fbeeec2698bcb0a83e38cd6374be05",
+                                                                      "name":  "premiere",
+                                                                      "description":  "",
+                                                                      "remote":  false,
+                                                                      "documentationLinks":  [
+
+                                                                                             ]
+                                                                  },
+                                                      "7035:12":  {
+                                                                      "key":  "b6250380e65da056d9cd8527b82d33f83333f054",
+                                                                      "name":  "aftereffects",
+                                                                      "description":  "",
+                                                                      "remote":  false,
+                                                                      "documentationLinks":  [
+
+                                                                                             ]
+                                                                  },
+                                                      "7055:24":  {
+                                                                      "key":  "3b2fbf666fcac0d16d001975c145387118393d93",
+                                                                      "name":  "Slider Showcase / Next Button White",
+                                                                      "description":  "",
+                                                                      "remote":  false,
+                                                                      "documentationLinks":  [
+
+                                                                                             ]
+                                                                  },
+                                                      "7057:27":  {
+                                                                      "key":  "a7134ed48377883b09e326a647d09696b838a278",
+                                                                      "name":  "Pagination Dots / White",
+                                                                      "description":  "",
+                                                                      "remote":  false,
+                                                                      "documentationLinks":  [
+
+                                                                                             ]
+                                                                  }
+                                                  },
+                                   "componentSets":  {
+                                                         "7065:1432":  {
+                                                                           "key":  "ac4badc5bb06f6e2063665a748540f1c039436e9",
+                                                                           "name":  "Links",
+                                                                           "description":  "",
+                                                                           "remote":  true
+                                                                       }
+                                                     },
+                                   "schemaVersion":  0,
+                                   "styles":  {
+                                                  "6933:4":  {
+                                                                 "key":  "cfb0952379b6f4a72e9383029578cd264942fce5",
+                                                                 "name":  "essentials.pixfort.com/White",
+                                                                 "styleType":  "FILL",
+                                                                 "remote":  true,
+                                                                 "description":  ""
+                                                             },
+                                                  "6933:8":  {
+                                                                 "key":  "f2d686fe81c368659bec688b331c0e7516c7a9b2",
+                                                                 "name":  "essentials.pixfort.com/Athens Gray",
+                                                                 "styleType":  "FILL",
+                                                                 "remote":  true,
+                                                                 "description":  ""
+                                                             },
+                                                  "6933:36":  {
+                                                                  "key":  "bdf7ecb39443e7d831bcf96a1fa1728856938883",
+                                                                  "name":  "essentials.pixfort.com/Shark",
+                                                                  "styleType":  "FILL",
+                                                                  "remote":  true,
+                                                                  "description":  ""
+                                                              },
+                                                  "6933:13":  {
+                                                                  "key":  "9f12b9042905836bcd7eae3b37124e7570ec02c9",
+                                                                  "name":  "essentials.pixfort.com/Abbey",
+                                                                  "styleType":  "FILL",
+                                                                  "remote":  true,
+                                                                  "description":  ""
+                                                              },
+                                                  "6933:100":  {
+                                                                   "key":  "38361f5e6cff8aec66526a8f538e11d53b580ef9",
+                                                                   "name":  "essentials.pixfort.com/Charade 30%",
+                                                                   "styleType":  "FILL",
+                                                                   "remote":  true,
+                                                                   "description":  ""
+                                                               }
+                                              }
+                               }
+              }
+}
