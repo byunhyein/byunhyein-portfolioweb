@@ -876,7 +876,7 @@ button {
 #skills > ul > li {
   display: grid;
   min-width: 0;
-  grid-template-rows: 5.5rem 2rem 2.25rem;
+  grid-template-rows: 5.5rem 2rem 1.875rem;
   align-items: center;
   justify-items: center;
   row-gap: .75rem;
@@ -902,27 +902,34 @@ button {
 
 .skill-progress {
   display: flex;
-  width: min(11.5rem, 100%);
-  height: 2.25rem;
+  width: min(10rem, 100%);
+  height: 1.875rem;
   overflow: hidden;
   align-items: center;
-  border-radius: 1.125rem;
+  border-radius: .9375rem;
   background: #eaedf0;
 }
 
 .skill-progress span {
   display: grid;
   width: var(--skill-level);
-  min-width: 3.5rem;
+  min-width: 3rem;
   height: 100%;
   place-items: center;
-  border-radius: 1.125rem;
+  border-radius: .9375rem;
   background: linear-gradient(180deg, #fcb396 0%, #f597ac 100%);
   color: #fff;
   font-family: var(--font-family-sans);
-  font-size: 1rem;
+  font-size: .8125rem;
   font-weight: var(--font-weight-bold);
   line-height: 1;
+}
+
+/* Four cards occupy the second row; a half-column shift centers that row under five cards. */
+@media (min-width: 75.0625rem) {
+  #skills > ul > li:nth-child(n + 6) {
+    transform: translateX(50%);
+  }
 }
 
 .skills-marquee {
