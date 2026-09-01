@@ -813,7 +813,7 @@ button {
 .skills-marquee__track {
   display: flex;
   width: max-content;
-  animation: skills-marquee-left 34s linear infinite;
+  animation: skills-marquee-left 30s linear infinite;
   will-change: transform;
 }
 
@@ -826,7 +826,7 @@ button {
 
 .skills-marquee__row--small .skills-marquee__track {
   animation-direction: reverse;
-  animation-duration: 28s;
+  animation-duration: 25s;
 }
 
 .skills-marquee__set img {
