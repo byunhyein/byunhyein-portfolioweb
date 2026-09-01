@@ -868,51 +868,59 @@ button {
 
 #skills > ul {
   display: grid;
-  grid-template-columns: repeat(9, 1fr);
-  gap: var(--space-5);
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  column-gap: 1.5rem;
+  row-gap: 2.5rem;
 }
 
 #skills > ul > li {
   display: grid;
   min-width: 0;
-  grid-template-rows: 4.25rem 1.8125rem 1rem;
+  grid-template-rows: 5.5rem 2rem 2.25rem;
   align-items: center;
   justify-items: center;
-  row-gap: .25rem;
+  row-gap: .75rem;
   color: var(--color-text-heading);
-  font-size: var(--font-size-12);
+  font-size: 1.375rem;
   font-weight: var(--font-weight-semibold);
+  line-height: 1.2;
   text-align: center;
 }
 
 #skills > ul img {
-  width: 3.875rem;
-  height: 3.875rem;
+  width: 5rem;
+  height: 5rem;
   object-fit: contain;
   background: transparent;
 }
 
+/* These source files include different transparent margins. Scale only the artwork
+   so its visible height matches the Photoshop and Illustrator icons. */
+#skills > ul > li:nth-child(3) img { transform: scale(1.12); }
+#skills > ul > li:nth-child(4) img { transform: scale(1.32); }
+#skills > ul > li:nth-child(5) img { transform: scale(1.68); }
+
 .skill-progress {
   display: flex;
-  width: 6rem;
-  height: 1rem;
+  width: min(11.5rem, 100%);
+  height: 2.25rem;
   overflow: hidden;
   align-items: center;
-  border-radius: .5rem;
+  border-radius: 1.125rem;
   background: #eaedf0;
 }
 
 .skill-progress span {
   display: grid;
   width: var(--skill-level);
-  min-width: 2rem;
+  min-width: 3.5rem;
   height: 100%;
   place-items: center;
-  border-radius: .5rem;
+  border-radius: 1.125rem;
   background: linear-gradient(180deg, #fcb396 0%, #f597ac 100%);
   color: #fff;
   font-family: var(--font-family-sans);
-  font-size: .4375rem;
+  font-size: 1rem;
   font-weight: var(--font-weight-bold);
   line-height: 1;
 }
