@@ -92,6 +92,36 @@ const initializeHeroMorphs = () => {
 
 initializeHeroMorphs();
 
+const initializeSkillProgressAnimation = () => {
+  const skillsSection = document.querySelector("#skills");
+
+  if (!skillsSection || prefersReducedMotion || !("IntersectionObserver" in window)) {
+    return;
+  }
+
+  skillsSection.dataset.skillBars = "ready";
+
+  const replaySkillBars = () => {
+    skillsSection.classList.remove("is-skill-bars-animating");
+    void skillsSection.offsetWidth;
+    skillsSection.classList.add("is-skill-bars-animating");
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        replaySkillBars();
+      } else {
+        skillsSection.classList.remove("is-skill-bars-animating");
+      }
+    });
+  }, { threshold: 0.3 });
+
+  observer.observe(skillsSection);
+};
+
+initializeSkillProgressAnimation();
+
 const initializeSlider = (selector, options) => {
   const element = document.querySelector(selector);
 

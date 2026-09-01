@@ -925,6 +925,20 @@ button {
   line-height: 1;
 }
 
+/* The observer resets this state off-screen, then replays the fill on every entry. */
+#skills[data-skill-bars="ready"] .skill-progress span {
+  width: 0;
+}
+
+#skills[data-skill-bars="ready"].is-skill-bars-animating .skill-progress span {
+  animation: skill-progress-fill .9s cubic-bezier(.22, .8, .35, 1) forwards;
+}
+
+@keyframes skill-progress-fill {
+  from { width: 0; }
+  to { width: var(--skill-level); }
+}
+
 /* Four cards occupy the second row; a half-column shift centers that row under five cards. */
 @media (min-width: 75.0625rem) {
   #skills > ul > li:nth-child(n + 6) {
