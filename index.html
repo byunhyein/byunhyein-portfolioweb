@@ -7,14 +7,35 @@
     <title>변혜인 포트폴리오</title>
     <link rel="icon" type="image/png" href="./assets/images/icons/favicon.png">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css">
-    <link rel="stylesheet" href="./assets/css/styles.css?v=20260901-1">
+    <link rel="stylesheet" href="./assets/css/styles.css?v=20260901-2">
   </head>
   <body>
     <a class="skip-link" href="#main-content">본문 바로가기</a>
 
     <header class="site-header">
       <nav class="site-nav container container--wide" aria-label="주요 메뉴">
-        <a class="site-nav__logo" href="#home" aria-label="홈으로 이동">로고(홈버튼)</a>
+        <a class="site-nav__logo" href="#home" aria-label="페이지 맨 위로 이동">
+          <svg class="header-logo" viewBox="0 0 130 44" role="img" aria-label="HYEIN">
+            <defs>
+              <linearGradient id="header-logo-gradient" x1="0" y1="0" x2="1" y2="1">
+                <stop stop-color="#ffb39a" />
+                <stop offset=".58" stop-color="#ff8aaf" />
+                <stop offset="1" stop-color="#f64ea0" />
+              </linearGradient>
+            </defs>
+            <g class="header-logo__left header-logo__letter-stroke">
+              <path d="M5 5V39M5 22H23M23 5V39" />
+              <path d="M31 5L42 22L53 5M42 22V39" />
+              <path d="M63 5V39M63 5H83M63 22H79M63 39H83" />
+            </g>
+            <g class="header-logo__right header-logo__letter-stroke"><path d="M104.5 39V5L126.5 39V5" /></g>
+            <image class="header-logo__question" href="./assets/images/logo-question-mark.png" x="48" y="2" width="26" height="40" preserveAspectRatio="xMidYMid meet" />
+            <g class="header-logo__bang-wrap"><g class="header-logo__bang-mark">
+              <rect class="header-logo__solid" x="56" y="2" width="10" height="29" rx="5" />
+              <circle class="header-logo__solid" cx="61" cy="39" r="5" />
+            </g></g>
+          </svg>
+        </a>
         <ul class="site-nav__links">
           <li><a href="#about">ABOUT ME</a></li>
           <li><a href="#skills">SKILLS</a></li>
