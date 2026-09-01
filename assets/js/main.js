@@ -122,63 +122,33 @@ const initializeSkillProgressAnimation = () => {
 
 initializeSkillProgressAnimation();
 
-const initializeSmoothWheelScroll = () => {
-  if (prefersReducedMotion || !window.matchMedia("(pointer: fine)").matches) {
-    return;
-  }
+const initializeHeaderAnchorNavigation = () => {
+  const header = document.querySelector(".site-header");
 
-  const html = document.documentElement;
-  const ignoredSelector = "input, textarea, select, [contenteditable='true'], .swiper, .site-nav__links";
-  let animationFrame = null;
-  let targetScrollY = window.scrollY;
+  document.querySelectorAll(".site-nav a[href^='#']").forEach((link) => {
+    link.addEventListener("click", (event) => {
+      const target = document.querySelector(link.getAttribute("href"));
 
-  const maxScrollY = () => Math.max(0, document.documentElement.scrollHeight - window.innerHeight);
-  const stop = () => {
-    animationFrame = null;
-    html.classList.remove("is-wheel-smoothing");
-  };
+      if (!target) {
+        return;
+      }
 
-  const animate = () => {
-    const currentScrollY = window.scrollY;
-    const nextScrollY = currentScrollY + ((targetScrollY - currentScrollY) * 0.16);
+      event.preventDefault();
 
-    window.scrollTo(0, nextScrollY);
+      const headerHeight = header?.getBoundingClientRect().height || 0;
+      const destination = Math.max(0, window.scrollY + target.getBoundingClientRect().top - headerHeight);
 
-    if (Math.abs(targetScrollY - nextScrollY) < 0.5) {
-      window.scrollTo(0, targetScrollY);
-      stop();
-      return;
-    }
+      window.scrollTo({
+        top: destination,
+        behavior: prefersReducedMotion ? "auto" : "smooth",
+      });
 
-    animationFrame = window.requestAnimationFrame(animate);
-  };
-
-  document.addEventListener("wheel", (event) => {
-    const sourceElement = event.target instanceof Element ? event.target : null;
-
-    if (event.ctrlKey || event.metaKey || event.deltaY === 0 || sourceElement?.closest(ignoredSelector)) {
-      return;
-    }
-
-    event.preventDefault();
-
-    const delta = event.deltaMode === WheelEvent.DOM_DELTA_LINE ? event.deltaY * 16 : event.deltaY;
-    targetScrollY = Math.min(maxScrollY(), Math.max(0, targetScrollY + delta));
-
-    if (!animationFrame) {
-      html.classList.add("is-wheel-smoothing");
-      animationFrame = window.requestAnimationFrame(animate);
-    }
-  }, { passive: false });
-
-  window.addEventListener("scroll", () => {
-    if (!animationFrame) {
-      targetScrollY = window.scrollY;
-    }
-  }, { passive: true });
+      window.history.pushState(null, "", link.hash);
+    });
+  });
 };
 
-initializeSmoothWheelScroll();
+initializeHeaderAnchorNavigation();
 
 const initializeSlider = (selector, options) => {
   const element = document.querySelector(selector);
