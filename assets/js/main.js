@@ -122,6 +122,64 @@ const initializeSkillProgressAnimation = () => {
 
 initializeSkillProgressAnimation();
 
+const initializeSmoothWheelScroll = () => {
+  if (prefersReducedMotion || !window.matchMedia("(pointer: fine)").matches) {
+    return;
+  }
+
+  const html = document.documentElement;
+  const ignoredSelector = "input, textarea, select, [contenteditable='true'], .swiper, .site-nav__links";
+  let animationFrame = null;
+  let targetScrollY = window.scrollY;
+
+  const maxScrollY = () => Math.max(0, document.documentElement.scrollHeight - window.innerHeight);
+  const stop = () => {
+    animationFrame = null;
+    html.classList.remove("is-wheel-smoothing");
+  };
+
+  const animate = () => {
+    const currentScrollY = window.scrollY;
+    const nextScrollY = currentScrollY + ((targetScrollY - currentScrollY) * 0.16);
+
+    window.scrollTo(0, nextScrollY);
+
+    if (Math.abs(targetScrollY - nextScrollY) < 0.5) {
+      window.scrollTo(0, targetScrollY);
+      stop();
+      return;
+    }
+
+    animationFrame = window.requestAnimationFrame(animate);
+  };
+
+  document.addEventListener("wheel", (event) => {
+    const sourceElement = event.target instanceof Element ? event.target : null;
+
+    if (event.ctrlKey || event.metaKey || event.deltaY === 0 || sourceElement?.closest(ignoredSelector)) {
+      return;
+    }
+
+    event.preventDefault();
+
+    const delta = event.deltaMode === WheelEvent.DOM_DELTA_LINE ? event.deltaY * 16 : event.deltaY;
+    targetScrollY = Math.min(maxScrollY(), Math.max(0, targetScrollY + delta));
+
+    if (!animationFrame) {
+      html.classList.add("is-wheel-smoothing");
+      animationFrame = window.requestAnimationFrame(animate);
+    }
+  }, { passive: false });
+
+  window.addEventListener("scroll", () => {
+    if (!animationFrame) {
+      targetScrollY = window.scrollY;
+    }
+  }, { passive: true });
+};
+
+initializeSmoothWheelScroll();
+
 const initializeSlider = (selector, options) => {
   const element = document.querySelector(selector);
 

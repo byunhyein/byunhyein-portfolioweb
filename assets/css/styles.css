@@ -141,6 +141,11 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Keep programmatic wheel easing immediate; anchor links still use smooth scrolling. */
+html.is-wheel-smoothing {
+  scroll-behavior: auto;
+}
+
 main > section {
   scroll-margin-top: var(--layout-header-height);
 }
