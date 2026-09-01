@@ -875,10 +875,10 @@ button {
 #skills > ul > li {
   display: grid;
   min-width: 0;
-  grid-template-rows: 4.25rem auto auto;
+  grid-template-rows: 4.25rem 1.8125rem 1rem;
   align-items: center;
   justify-items: center;
-  gap: var(--space-2);
+  row-gap: .25rem;
   color: var(--color-text-heading);
   font-size: var(--font-size-12);
   font-weight: var(--font-weight-semibold);
@@ -886,19 +886,35 @@ button {
 }
 
 #skills > ul img {
-  max-width: 3.875rem;
-  max-height: 3.875rem;
+  width: 3.875rem;
+  height: 3.875rem;
   object-fit: contain;
   background: transparent;
 }
 
-#skills progress {
-  width: 100%;
-  height: 0.375rem;
+.skill-progress {
+  display: flex;
+  width: 6rem;
+  height: 1rem;
   overflow: hidden;
-  border: 0;
-  border-radius: var(--radius-pill);
-  accent-color: var(--color-primary);
+  align-items: center;
+  border-radius: .5rem;
+  background: #eaedf0;
+}
+
+.skill-progress span {
+  display: grid;
+  width: var(--skill-level);
+  min-width: 2rem;
+  height: 100%;
+  place-items: center;
+  border-radius: .5rem;
+  background: linear-gradient(180deg, #fcb396 0%, #f597ac 100%);
+  color: #fff;
+  font-family: var(--font-family-sans);
+  font-size: .4375rem;
+  font-weight: var(--font-weight-bold);
+  line-height: 1;
 }
 
 .skills-marquee {
