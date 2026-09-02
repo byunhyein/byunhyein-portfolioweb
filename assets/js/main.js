@@ -1,5 +1,20 @@
 const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
+const initializeSmoothScroll = () => {
+  if (prefersReducedMotion || typeof window.Lenis !== "function") {
+    return null;
+  }
+
+  return new window.Lenis({
+    allowNestedScroll: true,
+    autoRaf: true,
+    duration: .75,
+    smoothWheel: true,
+  });
+};
+
+const smoothScroller = initializeSmoothScroll();
+
 const initializeHeroMorphs = () => {
   if (typeof window.gsap !== "object" || typeof window.MorphSVGPlugin === "undefined") {
     return;
@@ -122,6 +137,51 @@ const initializeSkillProgressAnimation = () => {
 
 initializeSkillProgressAnimation();
 
+const initializeContentReveal = () => {
+  if (prefersReducedMotion || !("IntersectionObserver" in window)) {
+    return;
+  }
+
+  const revealGroups = [
+    "#home > .hero-profile, #home > .hero-morph, #home > h1, #home > .button-group",
+    "#about > .section-title, #about > div > *",
+    "#experience article",
+    "#skills > .tag-list, #skills > .section-title, #skills > ul > li",
+    "#portfolio > .tag, #portfolio > .section-title, #portfolio > p:not(.tag), #portfolio > .swiper",
+    "#video-projects > .tag, #video-projects > p:not(.tag), #video-projects > .swiper",
+    "#works > .tag, #works > .section-title, #works > p, #works > ul > li",
+    "#contact .contact-card",
+  ];
+
+  const observer = new IntersectionObserver((entries, activeObserver) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.dataset.reveal = "visible";
+        activeObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.14, rootMargin: "0px 0px -6%" });
+
+  const revealItems = [];
+
+  revealGroups.forEach((selector) => {
+    document.querySelectorAll(selector).forEach((element, index) => {
+      element.dataset.reveal = "pending";
+      element.style.setProperty("--reveal-delay", `${Math.min(index * 80, 480)}ms`);
+      revealItems.push(element);
+    });
+  });
+
+  // Let the browser paint the hidden starting state before revealing elements.
+  window.requestAnimationFrame(() => {
+    window.requestAnimationFrame(() => {
+      revealItems.forEach((element) => observer.observe(element));
+    });
+  });
+};
+
+initializeContentReveal();
+
 const initializeHeaderAnchorNavigation = () => {
   const header = document.querySelector(".site-header");
 
@@ -138,10 +198,14 @@ const initializeHeaderAnchorNavigation = () => {
       const headerHeight = header?.getBoundingClientRect().height || 0;
       const destination = Math.max(0, window.scrollY + target.getBoundingClientRect().top - headerHeight);
 
-      window.scrollTo({
-        top: destination,
-        behavior: prefersReducedMotion ? "auto" : "smooth",
-      });
+      if (smoothScroller) {
+        smoothScroller.scrollTo(destination, { duration: .75 });
+      } else {
+        window.scrollTo({
+          top: destination,
+          behavior: prefersReducedMotion ? "auto" : "smooth",
+        });
+      }
 
       window.history.pushState(null, "", link.hash);
     });
