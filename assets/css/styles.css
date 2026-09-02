@@ -1367,6 +1367,20 @@ button {
   backdrop-filter: blur(1.5rem) saturate(120%);
   -webkit-backdrop-filter: blur(1.5rem) saturate(120%);
   overflow: hidden;
+  animation: contact-card-float 5.5s ease-in-out infinite;
+  will-change: transform, box-shadow;
+}
+
+@keyframes contact-card-float {
+  0%, 100% {
+    transform: translateY(0);
+    box-shadow: 0 1.5rem 2.5rem rgb(199 86 194 / 18%), inset 0 0.0625rem rgb(255 255 255 / 55%);
+  }
+
+  50% {
+    transform: translateY(-0.8rem);
+    box-shadow: 0 2rem 3rem rgb(199 86 194 / 23%), inset 0 0.0625rem rgb(255 255 255 / 62%);
+  }
 }
 
 .contact-card__border {
