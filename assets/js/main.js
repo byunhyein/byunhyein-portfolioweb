@@ -137,13 +137,36 @@ const initializeSkillProgressAnimation = () => {
 
 initializeSkillProgressAnimation();
 
+const initializeHeroEntrance = () => {
+  if (prefersReducedMotion) {
+    return;
+  }
+
+  const heroItems = [
+    ...document.querySelectorAll("#home > .hero-profile, #home > .hero-morph, #home > h1, #home > .button-group"),
+  ];
+
+  heroItems.forEach((element, index) => {
+    element.classList.add("hero-intro");
+    element.style.setProperty("--hero-intro-delay", `${index * 130}ms`);
+  });
+
+  // Two frames guarantee that the initial state is painted before the transition starts.
+  window.requestAnimationFrame(() => {
+    window.requestAnimationFrame(() => {
+      heroItems.forEach((element) => element.classList.add("is-hero-intro-visible"));
+    });
+  });
+};
+
+initializeHeroEntrance();
+
 const initializeContentReveal = () => {
   if (prefersReducedMotion || !("IntersectionObserver" in window)) {
     return;
   }
 
   const revealGroups = [
-    "#home > .hero-profile, #home > .hero-morph, #home > h1, #home > .button-group",
     "#about > .section-title, #about > div > *",
     "#experience article",
     "#skills > .tag-list, #skills > .section-title, #skills > ul > li",
