@@ -780,7 +780,73 @@ button {
   background: transparent;
 }
 
+.experience-sparkles {
+  position: absolute;
+  z-index: 1;
+  inset: 0;
+  pointer-events: none;
+}
+
+.experience-sparkle {
+  position: absolute;
+  display: grid;
+  width: 2.25rem;
+  height: 2.25rem;
+  place-items: center;
+  color: var(--color-pink-300);
+  font-family: Georgia, serif;
+  font-size: 2.25rem;
+  line-height: 1;
+  text-shadow: 0 0 0.75rem currentcolor;
+  animation: experience-sparkle-float 4.8s ease-in-out infinite;
+  will-change: transform, opacity, filter;
+}
+
+.experience-sparkle::after {
+  position: absolute;
+  width: 0.6rem;
+  height: 0.6rem;
+  border-radius: 50%;
+  background: currentcolor;
+  box-shadow: 0 0 0.75rem currentcolor;
+  content: "";
+  animation: experience-sparkle-twinkle 2.4s ease-in-out infinite;
+}
+
+.experience-sparkle--pink {
+  top: 8%;
+  left: max(1.5rem, calc(50% - 48rem));
+  color: #f79acf;
+  animation-delay: -1.2s;
+}
+
+.experience-sparkle--purple {
+  top: 7%;
+  right: max(1.5rem, calc(50% - 48rem));
+  color: #a9a7ff;
+  animation-delay: -3.3s;
+}
+
+.experience-sparkle--blue {
+  right: max(1.5rem, calc(50% - 51rem));
+  bottom: 10%;
+  color: #a9caff;
+  animation-delay: -2.1s;
+}
+
+@keyframes experience-sparkle-float {
+  0%, 100% { transform: translate3d(0, 0, 0) rotate(-8deg) scale(.82); opacity: .55; filter: brightness(.95); }
+  50% { transform: translate3d(0.35rem, -0.75rem, 0) rotate(12deg) scale(1.1); opacity: 1; filter: brightness(1.2); }
+}
+
+@keyframes experience-sparkle-twinkle {
+  0%, 100% { transform: scale(.25); opacity: .2; }
+  50% { transform: scale(1); opacity: .85; }
+}
+
 #experience article {
+  position: relative;
+  z-index: 2;
   min-height: 31.25rem;
   padding: var(--space-10) 2.75rem;
   border-radius: var(--radius-large);
@@ -1502,6 +1568,21 @@ button {
     min-height: auto;
     grid-template-columns: 1fr;
     padding: var(--space-16) var(--space-6);
+  }
+
+  .experience-sparkle--pink {
+    top: 2.5rem;
+    left: .5rem;
+  }
+
+  .experience-sparkle--purple {
+    top: 48%;
+    right: .5rem;
+  }
+
+  .experience-sparkle--blue {
+    right: .5rem;
+    bottom: 2rem;
   }
 
   #skills > ul {
