@@ -143,7 +143,7 @@ const initializeHeroEntrance = () => {
   }
 
   const heroItems = [
-    ...document.querySelectorAll("#home > .hero-profile, #home > .hero-morph, #home > h1, #home > .button-group"),
+    ...document.querySelectorAll("#home > .hero-profile, #home > .hero-morph, #home > .button-group"),
   ];
 
   heroItems.forEach((element, index) => {
@@ -151,12 +151,36 @@ const initializeHeroEntrance = () => {
     element.style.setProperty("--hero-intro-delay", `${index * 130}ms`);
   });
 
-  // Two frames guarantee that the initial state is painted before the transition starts.
-  window.requestAnimationFrame(() => {
+  let hasStarted = false;
+  const startEntrance = () => {
+    if (hasStarted) {
+      return;
+    }
+
+    hasStarted = true;
+
+    // Two frames guarantee that the initial state is painted before the transition starts.
     window.requestAnimationFrame(() => {
-      heroItems.forEach((element) => element.classList.add("is-hero-intro-visible"));
+      window.requestAnimationFrame(() => {
+        heroItems.forEach((element) => element.classList.add("is-hero-intro-visible"));
+        window.setTimeout(() => {
+          heroItems
+            .filter((element) => !element.classList.contains("button-group"))
+            .forEach((element) => element.classList.add("is-hero-floating"));
+        }, 1600);
+      });
     });
-  });
+  };
+
+  const profileImage = document.querySelector("#home > .hero-profile");
+
+  if (!profileImage || profileImage.complete) {
+    startEntrance();
+  } else {
+    profileImage.addEventListener("load", startEntrance, { once: true });
+    profileImage.addEventListener("error", startEntrance, { once: true });
+    window.setTimeout(startEntrance, 1000);
+  }
 };
 
 initializeHeroEntrance();
