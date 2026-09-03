@@ -685,18 +685,91 @@ button {
   pointer-events: none;
 }
 
-.hero-sparkle--pink {
-  top: 15%;
-  left: max(1.5rem, calc(50% - 50rem));
+.hero-sparkle--left {
+  top: 20%;
+  left: max(5rem, calc(50% - 38rem));
+  width: 2rem;
+  height: 2rem;
   color: #f79acf;
-  animation-delay: -1.6s;
+  font-size: 2rem;
+  rotate: -16deg;
+  animation-delay: -1.1s;
 }
 
-.hero-sparkle--purple {
-  top: 17%;
-  right: max(1.5rem, calc(50% - 49rem));
+.hero-sparkle--left-mini {
+  top: 30%;
+  left: max(7rem, calc(50% - 34rem));
+  width: .48rem;
+  height: .48rem;
+  color: #f4c2dc;
+  font-size: .48rem;
+  rotate: 18deg;
+  animation-delay: -3.8s;
+}
+
+.hero-sparkle--right {
+  top: 44%;
+  right: max(5rem, calc(50% - 42rem));
+  width: .85rem;
+  height: .85rem;
   color: #a9a7ff;
-  animation-delay: -3.4s;
+  font-size: .85rem;
+  rotate: 11deg;
+  animation-delay: -3.2s;
+}
+
+.hero-sparkle--right-mini {
+  top: 35%;
+  right: max(8rem, calc(50% - 37rem));
+  width: 1.25rem;
+  height: 1.25rem;
+  color: #c0b9ff;
+  font-size: 1.25rem;
+  rotate: -14deg;
+  animation-delay: -2.1s;
+}
+
+.hero-sparkle--bottom {
+  bottom: 7.5rem;
+  left: calc(50% - 7rem);
+  width: .7rem;
+  height: .7rem;
+  color: #f7b3c9;
+  font-size: .7rem;
+  rotate: -8deg;
+  animation-delay: -2.4s;
+}
+
+.hero-sparkle--bottom-mini {
+  bottom: 11rem;
+  left: calc(50% - 2rem);
+  width: 1rem;
+  height: 1rem;
+  color: #f7d0de;
+  font-size: 1rem;
+  rotate: 10deg;
+  animation-delay: -4.3s;
+}
+
+.hero-sparkle--left-mini::after {
+  width: .16rem;
+  height: .16rem;
+}
+
+.hero-sparkle--right-mini::after,
+.hero-sparkle--bottom-mini::after {
+  width: .32rem;
+  height: .32rem;
+}
+
+.hero-sparkle--right::after {
+  width: .24rem;
+  height: .24rem;
+}
+
+.hero-sparkle--bottom::after {
+  width: .2rem;
+  height: .2rem;
 }
 
 #hero-title {
@@ -773,10 +846,12 @@ button {
   width: 18.75rem;
   height: 25rem;
   object-fit: cover;
+  border-radius: .75rem;
 }
 
 #about article {
   padding: var(--space-8);
+  border-radius: .75rem;
   background: var(--color-surface-muted);
 }
 
@@ -901,6 +976,40 @@ button {
 @keyframes experience-sparkle-twinkle {
   0%, 100% { transform: scale(.25); opacity: .2; }
   50% { transform: scale(1); opacity: .85; }
+}
+
+/* These three hero accents intentionally stay smaller than the surrounding stars. */
+.experience-sparkle.hero-sparkle--left-mini {
+  width: 1.1rem;
+  height: 1.1rem;
+  font-size: 1.1rem;
+}
+
+.experience-sparkle.hero-sparkle--right {
+  width: 1.35rem;
+  height: 1.35rem;
+  font-size: 1.35rem;
+}
+
+.experience-sparkle.hero-sparkle--bottom {
+  width: 1.15rem;
+  height: 1.15rem;
+  font-size: 1.15rem;
+}
+
+.experience-sparkle.hero-sparkle--left-mini::after {
+  width: .26rem;
+  height: .26rem;
+}
+
+.experience-sparkle.hero-sparkle--right::after {
+  width: .32rem;
+  height: .32rem;
+}
+
+.experience-sparkle.hero-sparkle--bottom::after {
+  width: .28rem;
+  height: .28rem;
 }
 
 #experience article {
