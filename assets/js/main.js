@@ -107,6 +107,170 @@ const initializeHeroMorphs = () => {
 
 initializeHeroMorphs();
 
+const initializeHeroCopyInteraction = () => {
+  const questionCopy = document.querySelector(".hero-copy--question");
+  const questionWord = document.querySelector(".hero-word--question");
+  const exclamationWord = document.querySelector(".hero-word--exclamation");
+  const mainCopy = document.querySelector(".hero-copy--main");
+  const mainLines = document.querySelectorAll(".hero-copy__line");
+  const mainHighlight = document.querySelector(".hero-copy__highlight");
+
+  if (!questionCopy || !questionWord || !exclamationWord || !mainCopy || !mainLines.length || !mainHighlight) {
+    return;
+  }
+
+  const splitWord = (word) => {
+    const text = word.textContent || "";
+    word.replaceChildren(...[...text].map((character) => {
+      const characterElement = document.createElement("span");
+      characterElement.className = "hero-copy__char";
+      characterElement.textContent = character;
+      return characterElement;
+    }));
+  };
+
+  splitWord(questionWord);
+  splitWord(exclamationWord);
+
+  const splitLooseText = () => {
+    [...questionCopy.childNodes]
+      .filter((node) => node.nodeType === Node.TEXT_NODE && node.textContent?.trim())
+      .forEach((textNode) => {
+        const fragment = document.createDocumentFragment();
+
+        [...(textNode.textContent || "")].forEach((character) => {
+          const characterElement = document.createElement("span");
+          characterElement.className = "hero-copy__char";
+          characterElement.textContent = character === " " ? "\u00A0" : character;
+          fragment.append(characterElement);
+        });
+
+        textNode.replaceWith(fragment);
+      });
+  };
+
+  splitLooseText();
+
+  const createPopParticles = (word) => ["pink", "lavender", "blue", "pink"].map((tone) => {
+    const particle = document.createElement("span");
+    particle.className = `hero-pop-particle hero-pop-particle--${tone}`;
+    particle.setAttribute("aria-hidden", "true");
+    word.append(particle);
+    return particle;
+  });
+
+  const questionParticles = createPopParticles(questionWord);
+  const exclamationParticles = createPopParticles(exclamationWord);
+  const allPopParticles = [...questionParticles, ...exclamationParticles];
+  const questionParticleTargets = [
+    { left: "8%", top: "14%", x: -14, y: -12, scaleX: .9, scaleY: .9 },
+    { left: "70%", top: "6%", x: 6, y: -15, scaleX: .88, scaleY: .88 },
+    { left: "94%", top: "72%", x: 15, y: 6, scaleX: .8, scaleY: .8 },
+    { left: "30%", top: "94%", x: -4, y: 13, scaleX: .78, scaleY: .78 },
+  ];
+  const exclamationParticleTargets = [
+    { left: "10%", top: "16%", x: -13, y: -12, scaleX: .88, scaleY: .88 },
+    { left: "76%", top: "8%", x: 8, y: -14, scaleX: .86, scaleY: .86 },
+    { left: "92%", top: "73%", x: 14, y: 7, scaleX: .8, scaleY: .8 },
+    { left: "28%", top: "94%", x: -5, y: 13, scaleX: .78, scaleY: .78 },
+  ];
+
+  if (prefersReducedMotion || typeof window.gsap !== "object") {
+    return;
+  }
+
+  const characters = questionCopy.querySelectorAll(".hero-copy__char");
+  document.documentElement.classList.add("has-hero-copy-animation");
+
+  const playPop = (particles, targets) => {
+    window.gsap.killTweensOf(particles);
+    window.gsap.set(particles, {
+      autoAlpha: 0,
+      left: (index) => targets[index].left,
+      top: (index) => targets[index].top,
+      x: 0,
+      y: 0,
+      xPercent: -50,
+      yPercent: -50,
+      scale: 0,
+    });
+    window.gsap.timeline()
+      .to(particles, {
+        autoAlpha: (index) => index === 0 ? .9 : .76,
+        x: (index) => targets[index].x,
+        y: (index) => targets[index].y,
+        scaleX: (index) => targets[index].scaleX,
+        scaleY: (index) => targets[index].scaleY,
+        duration: .12,
+        stagger: .012,
+        ease: "power2.out",
+      })
+      .to(particles, { autoAlpha: 0, scale: 0, duration: .18, stagger: .01, ease: "power2.in" }, ">-=.01");
+  };
+
+  window.gsap.set(questionCopy, { opacity: 0, y: 0 });
+  window.gsap.set(mainCopy, { opacity: 0 });
+  window.gsap.set(characters, { autoAlpha: 0, y: 18 });
+  window.gsap.set(mainLines, { autoAlpha: 0, y: "110%" });
+  window.gsap.set(mainHighlight, { scaleX: 0, transformOrigin: "left center" });
+  window.gsap.set(allPopParticles, { autoAlpha: 0, x: 0, y: 0, xPercent: -50, yPercent: -50, scale: 0 });
+
+  window.gsap.timeline({
+    defaults: { ease: "power3.out" },
+    repeat: -1,
+  })
+    .set(questionCopy, { opacity: 1 })
+    .to(characters, { autoAlpha: 1, y: 0, duration: .28, stagger: .045 })
+    .to(questionWord, {
+      scaleX: 1.1,
+      scaleY: .9,
+      fontWeight: 700,
+      duration: .1,
+      ease: "power2.out",
+      onStart: () => questionWord.classList.add("hero-word--is-emphasized"),
+    })
+    .to(questionWord, {
+      scaleX: .96,
+      scaleY: 1.04,
+      duration: .14,
+      ease: "elastic.out(1, .55)",
+      onStart: () => playPop(questionParticles, questionParticleTargets),
+    })
+    .to(questionWord, { scaleX: 1, scaleY: 1, duration: .12 })
+    .to(exclamationWord, {
+      y: 9,
+      scaleX: 1.1,
+      scaleY: .82,
+      fontWeight: 700,
+      duration: .11,
+      ease: "power2.in",
+      onStart: () => exclamationWord.classList.add("hero-word--is-emphasized"),
+    }, "<")
+    .to(exclamationWord, {
+      y: -5,
+      scaleX: .94,
+      scaleY: 1.12,
+      duration: .17,
+      ease: "back.out(3)",
+      onStart: () => playPop(exclamationParticles, exclamationParticleTargets),
+    })
+    .to(exclamationWord, { y: 0, scaleX: 1, scaleY: 1, duration: .12, ease: "power2.out" })
+    .to(questionCopy, { opacity: 0, y: -10, duration: .32 }, "+=2")
+    .set(mainCopy, { opacity: 1 })
+    .to(mainLines, { autoAlpha: 1, y: "0%", duration: .58, stagger: .14, ease: "power4.out" })
+    .to(mainHighlight, { scaleX: 1, duration: .45, ease: "power3.out" })
+    .to({}, { duration: 4.55 })
+    .to(mainLines, { autoAlpha: 0, y: -18, duration: .3, stagger: .08, ease: "power2.in" })
+    .set(questionCopy, { opacity: 0, y: 0 })
+    .set(characters, { autoAlpha: 0, y: 18 })
+    .set(mainCopy, { opacity: 0 })
+    .set(mainLines, { autoAlpha: 0, y: "110%" })
+    .set(mainHighlight, { scaleX: 0 })
+    .set(allPopParticles, { autoAlpha: 0, x: 0, y: 0, scale: 0 });
+};
+
+initializeHeroCopyInteraction();
+
 const initializeSkillProgressAnimation = () => {
   const skillsSection = document.querySelector("#skills");
 
