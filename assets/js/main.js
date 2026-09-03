@@ -236,7 +236,7 @@ const initializeHeroCopyInteraction = () => {
       ease: "elastic.out(1, .55)",
       onStart: () => playPop(questionParticles, questionParticleTargets),
     })
-    .to(questionWord, { scaleX: 1, scaleY: 1, duration: .12 })
+    .to(questionWord, { scaleX: 1.0625, scaleY: 1.0625, duration: .12 })
     .to(exclamationWord, {
       y: 9,
       scaleX: 1.1,
@@ -254,7 +254,7 @@ const initializeHeroCopyInteraction = () => {
       ease: "back.out(3)",
       onStart: () => playPop(exclamationParticles, exclamationParticleTargets),
     })
-    .to(exclamationWord, { y: 0, scaleX: 1, scaleY: 1, duration: .12, ease: "power2.out" })
+    .to(exclamationWord, { y: 0, scaleX: 1.0625, scaleY: 1.0625, duration: .12, ease: "power2.out" })
     .to(questionCopy, { opacity: 0, y: -10, duration: .32 }, "+=2")
     .set(mainCopy, { opacity: 1 })
     .to(mainLines, { autoAlpha: 1, y: "0%", duration: .58, stagger: .14, ease: "power4.out" })

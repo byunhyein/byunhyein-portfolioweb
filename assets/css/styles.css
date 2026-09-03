@@ -880,10 +880,6 @@ button {
   background: rgba(173, 201, 244, .76);
 }
 
-.hero-word--is-emphasized {
-  font-size: calc(1em + 4px);
-}
-
 .has-hero-copy-animation .hero-copy--question {
   display: block;
 }
