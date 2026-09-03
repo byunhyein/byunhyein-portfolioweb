@@ -942,12 +942,24 @@ button {
   height: 25rem;
   object-fit: cover;
   border-radius: .75rem;
+  transition: transform .26s cubic-bezier(.22, .8, .35, 1), box-shadow .26s ease;
 }
 
 #about article {
   padding: var(--space-8);
   border-radius: .75rem;
   background: var(--color-surface-muted);
+  transition: transform .26s cubic-bezier(.22, .8, .35, 1), box-shadow .26s ease;
+}
+
+@media (hover: hover) {
+  #about > div > img:hover,
+  #about article:hover {
+    position: relative;
+    z-index: 1;
+    transform: translateY(-.25rem) scale(1.003);
+    box-shadow: 0 .75rem 1.5rem rgba(224, 166, 237, .16), 0 0 1.4rem rgba(196, 177, 255, .18);
+  }
 }
 
 #about article h3 {
@@ -1115,6 +1127,14 @@ button {
   border-radius: var(--radius-large);
   background: rgb(255 255 255 / 88%);
   box-shadow: var(--shadow-card);
+  transition: transform .26s cubic-bezier(.22, .8, .35, 1), box-shadow .26s ease;
+}
+
+@media (hover: hover) {
+  #experience article:hover {
+    transform: translateY(-.25rem) scale(1.003);
+    box-shadow: 0 .75rem 1.5rem rgba(224, 166, 237, .16), 0 0 1.4rem rgba(196, 177, 255, .18);
+  }
 }
 
 #experience article:first-of-type {
