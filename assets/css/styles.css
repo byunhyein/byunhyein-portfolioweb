@@ -941,6 +941,112 @@ button {
   width: 12.1875rem;
 }
 
+/* Figma: Hero / CTA Button - Left (7229:113, 7229:122) */
+#home > .hero-cta-buttons {
+  gap: 1rem;
+}
+
+#home .hero-cta-button {
+  position: relative;
+  display: block;
+  width: 12.1875rem;
+  min-height: 3.1875rem;
+  height: 3.1875rem;
+  padding: 0;
+  overflow: hidden;
+  border: 0.0625rem solid transparent;
+  border-radius: 0.3rem;
+  background: var(--color-white);
+  box-shadow: 0 0.1875rem 0.3125rem rgb(151 162 237 / 30%);
+  color: var(--color-text-body);
+  font-family: var(--font-family-sans);
+  font-size: var(--font-size-18);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-27);
+  letter-spacing: -0.01rem;
+  text-align: center;
+  transition: background-color 0.28s ease, border-color 0.28s ease, box-shadow 0.28s ease, color 0.28s ease, transform 0.28s ease;
+}
+
+#home .hero-cta-button__content {
+  position: relative;
+  z-index: 1;
+  display: inline-flex;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  white-space: nowrap;
+}
+
+#home .hero-cta-button__content > img {
+  flex: 0 0 auto;
+  width: 1.125rem;
+  height: 1.125rem;
+  object-fit: contain;
+  transition: filter 0.28s ease;
+}
+
+#home .hero-cta-button--resume {
+  border-color: var(--color-gray-200);
+  background: var(--color-white);
+  color: var(--color-gray-700);
+}
+
+#home .hero-cta-button--resume .hero-cta-button__content > img {
+  filter: brightness(0) invert(27%);
+}
+
+#home .hero-cta-button--github {
+  isolation: isolate;
+  border-width: 0.125rem;
+  border-color: transparent;
+  background: linear-gradient(var(--color-white), var(--color-white)) padding-box, var(--gradient-cta) border-box;
+  color: #aa84e4;
+}
+
+#home .hero-cta-button--github::before {
+  position: absolute;
+  z-index: 0;
+  inset: -0.0625rem;
+  border-radius: inherit;
+  background: var(--gradient-cta);
+  content: "";
+  opacity: 0;
+  transition: opacity 0.28s ease;
+}
+
+#home .hero-cta-button--github .hero-cta-button__content > img {
+  width: 1.0125rem;
+  height: 1.0125rem;
+  filter: brightness(0) saturate(100%) invert(57%) sepia(31%) saturate(900%) hue-rotate(219deg) brightness(93%) contrast(92%);
+}
+
+#home .hero-cta-button:disabled {
+  filter: none;
+  opacity: 1;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  #home .hero-cta-button--resume:hover {
+    background: var(--color-gray-100);
+  }
+
+  #home .hero-cta-button--github:hover {
+    color: var(--color-text-inverse);
+    transform: translateY(-0.125rem);
+  }
+
+  #home .hero-cta-button--github:hover::before {
+    opacity: 1;
+  }
+
+  #home .hero-cta-button--github:hover .hero-cta-button__content > img {
+    filter: brightness(0) invert(1);
+  }
+}
+
 .hero-bottom-wave {
   position: absolute;
   z-index: 5;

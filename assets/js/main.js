@@ -271,6 +271,80 @@ const initializeHeroCopyInteraction = () => {
 
 initializeHeroCopyInteraction();
 
+const triggerConfetti = (element, options = {}) => {
+  if (prefersReducedMotion || !element || typeof window.confetti !== "function") {
+    return;
+  }
+
+  const rect = element.getBoundingClientRect();
+  window.confetti({
+    particleCount: 80,
+    spread: 50,
+    startVelocity: 32,
+    origin: {
+      x: (rect.left + rect.width / 2) / window.innerWidth,
+      y: (rect.top + rect.height / 2) / window.innerHeight,
+    },
+    colors: options.colors || ["#d9c4ff", "#b8d3ff", "#ffd4e8"],
+  });
+};
+
+const initializeHeroButtonConfetti = () => {
+  const buttonGroup = document.querySelector("#home > .hero-cta-buttons");
+
+  if (!buttonGroup) {
+    return;
+  }
+
+  const palettes = {
+    resume: ["#d9c4ff", "#b8d3ff", "#ffd4e8"],
+    github: ["#ffc2df", "#c9b4ff", "#b79ceb"],
+  };
+  const pressAnimations = new WeakMap();
+  const triggerButtonFeedback = (button, event) => {
+    if (prefersReducedMotion || !button) {
+      return;
+    }
+
+    const lastPress = Number(button.dataset.confettiPressAt || 0);
+    const now = performance.now();
+
+    if (now - lastPress < 180) {
+      return;
+    }
+
+    button.dataset.confettiPressAt = String(now);
+    pressAnimations.get(button)?.cancel();
+    const pressAnimation = button.animate([
+      { transform: "scale(1)" },
+      { transform: "scale(.95)", offset: .32 },
+      { transform: "scale(1)" },
+    ], {
+      duration: 210,
+      easing: "cubic-bezier(.2, .8, .35, 1)",
+    });
+    pressAnimations.set(button, pressAnimation);
+
+    triggerConfetti(button, {
+      colors: button.classList.contains("hero-cta-button--github") ? palettes.github : palettes.resume,
+    });
+  };
+
+  // Capturing on the group preserves the resume button's existing disabled state
+  // while still allowing pointer feedback from its visible contents.
+  buttonGroup.addEventListener("pointerdown", (event) => {
+    triggerButtonFeedback(event.target.closest(".hero-cta-button"), event);
+  }, true);
+
+  buttonGroup.addEventListener("click", (event) => {
+    if (event.detail === 0) {
+      triggerButtonFeedback(event.target.closest(".hero-cta-button"), event);
+    }
+  }, true);
+};
+
+initializeHeroButtonConfetti();
+
 const initializeSkillProgressAnimation = () => {
   const skillsSection = document.querySelector("#skills");
 
