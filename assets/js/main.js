@@ -47,7 +47,12 @@ const initializeHeroMorphs = () => {
             <stop offset=".45" stop-color="#fff" stop-opacity=".06"/>
             <stop offset="1" stop-color="#5546b9" stop-opacity=".32"/>
           </linearGradient>
-          <radialGradient id="${id}-dot" gradientUnits="userSpaceOnUse" cx="174" cy="370" r="82">
+          <linearGradient id="${id}-dot-rim" gradientUnits="userSpaceOnUse" x1="158" y1="376" x2="228" y2="442">
+            <stop offset="0" stop-color="#ff9dcc" stop-opacity=".72"/>
+            <stop offset=".52" stop-color="#c5a4ff" stop-opacity=".8"/>
+            <stop offset="1" stop-color="#7d9fff" stop-opacity=".78"/>
+          </linearGradient>
+          <radialGradient id="${id}-dot" gradientUnits="userSpaceOnUse" cx="174" cy="375" r="82">
             <stop offset="0" stop-color="#ffaad1"/>
             <stop offset=".58" stop-color="#c6a5ff"/>
             <stop offset="1" stop-color="#7c9eff"/>
@@ -64,9 +69,9 @@ const initializeHeroMorphs = () => {
           <path class="hero-morph__path hero-morph__shine" d="${questionPath}" fill="none" stroke="#fff" stroke-width="7" stroke-linecap="round" stroke-dasharray="78 430" stroke-dashoffset="-12" opacity=".58"/>
         </g>
         <g class="hero-morph__dot">
-          <circle cx="193" cy="404" r="39" fill="#b88cff" opacity=".16" filter="url(#${id}-glow)"/>
-          <circle cx="193" cy="404" r="36" fill="url(#${id}-dot)" stroke="url(#${id}-rim)" stroke-width="5"/>
-          <path d="M174 393C184 381 202 380 213 388" fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round" opacity=".62"/>
+          <circle cx="193" cy="409" r="39" fill="#b88cff" opacity=".16" filter="url(#${id}-glow)"/>
+          <circle cx="193" cy="409" r="36" fill="url(#${id}-dot)" stroke="url(#${id}-dot-rim)" stroke-width="6"/>
+          <path d="M174 398C184 386 202 385 213 393" fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round" opacity=".62"/>
         </g>
         <path class="hero-morph__question" d="${questionPath}" visibility="hidden"/>
         <path class="hero-morph__exclamation" d="${exclamationPath}" visibility="hidden"/>
@@ -88,15 +93,15 @@ const initializeHeroMorphs = () => {
         ease: "power2.inOut",
       })
       .to(shine, { strokeDashoffset: -126, duration: 1.35, ease: "sine.inOut" }, "<")
-      .to(dot, { scale: .96, transformOrigin: "193px 404px", duration: .675, yoyo: true, repeat: 1, ease: "sine.inOut" }, "<")
-      .to({}, { duration: .9 })
+      .to(dot, { scale: .96, transformOrigin: "193px 409px", duration: .675, yoyo: true, repeat: 1, ease: "sine.inOut" }, "<")
+      .to({}, { duration: 1.9 })
       .to(paths, {
         morphSVG: { shape: question, map: "complexity" },
         duration: 1.35,
         ease: "power2.inOut",
       })
       .to(shine, { strokeDashoffset: -12, duration: 1.35, ease: "sine.inOut" }, "<")
-      .to(dot, { scale: .96, transformOrigin: "193px 404px", duration: .675, yoyo: true, repeat: 1, ease: "sine.inOut" }, "<")
+      .to(dot, { scale: .96, transformOrigin: "193px 409px", duration: .675, yoyo: true, repeat: 1, ease: "sine.inOut" }, "<")
       .to({}, { duration: .9 });
 
     if (prefersReducedMotion) {
@@ -111,45 +116,14 @@ const initializeHeroCopyInteraction = () => {
   const questionCopy = document.querySelector(".hero-copy--question");
   const questionWord = document.querySelector(".hero-word--question");
   const exclamationWord = document.querySelector(".hero-word--exclamation");
+  const questionPhrases = document.querySelectorAll(".hero-copy--question .hero-phrase");
   const mainCopy = document.querySelector(".hero-copy--main");
   const mainLines = document.querySelectorAll(".hero-copy__line");
   const mainHighlight = document.querySelector(".hero-copy__highlight");
 
-  if (!questionCopy || !questionWord || !exclamationWord || !mainCopy || !mainLines.length || !mainHighlight) {
+  if (!questionCopy || !questionWord || !exclamationWord || !questionPhrases.length || !mainCopy || !mainLines.length || !mainHighlight) {
     return;
   }
-
-  const splitWord = (word) => {
-    const text = word.textContent || "";
-    word.replaceChildren(...[...text].map((character) => {
-      const characterElement = document.createElement("span");
-      characterElement.className = "hero-copy__char";
-      characterElement.textContent = character;
-      return characterElement;
-    }));
-  };
-
-  splitWord(questionWord);
-  splitWord(exclamationWord);
-
-  const splitLooseText = () => {
-    [...questionCopy.childNodes]
-      .filter((node) => node.nodeType === Node.TEXT_NODE && node.textContent?.trim())
-      .forEach((textNode) => {
-        const fragment = document.createDocumentFragment();
-
-        [...(textNode.textContent || "")].forEach((character) => {
-          const characterElement = document.createElement("span");
-          characterElement.className = "hero-copy__char";
-          characterElement.textContent = character === " " ? "\u00A0" : character;
-          fragment.append(characterElement);
-        });
-
-        textNode.replaceWith(fragment);
-      });
-  };
-
-  splitLooseText();
 
   const createPopParticles = (word) => ["pink", "lavender", "blue", "pink"].map((tone) => {
     const particle = document.createElement("span");
@@ -179,7 +153,6 @@ const initializeHeroCopyInteraction = () => {
     return;
   }
 
-  const characters = questionCopy.querySelectorAll(".hero-copy__char");
   document.documentElement.classList.add("has-hero-copy-animation");
 
   const playPop = (particles, targets) => {
@@ -210,7 +183,7 @@ const initializeHeroCopyInteraction = () => {
 
   window.gsap.set(questionCopy, { opacity: 0, y: 0 });
   window.gsap.set(mainCopy, { opacity: 0 });
-  window.gsap.set(characters, { autoAlpha: 0, y: 18 });
+  window.gsap.set(questionPhrases, { autoAlpha: 0, y: 18 });
   window.gsap.set(mainLines, { autoAlpha: 0, y: "110%" });
   window.gsap.set(mainHighlight, { scaleX: 0, transformOrigin: "left center" });
   window.gsap.set(allPopParticles, { autoAlpha: 0, x: 0, y: 0, xPercent: -50, yPercent: -50, scale: 0 });
@@ -220,7 +193,7 @@ const initializeHeroCopyInteraction = () => {
     repeat: -1,
   })
     .set(questionCopy, { opacity: 1 })
-    .to(characters, { autoAlpha: 1, y: 0, duration: .28, stagger: .045 })
+    .to(questionPhrases, { autoAlpha: 1, y: 0, duration: .32, stagger: .12, ease: "power3.out" })
     .to(questionWord, {
       scaleX: 1.1,
       scaleY: .9,
@@ -255,14 +228,14 @@ const initializeHeroCopyInteraction = () => {
       onStart: () => playPop(exclamationParticles, exclamationParticleTargets),
     })
     .to(exclamationWord, { y: 0, scaleX: 1.0625, scaleY: 1.0625, duration: .12, ease: "power2.out" })
-    .to(questionCopy, { opacity: 0, y: -10, duration: .32 }, "+=2")
+    .to(questionCopy, { opacity: 0, y: -10, duration: .32 }, "+=1")
     .set(mainCopy, { opacity: 1 })
     .to(mainLines, { autoAlpha: 1, y: "0%", duration: .58, stagger: .14, ease: "power4.out" })
     .to(mainHighlight, { scaleX: 1, duration: .45, ease: "power3.out" })
     .to({}, { duration: 4.55 })
     .to(mainLines, { autoAlpha: 0, y: -18, duration: .3, stagger: .08, ease: "power2.in" })
     .set(questionCopy, { opacity: 0, y: 0 })
-    .set(characters, { autoAlpha: 0, y: 18 })
+    .set(questionPhrases, { autoAlpha: 0, y: 18 })
     .set(mainCopy, { opacity: 0 })
     .set(mainLines, { autoAlpha: 0, y: "110%" })
     .set(mainHighlight, { scaleX: 0 })
@@ -300,8 +273,7 @@ const initializeHeroButtonConfetti = () => {
     resume: ["#d9c4ff", "#b8d3ff", "#ffd4e8"],
     github: ["#ffc2df", "#c9b4ff", "#b79ceb"],
   };
-  const pressAnimations = new WeakMap();
-  const triggerButtonFeedback = (button, event) => {
+  const triggerButtonFeedback = (button) => {
     if (prefersReducedMotion || !button) {
       return;
     }
@@ -309,37 +281,22 @@ const initializeHeroButtonConfetti = () => {
     const lastPress = Number(button.dataset.confettiPressAt || 0);
     const now = performance.now();
 
-    if (now - lastPress < 180) {
+    if (now - lastPress < 450) {
       return;
     }
 
     button.dataset.confettiPressAt = String(now);
-    pressAnimations.get(button)?.cancel();
-    const pressAnimation = button.animate([
-      { transform: "scale(1)" },
-      { transform: "scale(.95)", offset: .32 },
-      { transform: "scale(1)" },
-    ], {
-      duration: 210,
-      easing: "cubic-bezier(.2, .8, .35, 1)",
-    });
-    pressAnimations.set(button, pressAnimation);
-
     triggerConfetti(button, {
       colors: button.classList.contains("hero-cta-button--github") ? palettes.github : palettes.resume,
     });
   };
 
-  // Capturing on the group preserves the resume button's existing disabled state
-  // while still allowing pointer feedback from its visible contents.
-  buttonGroup.addEventListener("pointerdown", (event) => {
-    triggerButtonFeedback(event.target.closest(".hero-cta-button"), event);
-  }, true);
-
-  buttonGroup.addEventListener("click", (event) => {
-    if (event.detail === 0) {
-      triggerButtonFeedback(event.target.closest(".hero-cta-button"), event);
-    }
+  buttonGroup.querySelectorAll(".hero-cta-button").forEach((button) => {
+    button.addEventListener("pointerenter", (event) => {
+      if (event.pointerType !== "touch") {
+        triggerButtonFeedback(button);
+      }
+    });
   }, true);
 };
 
