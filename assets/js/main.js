@@ -116,12 +116,14 @@ const initializeHeroCopyInteraction = () => {
   const questionCopy = document.querySelector(".hero-copy--question");
   const questionWord = document.querySelector(".hero-word--question");
   const exclamationWord = document.querySelector(".hero-word--exclamation");
+  const questionPunctuation = document.querySelector(".hero-punctuation--question");
+  const exclamationPunctuation = document.querySelector(".hero-punctuation--exclamation");
   const questionPhrases = document.querySelectorAll(".hero-copy--question .hero-phrase");
   const mainCopy = document.querySelector(".hero-copy--main");
   const mainLines = document.querySelectorAll(".hero-copy__line");
   const mainHighlight = document.querySelector(".hero-copy__highlight");
 
-  if (!questionCopy || !questionWord || !exclamationWord || !questionPhrases.length || !mainCopy || !mainLines.length || !mainHighlight) {
+  if (!questionCopy || !questionWord || !exclamationWord || !questionPunctuation || !exclamationPunctuation || !questionPhrases.length || !mainCopy || !mainLines.length || !mainHighlight) {
     return;
   }
 
@@ -202,6 +204,7 @@ const initializeHeroCopyInteraction = () => {
       ease: "power2.out",
       onStart: () => questionWord.classList.add("hero-word--is-emphasized"),
     })
+    .to(questionPunctuation, { fontWeight: 700, duration: .1, ease: "power2.out" }, "<")
     .to(questionWord, {
       scaleX: .96,
       scaleY: 1.04,
@@ -219,6 +222,7 @@ const initializeHeroCopyInteraction = () => {
       ease: "power2.in",
       onStart: () => exclamationWord.classList.add("hero-word--is-emphasized"),
     }, "<")
+    .to(exclamationPunctuation, { fontWeight: 700, duration: .11, ease: "power2.in" }, "<")
     .to(exclamationWord, {
       y: -5,
       scaleX: .94,
