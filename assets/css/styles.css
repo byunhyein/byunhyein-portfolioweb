@@ -1480,16 +1480,21 @@ button {
    so its visible height matches the Photoshop and Illustrator icons. */
 #skills > ul > li:nth-child(3) img { transform: scale(1.12); }
 #skills > ul > li:nth-child(4) img {
-  width: 6.1031rem;
-  height: 3.9038rem;
-  transform: none;
-  object-fit: fill;
+  /* Figma 7237:1147: 97.65 × 62.46px artwork. Keep the original square
+     source box, then compensate only for its transparent outer margin. */
+  width: 5rem;
+  height: 5rem;
+  transform: scale(1.32);
+  object-fit: contain;
 }
 
 #skills > ul > li:nth-child(5) img {
-  width: 2.8271rem;
-  height: 3.8551rem;
-  transform: none;
+  /* Figma 7237:1160: 45.23 × 61.68px artwork. Its source has notably more
+     transparent margin than HTML/CSS, so it needs an independent scale. */
+  width: 5rem;
+  height: 5rem;
+  transform: scale(1.68);
+  object-fit: contain;
 }
 
 #skills > ul .skill-icon--git-github {
@@ -1791,6 +1796,67 @@ button {
   padding: 4.6875rem max(calc((100% - var(--layout-content-width)) / 2), var(--space-6));
   background: var(--color-surface-default);
   text-align: center;
+}
+
+.works-morphs {
+  position: absolute;
+  z-index: 0;
+  inset: 0;
+  pointer-events: none;
+}
+
+#works > :not(.works-morphs) {
+  position: relative;
+  z-index: 1;
+}
+
+.works-morph {
+  z-index: 0;
+  opacity: .42;
+}
+
+.works-morph--left {
+  top: 7rem;
+  left: 3.25rem;
+  width: 14rem;
+  transform: rotate(-14deg);
+  animation-delay: -1.1s;
+}
+
+.works-morph--right-top {
+  top: 8.25rem;
+  right: 4.25rem;
+  width: 12.5rem;
+  transform: rotate(13deg);
+  animation-delay: -3.2s;
+}
+
+.works-morph--right-bottom {
+  right: -1.5rem;
+  bottom: 2rem;
+  width: 17rem;
+  transform: rotate(17deg);
+  animation-delay: -4.6s;
+}
+
+@media (max-width: 48rem) {
+  .works-morph--left {
+    top: 4.5rem;
+    left: -1.5rem;
+    width: 8.5rem;
+  }
+
+  .works-morph--right-top {
+    top: 7rem;
+    right: -2rem;
+    width: 7.5rem;
+  }
+
+  .works-morph--right-bottom {
+    right: -3rem;
+    bottom: 1rem;
+    width: 10rem;
+  }
 }
 
 #works > ul {
