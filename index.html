@@ -8,7 +8,7 @@
     <link rel="icon" type="image/png" href="./assets/images/icons/favicon.png">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css">
     <link rel="stylesheet" href="https://unpkg.com/lenis@1.3.24/dist/lenis.css">
-    <link rel="stylesheet" href="./assets/css/styles.css?v=20260904-46">
+    <link rel="stylesheet" href="./assets/css/styles.css?v=20260904-54">
   </head>
   <body>
     <a class="skip-link" href="#main-content">본문 바로가기</a>
@@ -39,11 +39,11 @@
         </a>
         <ul class="site-nav__links">
           <li><a href="#about">ABOUT ME</a></li>
-          <li><a href="#skills">SKILLS</a></li>
           <li><a href="#portfolio">PORTFOLIO</a></li>
+          <li><a href="#skills">SKILLS</a></li>
           <li><a href="#works">WORKS</a></li>
         </ul>
-        <a class="button button--compact" href="#contact">CONTACT</a>
+        <a class="button button--compact site-nav__contact" href="#contact"><span>CONTACT</span></a>
       </nav>
     </header>
 
@@ -294,7 +294,7 @@
             <h2 id="contact-title" class="section-title">CONTACT</h2>
             <p class="contact-card__intro">사용자에게 필요한 좋은 경험을 고민하고,<br>디자인을 실제 화면으로 구현하는 변혜인입니다.<br>새로운 기회와 협업에 언제나 열려 있습니다.</p>
             <dl>
-              <div><dt>Email</dt><dd><a href="mailto:hyeinjk6285@naver.com">hyeinjk6285@naver.com</a></dd></div>
+              <div><dt>Email</dt><dd><a id="contact-email-link" href="mailto:hyeinjk6285@naver.com" aria-haspopup="dialog" aria-controls="email-composer-modal">hyeinjk6285@naver.com</a></dd></div>
               <div><dt>Phone</dt><dd><a href="tel:01022726285">010-2272-6285</a></dd></div>
               <div><dt>GitHub</dt><dd><a href="https://github.com/byunhyein/byunhyein-portfolioweb" target="_blank" rel="noopener noreferrer">github.com/byunhyein/byunhyein-portfolioweb</a></dd></div>
             </dl>
@@ -313,11 +313,26 @@
       <p>ⓒ 2026 BYUN HYE IN. ALL RIGHTS RESERVED.</p>
     </footer>
 
+    <div id="email-composer-modal" class="email-composer-modal" role="presentation" hidden>
+      <div class="email-composer-modal__backdrop" data-email-modal-close></div>
+      <section class="email-composer-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="email-composer-title" aria-describedby="email-composer-description">
+        <button type="button" class="email-composer-modal__close" data-email-modal-close aria-label="메일 서비스 선택창 닫기">×</button>
+        <p class="tag">Send a Message</p>
+        <h2 id="email-composer-title">좋은 기회와 새로운 이야기를<br>기다리고 있습니다.</h2>
+        <p id="email-composer-description">아래 방법을 선택하면 이메일 주소가 자동으로 입력됩니다.</p>
+        <div class="email-composer-modal__actions">
+          <a class="email-composer-modal__action" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=hyeinjk6285%40naver.com" target="_blank" rel="noopener noreferrer" data-email-option>Gmail로 보내기</a>
+          <a class="email-composer-modal__action" href="https://mail.naver.com/v2/new?to=hyeinjk6285%40naver.com" target="_blank" rel="noopener noreferrer" data-email-option>네이버 메일로 보내기</a>
+          <a class="email-composer-modal__action" href="mailto:hyeinjk6285@naver.com" data-email-option>기본 메일 앱으로 보내기</a>
+        </div>
+      </section>
+    </div>
+
     <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/MorphSVGPlugin.min.js"></script>
     <script src="https://unpkg.com/lenis@1.3.24/dist/lenis.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
-    <script src="./assets/js/main.js?v=20260904-24"></script>
+    <script src="./assets/js/main.js?v=20260904-25"></script>
   </body>
 </html>

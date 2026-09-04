@@ -475,6 +475,52 @@ initializeSlider('[data-slider="videos"]', {
   },
 });
 
+const initializeEmailComposer = () => {
+  const trigger = document.querySelector("#contact-email-link");
+  const modal = document.querySelector("#email-composer-modal");
+
+  if (!trigger || !modal) {
+    return;
+  }
+
+  const closeButton = modal.querySelector(".email-composer-modal__close");
+  let lastFocusedElement = null;
+
+  const closeModal = () => {
+    modal.hidden = true;
+    lastFocusedElement?.focus();
+  };
+
+  const openModal = () => {
+    lastFocusedElement = document.activeElement;
+    modal.hidden = false;
+    closeButton?.focus();
+  };
+
+  trigger.addEventListener("click", (event) => {
+    event.preventDefault();
+    openModal();
+  });
+
+  modal.querySelectorAll("[data-email-modal-close]").forEach((element) => {
+    element.addEventListener("click", closeModal);
+  });
+
+  modal.querySelectorAll("[data-email-option]").forEach((element) => {
+    element.addEventListener("click", () => {
+      window.setTimeout(closeModal, 0);
+    });
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (!modal.hidden && event.key === "Escape") {
+      closeModal();
+    }
+  });
+};
+
+initializeEmailComposer();
+
 const setImageLoaded = (image) => {
   image.classList.remove("is-loading");
   image.classList.add("is-loaded");
