@@ -1479,8 +1479,41 @@ button {
 /* These source files include different transparent margins. Scale only the artwork
    so its visible height matches the Photoshop and Illustrator icons. */
 #skills > ul > li:nth-child(3) img { transform: scale(1.12); }
-#skills > ul > li:nth-child(4) img { transform: scale(1.32); }
-#skills > ul > li:nth-child(5) img { transform: scale(1.68); }
+#skills > ul > li:nth-child(4) img {
+  width: 6.1031rem;
+  height: 3.9038rem;
+  transform: none;
+  object-fit: fill;
+}
+
+#skills > ul > li:nth-child(5) img {
+  width: 2.8271rem;
+  height: 3.8551rem;
+  transform: none;
+}
+
+#skills > ul .skill-icon--git-github {
+  position: relative;
+  display: block;
+  width: 6.6014rem;
+  height: 3.6014rem;
+}
+
+#skills > ul .skill-icon--git-github img {
+  position: absolute;
+  top: 0;
+  width: 3.6014rem;
+  height: 3.6014rem;
+  object-fit: contain;
+}
+
+#skills > ul .skill-icon--git-github img:first-child {
+  left: 0;
+}
+
+#skills > ul .skill-icon--git-github img:last-child {
+  left: 3rem;
+}
 
 .skill-progress {
   display: flex;
