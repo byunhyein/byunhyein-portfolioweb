@@ -1818,23 +1818,23 @@ button {
 .works-morph--left {
   top: 7rem;
   left: 3.25rem;
-  width: 14rem;
+  width: 12.5rem;
   transform: rotate(-14deg);
   animation-delay: -1.1s;
 }
 
 .works-morph--right-top {
-  top: 8.25rem;
-  right: 4.25rem;
-  width: 12.5rem;
+  top: 7.5rem;
+  right: 5.5rem;
+  width: 11.25rem;
   transform: rotate(13deg);
   animation-delay: -3.2s;
 }
 
 .works-morph--right-bottom {
-  right: -1.5rem;
+  right: .75rem;
   bottom: 2rem;
-  width: 17rem;
+  width: 15.5rem;
   transform: rotate(17deg);
   animation-delay: -4.6s;
 }
