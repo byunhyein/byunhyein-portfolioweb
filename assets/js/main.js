@@ -121,9 +121,12 @@ const initializeHeroCopyInteraction = () => {
   const questionPhrases = document.querySelectorAll(".hero-copy--question .hero-phrase");
   const mainCopy = document.querySelector(".hero-copy--main");
   const mainLines = document.querySelectorAll(".hero-copy__line");
+  const nameCopy = document.querySelector(".hero-copy__name");
+  const nameCharacters = document.querySelectorAll(".hero-copy__name-char");
+  const nameSuffix = document.querySelector(".hero-copy__suffix");
   const mainHighlight = document.querySelector(".hero-copy__highlight");
 
-  if (!questionCopy || !questionWord || !exclamationWord || !questionPunctuation || !exclamationPunctuation || !questionPhrases.length || !mainCopy || !mainLines.length || !mainHighlight) {
+  if (!questionCopy || !questionWord || !exclamationWord || !questionPunctuation || !exclamationPunctuation || !questionPhrases.length || !mainCopy || !mainLines.length || !nameCopy || !nameCharacters.length || !nameSuffix || !mainHighlight) {
     return;
   }
 
@@ -187,6 +190,9 @@ const initializeHeroCopyInteraction = () => {
   window.gsap.set(mainCopy, { opacity: 0 });
   window.gsap.set(questionPhrases, { autoAlpha: 0, y: 18 });
   window.gsap.set(mainLines, { autoAlpha: 0, y: "110%" });
+  window.gsap.set(nameCopy, { autoAlpha: 0, y: 18 });
+  window.gsap.set(nameCharacters, { autoAlpha: 0, y: 18 });
+  window.gsap.set(nameSuffix, { autoAlpha: 0, y: 12 });
   window.gsap.set(mainHighlight, { scaleX: 0, transformOrigin: "left center" });
   window.gsap.set(allPopParticles, { autoAlpha: 0, x: 0, y: 0, xPercent: -50, yPercent: -50, scale: 0 });
 
@@ -204,7 +210,7 @@ const initializeHeroCopyInteraction = () => {
       ease: "power2.out",
       onStart: () => questionWord.classList.add("hero-word--is-emphasized"),
     })
-    .to(questionPunctuation, { fontWeight: 700, duration: .1, ease: "power2.out" }, "<")
+    .to(questionPunctuation, { scaleX: 1.28, scaleY: .74, fontWeight: 700, duration: .1, ease: "power2.out" }, "<")
     .to(questionWord, {
       scaleX: .96,
       scaleY: 1.04,
@@ -212,7 +218,9 @@ const initializeHeroCopyInteraction = () => {
       ease: "elastic.out(1, .55)",
       onStart: () => playPop(questionParticles, questionParticleTargets),
     })
+    .to(questionPunctuation, { y: -4, scaleX: .82, scaleY: 1.22, duration: .14, ease: "elastic.out(1, .55)" }, "<")
     .to(questionWord, { scaleX: 1.0625, scaleY: 1.0625, duration: .12 })
+    .to(questionPunctuation, { y: 0, scaleX: 1.12, scaleY: 1.12, duration: .12, ease: "power2.out" }, "<")
     .to(exclamationWord, {
       y: 9,
       scaleX: 1.1,
@@ -222,7 +230,7 @@ const initializeHeroCopyInteraction = () => {
       ease: "power2.in",
       onStart: () => exclamationWord.classList.add("hero-word--is-emphasized"),
     }, "<")
-    .to(exclamationPunctuation, { fontWeight: 700, duration: .11, ease: "power2.in" }, "<")
+    .to(exclamationPunctuation, { y: 10, scaleX: 1.28, scaleY: .72, fontWeight: 700, duration: .11, ease: "power2.in" }, "<")
     .to(exclamationWord, {
       y: -5,
       scaleX: .94,
@@ -231,10 +239,15 @@ const initializeHeroCopyInteraction = () => {
       ease: "back.out(3)",
       onStart: () => playPop(exclamationParticles, exclamationParticleTargets),
     })
+    .to(exclamationPunctuation, { y: -8, scaleX: .82, scaleY: 1.25, duration: .17, ease: "back.out(3)" }, "<")
     .to(exclamationWord, { y: 0, scaleX: 1.0625, scaleY: 1.0625, duration: .12, ease: "power2.out" })
+    .to(exclamationPunctuation, { y: 0, scaleX: 1.12, scaleY: 1.12, duration: .12, ease: "power2.out" }, "<")
     .to(questionCopy, { opacity: 0, y: -10, duration: .32 }, "+=1")
     .set(mainCopy, { opacity: 1 })
     .to(mainLines, { autoAlpha: 1, y: "0%", duration: .58, stagger: .14, ease: "power4.out" })
+    .to(nameCopy, { autoAlpha: 1, y: 0, duration: .32, ease: "power3.out" }, "-=.14")
+    .to(nameCharacters, { autoAlpha: 1, y: 0, duration: .32, stagger: .1, ease: "power3.out" }, "<+.06")
+    .to(nameSuffix, { autoAlpha: 1, y: 0, duration: .26, ease: "power3.out" }, ">-=.08")
     .to(mainHighlight, { scaleX: 1, duration: .45, ease: "power3.out" })
     .to({}, { duration: 4.55 })
     .to(mainLines, { autoAlpha: 0, y: -18, duration: .3, stagger: .08, ease: "power2.in" })
@@ -242,6 +255,9 @@ const initializeHeroCopyInteraction = () => {
     .set(questionPhrases, { autoAlpha: 0, y: 18 })
     .set(mainCopy, { opacity: 0 })
     .set(mainLines, { autoAlpha: 0, y: "110%" })
+    .set(nameCopy, { autoAlpha: 0, y: 18 })
+    .set(nameCharacters, { autoAlpha: 0, y: 18 })
+    .set(nameSuffix, { autoAlpha: 0, y: 12 })
     .set(mainHighlight, { scaleX: 0 })
     .set(allPopParticles, { autoAlpha: 0, x: 0, y: 0, scale: 0 });
 };

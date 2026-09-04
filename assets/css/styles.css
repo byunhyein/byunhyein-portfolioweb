@@ -867,7 +867,17 @@ button {
 }
 
 .hero-copy__name {
+  display: inline-block;
   font-size: var(--font-size-72);
+}
+
+.hero-copy__name-char {
+  display: inline-block;
+  font-weight: var(--font-weight-bold);
+}
+
+.hero-copy__suffix {
+  display: inline-block;
 }
 
 #hero-title .hero-copy__line::first-line {
@@ -890,6 +900,11 @@ button {
 
 .hero-phrase .hero-word {
   margin-right: .12em;
+}
+
+.hero-punctuation {
+  display: inline-block;
+  transform-origin: center center;
 }
 
 .hero-pop-particle {
@@ -1349,7 +1364,7 @@ button {
 /* Skills */
 #skills {
   min-height: var(--layout-section-height);
-  padding: 4.5rem max(calc((100% - var(--layout-content-width)) / 2), var(--space-6)) 11rem;
+  padding: 4.5rem max(calc((100% - var(--layout-content-width)) / 2), var(--space-6));
   background: var(--color-surface-default);
 }
 
@@ -1483,6 +1498,18 @@ button {
   align-content: center;
   gap: .35rem;
   overflow: hidden;
+}
+
+#skills-marquee {
+  min-height: 14.35rem;
+  padding: 0;
+  background: var(--color-surface-default);
+}
+
+#skills-marquee .skills-marquee {
+  position: relative;
+  bottom: auto;
+  height: 14.35rem;
 }
 
 .skills-marquee__row {
@@ -2086,6 +2113,12 @@ button {
     --marquee-item-gap: 2rem;
     height: 7rem;
     gap: .15rem;
+  }
+
+  #skills-marquee,
+  #skills-marquee .skills-marquee {
+    min-height: 7rem;
+    height: 7rem;
   }
 
   .skills-marquee__row--large img {
