@@ -409,8 +409,37 @@ const initializeHeaderAnchorNavigation = () => {
 
       event.preventDefault();
 
-      const headerHeight = header?.getBoundingClientRect().height || 0;
-      const destination = Math.max(0, window.scrollY + target.getBoundingClientRect().top - headerHeight);
+      // Use the visual desktop header height as the baseline.  During Lenis
+      // scrolling, the measured header box can transiently report its inner
+      // height; that was leaving the target content tucked under the header.
+      const headerHeight = Math.max(100, header?.getBoundingClientRect().height || 0);
+      const availableViewportHeight = window.innerHeight - headerHeight;
+      const targetTop = window.scrollY + target.getBoundingClientRect().top;
+      const shouldCenterContent = ["about", "portfolio", "contact"].includes(target.id);
+      const contentBounds = shouldCenterContent
+        ? Array.from(target.children)
+          .map((child) => child.getBoundingClientRect())
+          .filter((rect) => rect.width > 0 && rect.height > 0)
+        : [];
+      const contentTop = contentBounds.length
+        ? Math.min(...contentBounds.map((rect) => window.scrollY + rect.top))
+        : targetTop;
+      const contentBottom = contentBounds.length
+        ? Math.max(...contentBounds.map((rect) => window.scrollY + rect.bottom))
+        : targetTop + target.offsetHeight;
+      const contentInset = shouldCenterContent
+        ? Math.max(24, (availableViewportHeight - (contentBottom - contentTop)) / 2)
+        : 0;
+      const destination = Math.max(
+        0,
+        // Lenis' transformed scrolling settles 20px past the requested
+        // document coordinate in this layout. Compensate here so the visual
+        // content bounds, rather than the empty section shell, are centered.
+        (shouldCenterContent ? contentTop : targetTop)
+          - headerHeight
+          - contentInset
+          - (shouldCenterContent ? 20 : 0),
+      );
 
       if (smoothScroller) {
         smoothScroller.scrollTo(destination, { duration: .75 });
