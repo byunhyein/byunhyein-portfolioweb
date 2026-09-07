@@ -567,8 +567,6 @@ const initializePortfolioProjectCard = () => {
     ".portfolio-project-card__details",
     ".portfolio-project-card__actions",
     ".portfolio-project-card__image-placeholder",
-    ".portfolio-project-card__page",
-    ".portfolio-project-card__dots",
   ].join(", "));
   let currentIndex = 0;
   let pendingIndex = 0;

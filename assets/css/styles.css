@@ -1872,7 +1872,7 @@ button {
 .portfolio-project-card__image-placeholder {
   position: absolute;
   top: 4rem;
-  right: 5.875rem;
+  right: 4.5rem;
   display: grid;
   width: 32.722rem;
   height: 19.836rem;
@@ -1932,12 +1932,13 @@ button {
   width: .5rem;
   height: .5rem;
   border-radius: 50%;
-  background: #b7aaff;
+  background-color: #b7aaff;
+  transition: background-color .2s ease, opacity .2s ease;
 }
 
-.portfolio-project-card__dots i:not(.is-active) { background: #e0dff2; }
+.portfolio-project-card__dots i:not(.is-active) { background-color: #e0dff2; }
 
-.portfolio-project-card__dots i.is-active { background: #b7aaff; }
+.portfolio-project-card__dots i.is-active { background-color: #b7aaff; }
 
 .portfolio-project-card__navigation {
   position: absolute;
