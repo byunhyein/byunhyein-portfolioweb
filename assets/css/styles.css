@@ -1935,7 +1935,7 @@ button {
   background: #b7aaff;
 }
 
-.portfolio-project-card__dots i:not(:first-child) { background: #e0dff2; }
+.portfolio-project-card__dots i:not(.is-active) { background: #e0dff2; }
 
 .portfolio-project-card__dots i.is-active { background: #b7aaff; }
 

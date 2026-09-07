@@ -586,7 +586,7 @@ const initializePortfolioProjectCard = () => {
     detailValues.forEach((detail, index) => {
       detail.innerHTML = project.details[index];
     });
-    page.textContent = `${project.number} / ${String(projects.length).padStart(2, "0")}`;
+    page.textContent = `${Number(project.number)} / ${projects.length}`;
     dots.forEach((dot, index) => {
       dot.classList.toggle("is-active", index === currentIndex);
     });
