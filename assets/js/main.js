@@ -271,9 +271,9 @@ const triggerConfetti = (element, options = {}) => {
 
   const rect = element.getBoundingClientRect();
   window.confetti({
-    particleCount: 80,
-    spread: 50,
-    startVelocity: 32,
+    particleCount: options.particleCount ?? 80,
+    spread: options.spread ?? 50,
+    startVelocity: options.startVelocity ?? 32,
     origin: {
       x: (rect.left + rect.width / 2) / window.innerWidth,
       y: (rect.top + rect.height / 2) / window.innerHeight,
@@ -321,6 +321,41 @@ const initializeHeroButtonConfetti = () => {
 };
 
 initializeHeroButtonConfetti();
+
+const initializePortfolioButtonConfetti = () => {
+  const actionGroup = document.querySelector(".portfolio-project-card__actions");
+
+  if (!actionGroup) {
+    return;
+  }
+
+  const colors = ["#d9c4ff", "#c7b0f2", "#ffd4e8", "#b8d3ff"];
+
+  actionGroup.addEventListener("pointerenter", (event) => {
+    const button = event.target.closest("button[data-project-link]");
+
+    if (!button || button.disabled || !event.isPrimary) {
+      return;
+    }
+
+    const lastHover = Number(button.dataset.confettiHoverAt || 0);
+    const now = performance.now();
+
+    if (now - lastHover < 450) {
+      return;
+    }
+
+    button.dataset.confettiHoverAt = String(now);
+    triggerConfetti(button, {
+      colors,
+      particleCount: 54,
+      spread: 28,
+      startVelocity: 26,
+    });
+  }, true);
+};
+
+initializePortfolioButtonConfetti();
 
 const initializeSkillProgressAnimation = () => {
   const skillsSection = document.querySelector("#skills");
@@ -514,6 +549,7 @@ const initializePortfolioProjectCard = () => {
       links: [
         "https://drive.google.com/file/d/1l7YmsGm8vdxcaeGnxoz9syCf4INybTDD/view?usp=sharing",
         "https://github.com/icerence/kiwik-project",
+        "https://github.com/icerence/kiwik-project",
       ],
       image: "",
       imageLabel: "Image",
@@ -524,7 +560,7 @@ const initializePortfolioProjectCard = () => {
       title: "업데이트 예정",
       description: "새로운 프로젝트를<br>업데이트 예정입니다.",
       details: ["—", "—", "—"],
-      links: ["", ""],
+      links: ["", "", ""],
       image: "",
       imageLabel: "Image",
     },
@@ -534,7 +570,7 @@ const initializePortfolioProjectCard = () => {
       title: "업데이트 예정",
       description: "새로운 프로젝트를<br>업데이트 예정입니다.",
       details: ["—", "—", "—"],
-      links: ["", ""],
+      links: ["", "", ""],
       image: "",
       imageLabel: "Image",
     },
@@ -544,7 +580,7 @@ const initializePortfolioProjectCard = () => {
       title: "업데이트 예정",
       description: "새로운 프로젝트를<br>업데이트 예정입니다.",
       details: ["—", "—", "—"],
-      links: ["", ""],
+      links: ["", "", ""],
       image: "",
       imageLabel: "Image",
     },
