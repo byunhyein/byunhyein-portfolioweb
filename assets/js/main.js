@@ -534,6 +534,7 @@ const initializeSlider = (selector, options) => {
 
 initializeSlider('[data-slider="videos"]', {
   navigation: {
+    prevEl: '[data-slider="videos"] .swiper-button-prev',
     nextEl: '[data-slider="videos"] .swiper-button-next',
   },
 });

@@ -8,7 +8,7 @@
     <link rel="icon" type="image/png" href="./assets/images/icons/favicon.png">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css">
     <link rel="stylesheet" href="https://unpkg.com/lenis@1.3.24/dist/lenis.css">
-    <link rel="stylesheet" href="./assets/css/styles.css?v=20260907-63">
+    <link rel="stylesheet" href="./assets/css/styles.css?v=20260907-64">
   </head>
   <body>
     <a class="skip-link" href="#main-content">본문 바로가기</a>
@@ -211,9 +211,16 @@
       </section>
 
       <section id="video-projects" class="section" aria-labelledby="video-projects-title">
+        <div class="video-projects__decor" aria-hidden="true">
+          <svg class="video-projects__curve" viewBox="0 0 420 155"><path d="M4 108C61 33 111 34 170 79C229 124 303 132 360 88C382 70 397 46 416 17"></path><circle cx="360" cy="88" r="14"></circle></svg>
+          <span class="video-projects__plus">+</span>
+          <span class="video-projects__orb"></span>
+          <span class="video-projects__dot-grid"></span>
+          <p>IDEA<br>PLAN<br>EDIT<br>PLAY</p>
+        </div>
         <img class="video-projects__top-wave" src="./assets/images/experience/bottom-wave.svg" alt="" aria-hidden="true" loading="lazy">
         <p class="tag project-feature" data-figma-variant="videos">Videos</p>
-        <h2 id="video-projects-title" class="visually-hidden">영상 프로젝트</h2>
+        <h2 id="video-projects-title" class="video-projects__title">VIDEO</h2>
         <p>다양한 아이디어와 시각적 표현을 담아<br>기획하고 편집한 영상 프로젝트입니다.</p>
         <div class="swiper" data-slider="videos" role="region" aria-label="영상 프로젝트 슬라이더">
           <div class="swiper-wrapper">
@@ -225,8 +232,14 @@
               </button>
             </article>
           </div>
+          <button type="button" class="swiper-button-prev" aria-label="이전 영상"><img src="./assets/images/works/next-button.svg" alt=""></button>
           <button type="button" class="swiper-button-next" aria-label="다음 영상"><img src="./assets/images/works/next-button.svg" alt=""></button>
           <div class="swiper-pagination" role="group" aria-label="영상 페이지"></div>
+        </div>
+        <div class="video-projects__meta" aria-label="영상 프로젝트 정보">
+          <p><strong>01</strong><span>영상 프로젝트</span><small lang="en">Brand Film</small></p>
+          <ul aria-label="프로젝트 분류"><li>30 sec</li><li>Planning</li><li>Editing</li></ul>
+          <span>1 / 4</span>
         </div>
         <img src="./assets/images/works/bottom-wave.svg" alt="" aria-hidden="true" loading="lazy">
       </section>
