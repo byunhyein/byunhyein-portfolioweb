@@ -550,7 +550,7 @@ const initializePortfolioProjectCard = () => {
       number: "01",
       category: "WEB · TEAM PROJECT",
       title: "풀무원 ESG<br>웹사이트 리디자인",
-      description: "냉장고 속 재료를 기반으로, 사용자의 상황에 맞는<br>메뉴를 추천하는 레시피 웹 서비스입니다.",
+      description: "풀무원의 ESG 활동과 지속가능성을 담아낸<br>웹 리디자인 프로젝트입니다.",
       details: ["4주", "20%", "Figma<br>Claude Code<br>Codex"],
       links: [
         "https://drive.google.com/file/d/1l7YmsGm8vdxcaeGnxoz9syCf4INybTDD/view?usp=sharing",
@@ -600,7 +600,7 @@ const initializePortfolioProjectCard = () => {
   const placeholder = card.querySelector(".portfolio-project-card__image-placeholder");
   const placeholderLabel = placeholder?.querySelector("p");
   const page = card.querySelector(".portfolio-project-card__page");
-  const dots = card.querySelectorAll(".portfolio-project-card__dots i");
+  const dots = card.querySelectorAll(".portfolio-project-card__dots button");
   const transitionElements = card.querySelectorAll([
     ".portfolio-project-card__number",
     ".portfolio-project-card__category",
@@ -629,6 +629,7 @@ const initializePortfolioProjectCard = () => {
     page.textContent = `${Number(project.number)} / ${projects.length}`;
     dots.forEach((dot, index) => {
       dot.classList.toggle("is-active", index === currentIndex);
+      dot.toggleAttribute("aria-current", index === currentIndex);
     });
 
     actionButtons.forEach((button, index) => {
@@ -711,10 +712,52 @@ const initializePortfolioProjectCard = () => {
     });
   });
 
+  dots.forEach((dot, index) => {
+    dot.addEventListener("click", () => renderProject(index));
+  });
+
   renderProject(0, false);
 };
 
 initializePortfolioProjectCard();
+
+const initializePortfolioCardMagnetism = () => {
+  const card = document.querySelector(".portfolio-project-card");
+  const supportsMagneticHover = window.matchMedia("(hover: hover) and (pointer: fine) and (min-width: 70.0625rem)");
+
+  if (!card || prefersReducedMotion || typeof window.gsap !== "object" || !supportsMagneticHover.matches) {
+    return;
+  }
+
+  const moveCard = (event) => {
+    const bounds = card.getBoundingClientRect();
+    const x = ((event.clientX - bounds.left) / bounds.width - .5) * 12;
+    const y = ((event.clientY - bounds.top) / bounds.height - .5) * 8;
+
+    window.gsap.to(card, {
+      x,
+      y,
+      scale: 1.003,
+      duration: .34,
+      ease: "power3.out",
+      overwrite: "auto",
+    });
+  };
+
+  card.addEventListener("pointermove", moveCard);
+  card.addEventListener("pointerleave", () => {
+    window.gsap.to(card, {
+      x: 0,
+      y: 0,
+      scale: 1,
+      duration: .46,
+      ease: "power3.out",
+      overwrite: "auto",
+    });
+  });
+};
+
+initializePortfolioCardMagnetism();
 
 const initializeEmailComposer = () => {
   const trigger = document.querySelector("#contact-email-link");
