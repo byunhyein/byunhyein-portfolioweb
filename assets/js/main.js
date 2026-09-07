@@ -453,6 +453,10 @@ const initializeHeaderAnchorNavigation = () => {
       const shouldCenterContent = ["about", "portfolio", "contact"].includes(target.id);
       const contentBounds = shouldCenterContent
         ? Array.from(target.children)
+          // Decorative full-section layers must not participate in the scroll
+          // bounds: they were stretching the measured area to the whole section
+          // and leaving no visual room beneath the actual content.
+          .filter((child) => child.getAttribute("aria-hidden") !== "true" && !child.classList.contains("portfolio-background"))
           .map((child) => child.getBoundingClientRect())
           .filter((rect) => rect.width > 0 && rect.height > 0)
         : [];
@@ -549,7 +553,7 @@ const initializePortfolioProjectCard = () => {
       links: [
         "https://drive.google.com/file/d/1l7YmsGm8vdxcaeGnxoz9syCf4INybTDD/view?usp=sharing",
         "https://github.com/icerence/kiwik-project",
-        "https://github.com/icerence/kiwik-project",
+        "https://icerence.github.io/kiwik-project/",
       ],
       image: "",
       imageLabel: "Image",
