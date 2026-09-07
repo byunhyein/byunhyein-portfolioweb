@@ -497,6 +497,185 @@ initializeSlider('[data-slider="videos"]', {
   },
 });
 
+const initializePortfolioProjectCard = () => {
+  const card = document.querySelector(".portfolio-project-card");
+
+  if (!card) {
+    return;
+  }
+
+  const projects = [
+    {
+      number: "01",
+      category: "WEB · TEAM PROJECT",
+      title: "풀무원 ESG<br>웹사이트 리디자인",
+      description: "냉장고 속 재료를 기반으로, 사용자의 상황에 맞는<br>메뉴를 추천하는 레시피 웹 서비스입니다.",
+      details: ["4주", "20%", "Figma<br>Claude Code<br>Codex"],
+      links: [
+        "https://drive.google.com/file/d/1l7YmsGm8vdxcaeGnxoz9syCf4INybTDD/view?usp=sharing",
+        "https://github.com/icerence/kiwik-project",
+      ],
+      image: "",
+      imageLabel: "Image",
+    },
+    {
+      number: "02",
+      category: "COMING SOON",
+      title: "업데이트 예정",
+      description: "새로운 프로젝트를<br>업데이트 예정입니다.",
+      details: ["—", "—", "—"],
+      links: ["", ""],
+      image: "",
+      imageLabel: "Image",
+    },
+    {
+      number: "03",
+      category: "COMING SOON",
+      title: "업데이트 예정",
+      description: "새로운 프로젝트를<br>업데이트 예정입니다.",
+      details: ["—", "—", "—"],
+      links: ["", ""],
+      image: "",
+      imageLabel: "Image",
+    },
+    {
+      number: "04",
+      category: "COMING SOON",
+      title: "업데이트 예정",
+      description: "새로운 프로젝트를<br>업데이트 예정입니다.",
+      details: ["—", "—", "—"],
+      links: ["", ""],
+      image: "",
+      imageLabel: "Image",
+    },
+  ];
+  const number = card.querySelector(".portfolio-project-card__number");
+  const category = card.querySelector(".portfolio-project-card__category");
+  const title = card.querySelector("#portfolio-project-title");
+  const description = card.querySelector(".portfolio-project-card__description");
+  const detailValues = card.querySelectorAll(".portfolio-project-card__details dd");
+  const actionButtons = card.querySelectorAll("[data-project-link]");
+  const placeholder = card.querySelector(".portfolio-project-card__image-placeholder");
+  const placeholderLabel = placeholder?.querySelector("p");
+  const page = card.querySelector(".portfolio-project-card__page");
+  const dots = card.querySelectorAll(".portfolio-project-card__dots i");
+  const transitionElements = card.querySelectorAll([
+    ".portfolio-project-card__number",
+    ".portfolio-project-card__category",
+    "#portfolio-project-title",
+    ".portfolio-project-card__description",
+    ".portfolio-project-card__details",
+    ".portfolio-project-card__actions",
+    ".portfolio-project-card__image-placeholder",
+    ".portfolio-project-card__page",
+    ".portfolio-project-card__dots",
+  ].join(", "));
+  let currentIndex = 0;
+  let pendingIndex = 0;
+  let isProjectTransitioning = false;
+
+  const applyProject = (nextIndex) => {
+    currentIndex = (nextIndex + projects.length) % projects.length;
+    pendingIndex = currentIndex;
+    const project = projects[currentIndex];
+
+    number.textContent = project.number;
+    category.textContent = project.category;
+    title.innerHTML = project.title;
+    description.innerHTML = project.description;
+    detailValues.forEach((detail, index) => {
+      detail.innerHTML = project.details[index];
+    });
+    page.textContent = `${project.number} / ${String(projects.length).padStart(2, "0")}`;
+    dots.forEach((dot, index) => {
+      dot.classList.toggle("is-active", index === currentIndex);
+    });
+
+    actionButtons.forEach((button, index) => {
+      const link = project.links[index];
+      button.disabled = !link;
+      button.dataset.projectLink = link;
+      button.setAttribute("aria-disabled", String(!link));
+    });
+
+    if (placeholder) {
+      placeholder.classList.toggle("has-project-image", Boolean(project.image));
+      placeholder.style.backgroundImage = project.image ? `url("${project.image}")` : "";
+      placeholder.setAttribute("aria-label", project.imageLabel);
+    }
+
+    if (placeholderLabel) {
+      placeholderLabel.hidden = Boolean(project.image);
+      placeholderLabel.textContent = project.imageLabel;
+    }
+  };
+
+  const renderProject = (nextIndex, shouldAnimate = true) => {
+    const normalizedIndex = (nextIndex + projects.length) % projects.length;
+    pendingIndex = normalizedIndex;
+
+    if (!shouldAnimate || prefersReducedMotion) {
+      applyProject(normalizedIndex);
+      return;
+    }
+
+    if (isProjectTransitioning) {
+      return;
+    }
+
+    isProjectTransitioning = true;
+    const exitingAnimations = Array.from(transitionElements, (element) => element.animate(
+      [
+        { opacity: 1, transform: "translateX(0)" },
+        { opacity: 0, transform: "translateX(-1.25rem)" },
+      ],
+      { duration: 120, easing: "cubic-bezier(.4, 0, 1, 1)", fill: "forwards" },
+    ));
+
+    Promise.all(exitingAnimations.map((animation) => animation.finished.catch(() => undefined))).then(() => {
+      applyProject(pendingIndex);
+      exitingAnimations.forEach((animation) => animation.cancel());
+
+      Array.from(transitionElements, (element) => element.animate(
+        [
+          { opacity: 0, transform: "translateX(1.25rem)" },
+          { opacity: 1, transform: "translateX(0)" },
+        ],
+        { duration: 170, easing: "cubic-bezier(0, 0, .2, 1)" },
+      ));
+
+      window.setTimeout(() => {
+        isProjectTransitioning = false;
+
+        if (pendingIndex !== currentIndex) {
+          renderProject(pendingIndex);
+        }
+      }, 170);
+    });
+  };
+
+  actionButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      const link = button.dataset.projectLink;
+
+      if (link) {
+        window.open(link, "_blank", "noopener");
+      }
+    });
+  });
+
+  card.querySelectorAll("[data-project-direction]").forEach((button) => {
+    button.addEventListener("click", () => {
+      const step = button.dataset.projectDirection === "next" ? 1 : -1;
+      renderProject(pendingIndex + step);
+    });
+  });
+
+  renderProject(0, false);
+};
+
+initializePortfolioProjectCard();
+
 const initializeEmailComposer = () => {
   const trigger = document.querySelector("#contact-email-link");
   const modal = document.querySelector("#email-composer-modal");
