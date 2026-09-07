@@ -469,6 +469,7 @@ const initializeHeaderAnchorNavigation = () => {
       const contentInset = shouldCenterContent
         ? Math.max(24, (availableViewportHeight - (contentBottom - contentTop)) / 2)
         : 0;
+      const bottomBreathingRoom = ["about", "portfolio"].includes(target.id) ? 30 : 0;
       const destination = Math.max(
         0,
         // Lenis' transformed scrolling settles 20px past the requested
@@ -477,7 +478,8 @@ const initializeHeaderAnchorNavigation = () => {
         (shouldCenterContent ? contentTop : targetTop)
           - headerHeight
           - contentInset
-          - (shouldCenterContent ? 20 : 0),
+          - (shouldCenterContent ? 20 : 0)
+          + bottomBreathingRoom,
       );
 
       if (smoothScroller) {
