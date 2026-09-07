@@ -361,7 +361,7 @@ const initializeContentReveal = () => {
     "#about > .section-title, #about > div > *",
     "#experience article",
     "#skills > .tag-list, #skills > .section-title, #skills > ul > li",
-    "#portfolio > .tag, #portfolio > .section-title, #portfolio > p:not(.tag), #portfolio > .swiper",
+    "#portfolio > .tag, #portfolio > .section-title, #portfolio > p:not(.tag)",
     "#video-projects > .tag, #video-projects > p:not(.tag), #video-projects > .swiper",
     "#works > .tag, #works > .section-title, #works > p, #works > ul > li",
     "#contact .contact-card",
@@ -461,13 +461,6 @@ const initializeSlider = (selector, options) => {
     ...options,
   });
 };
-
-initializeSlider('[data-slider="portfolio"]', {
-  navigation: {
-    nextEl: '[data-slider="portfolio"] .swiper-button-next',
-    prevEl: '[data-slider="portfolio"] .swiper-button-prev',
-  },
-});
 
 initializeSlider('[data-slider="videos"]', {
   navigation: {
