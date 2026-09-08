@@ -357,6 +357,41 @@ const initializePortfolioButtonConfetti = () => {
 
 initializePortfolioButtonConfetti();
 
+const initializeWorksPdfButtonConfetti = () => {
+  const pdfButtons = document.querySelectorAll("button[data-portfolio-pdf]");
+
+  if (!pdfButtons.length) {
+    return;
+  }
+
+  const colors = ["#d9c4ff", "#c7b0f2", "#ffd4e8", "#b8d3ff"];
+
+  pdfButtons.forEach((button) => {
+    button.addEventListener("pointerenter", (event) => {
+      if (event.pointerType === "touch") {
+        return;
+      }
+
+      const lastHover = Number(button.dataset.confettiHoverAt || 0);
+      const now = performance.now();
+
+      if (now - lastHover < 450) {
+        return;
+      }
+
+      button.dataset.confettiHoverAt = String(now);
+      triggerConfetti(button, {
+        colors,
+        particleCount: 54,
+        spread: 28,
+        startVelocity: 26,
+      });
+    });
+  });
+};
+
+initializeWorksPdfButtonConfetti();
+
 const initializeSkillProgressAnimation = () => {
   const skillsSection = document.querySelector("#skills");
 
@@ -559,7 +594,8 @@ const initializeVideoCarousel = () => {
   ];
   const [number, title, category] = [meta.querySelector("strong"), meta.querySelector("p > span"), meta.querySelector("small")];
   const tags = meta.querySelector("ul");
-  const page = meta.querySelector(":scope > span");
+  const page = meta.querySelector(".video-projects__pagination > span");
+  const paginationButtons = meta.querySelectorAll(".video-projects__dots button");
   const wrapIndex = (index) => (index + cards.length) % cards.length;
   const layoutFor = (index, currentIndex) => {
     const previous = wrapIndex(currentIndex - 1);
@@ -583,6 +619,11 @@ const initializeVideoCarousel = () => {
     category.textContent = project.category;
     tags.innerHTML = project.tags.map((tag) => `<li>${tag}</li>`).join("");
     page.textContent = `${index + 1} / ${cards.length}`;
+    paginationButtons.forEach((button, buttonIndex) => {
+      const isActive = buttonIndex === index;
+      button.classList.toggle("is-active", isActive);
+      button.toggleAttribute("aria-current", isActive);
+    });
   };
   const goTo = (nextIndex) => {
     if (isTransitioning) return;
@@ -597,6 +638,9 @@ const initializeVideoCarousel = () => {
     });
     if (direction) carousel.dataset.direction = direction > 0 ? "next" : "previous";
   };
+  paginationButtons.forEach((button, index) => {
+    button.addEventListener("click", () => goTo(index));
+  });
   if (typeof window.gsap !== "object" || prefersReducedMotion) {
     cards.forEach((card, index) => Object.assign(card.style, { display: index === 0 ? "grid" : "none" }));
     updateMeta(0);
@@ -633,8 +677,8 @@ const initializePortfolioProjectCard = () => {
         "https://github.com/icerence/kiwik-project",
         "https://icerence.github.io/kiwik-project/",
       ],
-      image: "",
-      imageLabel: "Image",
+      image: "./assets/images/portfolio/pulmuone-kitchen-ipad-light.jpg",
+      imageLabel: "풀무원 ESG 웹사이트 리디자인 목업 이미지",
     },
     {
       number: "02",
