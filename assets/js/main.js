@@ -590,7 +590,6 @@ const initializeVideoCarousel = () => {
     { title: "영상 프로젝트", category: "Brand Film", tags: ["30 sec", "Planning", "Editing"] },
     { title: "업데이트 예정", category: "Coming Soon", tags: ["—"] },
     { title: "업데이트 예정", category: "Coming Soon", tags: ["—"] },
-    { title: "업데이트 예정", category: "Coming Soon", tags: ["—"] },
   ];
   const [number, title, category] = [meta.querySelector("strong"), meta.querySelector("p > span"), meta.querySelector("small")];
   const tags = meta.querySelector("ul");

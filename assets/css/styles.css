@@ -2656,7 +2656,7 @@ button {
   grid-template-columns: 1fr auto 1fr;
   align-items: center;
   width: min(100%, 51.875rem);
-  margin: 1rem auto 0;
+  margin: 3rem auto 0;
   text-align: left;
 }
 
