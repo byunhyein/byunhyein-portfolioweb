@@ -431,6 +431,46 @@ const initializeContentReveal = () => {
 
 initializeContentReveal();
 
+const initializePortfolioDropdown = () => {
+  const dropdown = document.querySelector(".site-nav__dropdown");
+  const trigger = dropdown?.querySelector(".site-nav__dropdown-trigger");
+
+  if (!dropdown || !trigger) {
+    return;
+  }
+
+  const setExpanded = (isExpanded) => {
+    trigger.setAttribute("aria-expanded", String(isExpanded));
+  };
+
+  dropdown.addEventListener("pointerenter", () => {
+    dropdown.classList.remove("is-dropdown-click-closed");
+    setExpanded(true);
+  });
+  dropdown.addEventListener("pointerleave", () => {
+    dropdown.classList.remove("is-dropdown-click-closed");
+    setExpanded(false);
+  });
+  dropdown.addEventListener("focusin", () => {
+    dropdown.classList.remove("is-dropdown-click-closed");
+    setExpanded(true);
+  });
+  dropdown.addEventListener("focusout", () => {
+    window.requestAnimationFrame(() => {
+      setExpanded(dropdown.contains(document.activeElement));
+    });
+  });
+  dropdown.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", () => {
+      dropdown.classList.add("is-dropdown-click-closed");
+      setExpanded(false);
+      window.requestAnimationFrame(() => link.blur());
+    });
+  });
+};
+
+initializePortfolioDropdown();
+
 const initializeHeaderAnchorNavigation = () => {
   const header = document.querySelector(".site-header");
 
@@ -450,7 +490,8 @@ const initializeHeaderAnchorNavigation = () => {
       const headerHeight = Math.max(100, header?.getBoundingClientRect().height || 0);
       const availableViewportHeight = window.innerHeight - headerHeight;
       const targetTop = window.scrollY + target.getBoundingClientRect().top;
-      const shouldCenterContent = ["about", "portfolio", "contact"].includes(target.id);
+      const shouldCenterContent = ["about", "portfolio", "contact"].includes(target.id)
+        || link.dataset.scrollAlign === "content";
       const contentBounds = shouldCenterContent
         ? Array.from(target.children)
           // Decorative full-section layers must not participate in the scroll
@@ -469,7 +510,10 @@ const initializeHeaderAnchorNavigation = () => {
       const contentInset = shouldCenterContent
         ? Math.max(24, (availableViewportHeight - (contentBottom - contentTop)) / 2)
         : 0;
-      const bottomBreathingRoom = ["about", "portfolio"].includes(target.id) ? 30 : 0;
+      const requestedBottomSpace = Number(link.dataset.scrollBottomSpace);
+      const bottomBreathingRoom = Number.isFinite(requestedBottomSpace) && requestedBottomSpace > 0
+        ? requestedBottomSpace
+        : (["about", "portfolio"].includes(target.id) ? 30 : 0);
       const destination = Math.max(
         0,
         // Lenis' transformed scrolling settles 20px past the requested
@@ -498,46 +542,77 @@ const initializeHeaderAnchorNavigation = () => {
 
 initializeHeaderAnchorNavigation();
 
-const initializeSlider = (selector, options) => {
-  const element = document.querySelector(selector);
+const initializeVideoCarousel = () => {
+  const carousel = document.querySelector("[data-video-carousel]");
+  const cards = carousel ? Array.from(carousel.querySelectorAll(".video-projects__carousel-card")) : [];
+  const meta = document.querySelector(".video-projects__meta");
 
-  if (!element || typeof window.Swiper !== "function") {
-    return null;
+  if (!carousel || !meta || cards.length < 2) {
+    return;
   }
 
-  return new window.Swiper(element, {
-    a11y: {
-      enabled: true,
-      firstSlideMessage: "첫 번째 항목입니다.",
-      lastSlideMessage: "마지막 항목입니다.",
-      nextSlideMessage: "다음 항목",
-      prevSlideMessage: "이전 항목",
-      slideLabelMessage: "{{index}} / {{slidesLength}}",
-    },
-    allowTouchMove: true,
-    autoHeight: false,
-    keyboard: {
-      enabled: true,
-      onlyInViewport: true,
-    },
-    loop: false,
-    pagination: {
-      clickable: true,
-      el: element.querySelector(".swiper-pagination"),
-    },
-    slidesPerView: 1,
-    speed: prefersReducedMotion ? 0 : 450,
-    watchOverflow: true,
-    ...options,
+  const videoProjects = [
+    { title: "영상 프로젝트", category: "Brand Film", tags: ["30 sec", "Planning", "Editing"] },
+    { title: "업데이트 예정", category: "Coming Soon", tags: ["—"] },
+    { title: "업데이트 예정", category: "Coming Soon", tags: ["—"] },
+    { title: "업데이트 예정", category: "Coming Soon", tags: ["—"] },
+  ];
+  const [number, title, category] = [meta.querySelector("strong"), meta.querySelector("p > span"), meta.querySelector("small")];
+  const tags = meta.querySelector("ul");
+  const page = meta.querySelector(":scope > span");
+  const wrapIndex = (index) => (index + cards.length) % cards.length;
+  const layoutFor = (index, currentIndex) => {
+    const previous = wrapIndex(currentIndex - 1);
+    const next = wrapIndex(currentIndex + 1);
+    const isCompact = window.matchMedia("(max-width: 48rem)").matches;
+    const sideOffset = isCompact ? 16 : 29;
+    const sideScale = isCompact ? .84 : .9;
+    const sideY = isCompact ? 8 : 14;
+    if (index === currentIndex) return { xPercent: 0, y: 0, scale: 1, rotateY: 0, opacity: 1, filter: "blur(0px) brightness(1)", zIndex: 5 };
+    if (index === previous) return { xPercent: -sideOffset, y: sideY, scale: sideScale, rotateY: 5, opacity: .58, filter: "blur(1px) brightness(.84)", zIndex: 3 };
+    if (index === next) return { xPercent: sideOffset, y: sideY, scale: sideScale, rotateY: -5, opacity: .58, filter: "blur(1px) brightness(.84)", zIndex: 3 };
+    return { xPercent: 0, y: 22, scale: .78, rotateY: 0, opacity: 0, filter: "blur(3px) brightness(.76)", zIndex: 1 };
+  };
+  let currentIndex = 0;
+  let isTransitioning = false;
+  const applyLayout = (index) => cards.forEach((card, cardIndex) => window.gsap.set(card, { transformPerspective: 1000, ...layoutFor(cardIndex, index) }));
+  const updateMeta = (index) => {
+    const project = videoProjects[index];
+    number.textContent = String(index + 1).padStart(2, "0");
+    title.textContent = project.title;
+    category.textContent = project.category;
+    tags.innerHTML = project.tags.map((tag) => `<li>${tag}</li>`).join("");
+    page.textContent = `${index + 1} / ${cards.length}`;
+  };
+  const goTo = (nextIndex) => {
+    if (isTransitioning) return;
+    const direction = nextIndex === wrapIndex(currentIndex + 1) ? 1 : -1;
+    isTransitioning = true;
+    meta.classList.add("is-video-meta-changing");
+    const timeline = window.gsap.timeline({ defaults: { duration: .72, ease: "power3.inOut", overwrite: "auto" } });
+    cards.forEach((card, cardIndex) => timeline.to(card, layoutFor(cardIndex, nextIndex), 0));
+    timeline.call(() => updateMeta(nextIndex), [], .2).to(meta, { opacity: 1, duration: .18 }, .2).call(() => {
+      currentIndex = nextIndex;
+      isTransitioning = false;
+    });
+    if (direction) carousel.dataset.direction = direction > 0 ? "next" : "previous";
+  };
+  if (typeof window.gsap !== "object" || prefersReducedMotion) {
+    cards.forEach((card, index) => Object.assign(card.style, { display: index === 0 ? "grid" : "none" }));
+    updateMeta(0);
+    return;
+  }
+  applyLayout(currentIndex);
+  updateMeta(currentIndex);
+  window.addEventListener("resize", () => {
+    if (!isTransitioning) applyLayout(currentIndex);
+  });
+  carousel.querySelectorAll("[data-video-direction]").forEach((button) => {
+    button.addEventListener("click", () => goTo(wrapIndex(currentIndex + (button.dataset.videoDirection === "next" ? 1 : -1))));
   });
 };
 
-initializeSlider('[data-slider="videos"]', {
-  navigation: {
-    prevEl: '[data-slider="videos"] .swiper-button-prev',
-    nextEl: '[data-slider="videos"] .swiper-button-next',
-  },
-});
+initializeVideoCarousel();
 
 const initializePortfolioProjectCard = () => {
   const card = document.querySelector(".portfolio-project-card");

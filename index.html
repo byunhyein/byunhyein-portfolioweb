@@ -8,7 +8,7 @@
     <link rel="icon" type="image/png" href="./assets/images/icons/favicon.png">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css">
     <link rel="stylesheet" href="https://unpkg.com/lenis@1.3.24/dist/lenis.css">
-    <link rel="stylesheet" href="./assets/css/styles.css?v=20260907-64">
+    <link rel="stylesheet" href="./assets/css/styles.css?v=20260908-90">
   </head>
   <body>
     <a class="skip-link" href="#main-content">본문 바로가기</a>
@@ -39,7 +39,24 @@
         </a>
         <ul class="site-nav__links">
           <li><a href="#about">ABOUT ME</a></li>
-          <li><a href="#portfolio">PORTFOLIO</a></li>
+          <li class="site-nav__dropdown">
+            <a class="site-nav__dropdown-trigger" href="#portfolio" aria-haspopup="true" aria-expanded="false">
+              PORTFOLIO
+              <svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="m6 3 5 5-5 5"></path></svg>
+            </a>
+            <div class="site-nav__dropdown-menu" aria-label="포트폴리오 바로가기">
+              <a href="#portfolio">
+                <span class="site-nav__dropdown-icon site-nav__dropdown-icon--monitor" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3.5" y="4.5" width="17" height="12" rx="1.5"></rect><path d="M9 20h6M12 16.5V20"></path></svg></span>
+                <span>Web Pages</span>
+                <svg class="site-nav__dropdown-arrow" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="m6 3 5 5-5 5"></path></svg>
+              </a>
+              <a href="#video-projects" data-scroll-align="content" data-scroll-bottom-space="20">
+                <span class="site-nav__dropdown-icon site-nav__dropdown-icon--play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m9 6 9 6-9 6V6Z"></path></svg></span>
+                <span>Videos</span>
+                <svg class="site-nav__dropdown-arrow" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="m6 3 5 5-5 5"></path></svg>
+              </a>
+            </div>
+          </li>
           <li><a href="#works">WORKS</a></li>
           <li><a href="#skills">SKILLS</a></li>
         </ul>
@@ -212,36 +229,49 @@
 
       <section id="video-projects" class="section" aria-labelledby="video-projects-title">
         <div class="video-projects__decor" aria-hidden="true">
-          <svg class="video-projects__curve" viewBox="0 0 420 155"><path d="M4 108C61 33 111 34 170 79C229 124 303 132 360 88C382 70 397 46 416 17"></path><circle cx="360" cy="88" r="14"></circle></svg>
-          <span class="video-projects__plus">+</span>
           <span class="video-projects__orb"></span>
-          <span class="video-projects__dot-grid"></span>
-          <p>IDEA<br>PLAN<br>EDIT<br>PLAY</p>
+          <svg class="video-projects__circle-path" viewBox="0 0 320 320"><defs><linearGradient id="video-circle-gradient" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#ffd2e3"></stop><stop offset="100%" stop-color="#ffc995"></stop></linearGradient></defs><path d="M160 12C241 12 308 78 308 160C308 242 241 308 160 308C78 308 12 242 12 160C12 78 78 12 160 12Z"></path></svg>
         </div>
         <img class="video-projects__top-wave" src="./assets/images/experience/bottom-wave.svg" alt="" aria-hidden="true" loading="lazy">
         <p class="tag project-feature" data-figma-variant="videos">Videos</p>
         <h2 id="video-projects-title" class="video-projects__title">VIDEO</h2>
         <p>다양한 아이디어와 시각적 표현을 담아<br>기획하고 편집한 영상 프로젝트입니다.</p>
-        <div class="swiper" data-slider="videos" role="region" aria-label="영상 프로젝트 슬라이더">
-          <div class="swiper-wrapper">
-            <article class="swiper-slide">
-              <h3 class="visually-hidden">영상 프로젝트</h3>
-              <img src="./assets/images/works/video-thumbnail.jpg" alt="영상 프로젝트 썸네일" loading="lazy">
-              <button type="button" disabled aria-label="영상 소스가 제공되지 않아 재생할 수 없음">
-                <img src="./assets/images/works/play-button.svg" alt="">
-              </button>
-            </article>
+        <div class="video-projects__carousel" data-video-carousel role="region" aria-label="영상 프로젝트 슬라이더">
+          <div class="video-projects__carousel-stage">
+            <div class="video-projects__carousel-card" data-video-index="1">
+              <div class="video-projects__placeholder" role="img" aria-label="영상 프로젝트 이미지 자리">
+                <svg viewBox="0 0 48 48" aria-hidden="true" focusable="false"><rect x="5" y="8" width="38" height="30" rx="3"></rect><path d="m11 32 9-9 6 6 5-5 6 8"></path><circle cx="16" cy="16" r="3"></circle></svg>
+                <span>Video Preview 01</span>
+              </div>
+            </div>
+            <div class="video-projects__carousel-card" data-video-index="2">
+              <div class="video-projects__placeholder" role="img" aria-label="두 번째 영상 프로젝트 이미지 자리">
+                <svg viewBox="0 0 48 48" aria-hidden="true" focusable="false"><rect x="5" y="8" width="38" height="30" rx="3"></rect><path d="m11 32 9-9 6 6 5-5 6 8"></path><circle cx="16" cy="16" r="3"></circle></svg>
+                <span>Video Preview 02</span>
+              </div>
+            </div>
+            <div class="video-projects__carousel-card" data-video-index="3">
+              <div class="video-projects__placeholder" role="img" aria-label="세 번째 영상 프로젝트 이미지 자리">
+                <svg viewBox="0 0 48 48" aria-hidden="true" focusable="false"><rect x="5" y="8" width="38" height="30" rx="3"></rect><path d="m11 32 9-9 6 6 5-5 6 8"></path><circle cx="16" cy="16" r="3"></circle></svg>
+                <span>Video Preview 03</span>
+              </div>
+            </div>
+            <div class="video-projects__carousel-card" data-video-index="4">
+              <div class="video-projects__placeholder" role="img" aria-label="네 번째 영상 프로젝트 이미지 자리">
+                <svg viewBox="0 0 48 48" aria-hidden="true" focusable="false"><rect x="5" y="8" width="38" height="30" rx="3"></rect><path d="m11 32 9-9 6 6 5-5 6 8"></path><circle cx="16" cy="16" r="3"></circle></svg>
+                <span>Video Preview 04</span>
+              </div>
+            </div>
           </div>
-          <button type="button" class="swiper-button-prev" aria-label="이전 영상"><img src="./assets/images/works/next-button.svg" alt=""></button>
-          <button type="button" class="swiper-button-next" aria-label="다음 영상"><img src="./assets/images/works/next-button.svg" alt=""></button>
-          <div class="swiper-pagination" role="group" aria-label="영상 페이지"></div>
+          <button type="button" class="video-projects__carousel-button video-projects__carousel-button--previous" data-video-direction="previous" aria-label="이전 영상"><img src="./assets/images/portfolio/prev-button.svg" alt=""></button>
+          <button type="button" class="video-projects__carousel-button video-projects__carousel-button--next" data-video-direction="next" aria-label="다음 영상"><img src="./assets/images/portfolio/next-button.svg" alt=""></button>
         </div>
         <div class="video-projects__meta" aria-label="영상 프로젝트 정보">
           <p><strong>01</strong><span>영상 프로젝트</span><small lang="en">Brand Film</small></p>
           <ul aria-label="프로젝트 분류"><li>30 sec</li><li>Planning</li><li>Editing</li></ul>
           <span>1 / 4</span>
         </div>
-        <img src="./assets/images/works/bottom-wave.svg" alt="" aria-hidden="true" loading="lazy">
+        <img class="video-projects__bottom-wave" src="./assets/images/contact/bottom-wave.svg" alt="" aria-hidden="true" loading="lazy">
       </section>
 
       <section id="works" class="section" aria-labelledby="works-title">
@@ -380,6 +410,6 @@
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/MorphSVGPlugin.min.js"></script>
     <script src="https://unpkg.com/lenis@1.3.24/dist/lenis.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
-  <script src="./assets/js/main.js?v=20260907-50"></script>
+  <script src="./assets/js/main.js?v=20260908-58"></script>
   </body>
 </html>
