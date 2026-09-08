@@ -587,12 +587,14 @@ const initializeVideoCarousel = () => {
   }
 
   const videoProjects = [
-    { title: "영상 프로젝트", category: "Brand Film", tags: ["30 sec", "Planning", "Editing"] },
-    { title: "업데이트 예정", category: "Coming Soon", tags: ["—"] },
-    { title: "업데이트 예정", category: "Coming Soon", tags: ["—"] },
+    { id: "brand-film", title: "영상 프로젝트", category: "Brand Film", tags: ["30 sec", "Planning", "Editing"], description: "브랜드의 메시지를 짧고 명확한 영상으로 전달하기 위해 기획과 편집을 진행한 프로젝트입니다.", period: "준비 중", contribution: ["기획 · 편집"], tools: ["Premiere Pro"], images: [{ src: "./assets/images/works/video-thumbnail.jpg", alt: "영상 프로젝트 대표 이미지" }], documentLinks: [] },
+    { id: "afree-day-short-form", title: "어프리데이 숏폼 광고", category: "Short-form AD", tags: ["Commercial", "Short-form", "AI Video", "Motion Graphics"], description: "논알콜 브랜드 ‘어프리데이’를 주제로 제작한 숏폼 광고 프로젝트입니다.\n‘오늘의 즐거움과 내일의 가벼움’을 초현실적인 상황과 유쾌한 언어유희로 표현했습니다.", period: "2026.08 – 2026.09", contribution: ["100%"], tools: ["Premiere Pro", "After Effects", "Google Vids"], toolsSeparator: " · ", images: [{ src: "./assets/images/video-projects/afree-day-short-form-thumbnail.png", alt: "어프리데이 숏폼 광고 임시 썸네일" }], documentLinks: [] },
+    { id: "coming-soon-03", title: "업데이트 예정", category: "Coming Soon", tags: ["Coming Soon"], description: "새로운 영상 프로젝트를 준비하고 있습니다.", period: "준비 중", contribution: ["—"], tools: ["—"], images: [], documentLinks: [] },
+    { id: "invisible-friend", title: "투명인간 친구", category: "Opening Animation", tags: ["30 sec", "2D Animation", "Procreate", "Premiere Pro", "Illustration"], description: "창작 낭독극 《투명인간 친구》를 주제로 제작한 오프닝 애니메이션입니다.\n작품의 분위기와 이야기의 흐름을 시각적으로 표현하기 위해 Procreate를 활용해 직접 드로잉하고 2D 애니메이션으로 구성했습니다.", period: "2025.10 (2주)", contribution: ["100%"], documentLabel: "기획서", document: { label: "PDF 보기", url: "" }, images: [{ src: "./assets/images/video-projects/invisible-friend-01.png", alt: "투명인간 친구 오프닝 애니메이션 장면 1" }, { src: "./assets/images/video-projects/invisible-friend-02.png", alt: "투명인간 친구 오프닝 애니메이션 장면 2" }, { src: "./assets/images/video-projects/invisible-friend-03.png", alt: "투명인간 친구 오프닝 애니메이션 장면 3" }, { src: "./assets/images/video-projects/invisible-friend-04.png", alt: "투명인간 친구 오프닝 애니메이션 대표 이미지" }], documentLinks: [] },
   ];
   const [number, title, category] = [meta.querySelector("strong"), meta.querySelector("p > span"), meta.querySelector("small")];
-  const tags = meta.querySelector("ul");
+  const projectInfo = meta.querySelector("p");
+  const detailButton = meta.querySelector("[data-video-project-details]");
   const page = meta.querySelector(".video-projects__pagination > span");
   const paginationButtons = meta.querySelectorAll(".video-projects__dots button");
   const wrapIndex = (index) => (index + cards.length) % cards.length;
@@ -603,20 +605,26 @@ const initializeVideoCarousel = () => {
     const sideOffset = isCompact ? 16 : 29;
     const sideScale = isCompact ? .84 : .9;
     const sideY = isCompact ? 8 : 14;
-    if (index === currentIndex) return { xPercent: 0, y: 0, scale: 1, rotateY: 0, opacity: 1, filter: "blur(0px) brightness(1)", zIndex: 5 };
-    if (index === previous) return { xPercent: -sideOffset, y: sideY, scale: sideScale, rotateY: 5, opacity: .58, filter: "blur(1px) brightness(.84)", zIndex: 3 };
-    if (index === next) return { xPercent: sideOffset, y: sideY, scale: sideScale, rotateY: -5, opacity: .58, filter: "blur(1px) brightness(.84)", zIndex: 3 };
-    return { xPercent: 0, y: 22, scale: .78, rotateY: 0, opacity: 0, filter: "blur(3px) brightness(.76)", zIndex: 1 };
+    if (index === currentIndex) return { xPercent: 0, y: 0, z: 1, scale: 1, rotateY: 0, opacity: 1, filter: "blur(0px) brightness(1)", zIndex: 10, pointerEvents: "auto" };
+    if (index === previous) return { xPercent: -sideOffset, y: sideY, z: 0, scale: sideScale, rotateY: 5, opacity: .58, filter: "blur(1px) brightness(.84)", zIndex: 1, pointerEvents: "none" };
+    if (index === next) return { xPercent: sideOffset, y: sideY, z: 0, scale: sideScale, rotateY: -5, opacity: .58, filter: "blur(1px) brightness(.84)", zIndex: 1, pointerEvents: "none" };
+    return { xPercent: 0, y: 22, z: -1, scale: .78, rotateY: 0, opacity: 0, filter: "blur(3px) brightness(.76)", zIndex: 0, pointerEvents: "none" };
   };
   let currentIndex = 0;
   let isTransitioning = false;
+  const pauseEmbeddedVideos = () => {
+    carousel.querySelectorAll(".video-projects__embed iframe").forEach((iframe) => {
+      iframe.contentWindow?.postMessage('{"event":"command","func":"pauseVideo","args":""}', "*");
+    });
+  };
   const applyLayout = (index) => cards.forEach((card, cardIndex) => window.gsap.set(card, { transformPerspective: 1000, ...layoutFor(cardIndex, index) }));
   const updateMeta = (index) => {
     const project = videoProjects[index];
     number.textContent = String(index + 1).padStart(2, "0");
     title.textContent = project.title;
     category.textContent = project.category;
-    tags.innerHTML = project.tags.map((tag) => `<li>${tag}</li>`).join("");
+    detailButton.dataset.videoProjectIndex = String(index);
+    detailButton.setAttribute("aria-label", `${project.title} 프로젝트 상세 보기`);
     page.textContent = `${index + 1} / ${cards.length}`;
     paginationButtons.forEach((button, buttonIndex) => {
       const isActive = buttonIndex === index;
@@ -624,17 +632,151 @@ const initializeVideoCarousel = () => {
       button.toggleAttribute("aria-current", isActive);
     });
   };
+  const modal = document.querySelector("#video-project-modal");
+  const openProjectModal = () => {
+    if (!modal) return;
+    const project = videoProjects[currentIndex];
+    const image = modal.querySelector("[data-video-modal-image]");
+    const emptyImage = modal.querySelector("[data-video-modal-empty-image]");
+    const gallery = modal.querySelector("[data-video-modal-gallery]");
+    const imageCount = modal.querySelector("[data-video-modal-image-count]");
+    const titleElement = modal.querySelector("[data-video-modal-title]");
+    const subtitle = modal.querySelector("[data-video-modal-subtitle]");
+    const tagsElement = modal.querySelector("[data-video-modal-tags]");
+    const description = modal.querySelector("[data-video-modal-description]");
+    const details = modal.querySelector("[data-video-modal-details]");
+    const resources = modal.querySelector("[data-video-modal-resources]");
+    const resourceLinks = modal.querySelector("[data-video-modal-resource-links]");
+    let imageIndex = 0;
+    const renderImage = (withMorph = false) => {
+      const selectedImage = project.images[imageIndex];
+      const hasImage = Boolean(selectedImage);
+      image.hidden = !hasImage;
+      emptyImage.hidden = hasImage;
+      if (hasImage) {
+        image.src = selectedImage.src;
+        image.alt = selectedImage.alt;
+      }
+      imageCount.textContent = hasImage ? `${imageIndex + 1} / ${project.images.length}` : "";
+      gallery.querySelectorAll("button").forEach((button, index) => {
+        const isSelected = index === imageIndex;
+        button.classList.toggle("is-active", isSelected);
+        button.setAttribute("aria-current", String(isSelected));
+      });
+      const activeButton = gallery.querySelector("button.is-active");
+      const galleryIndicator = gallery.querySelector(".video-project-modal__gallery-indicator");
+      if (activeButton && galleryIndicator) {
+        galleryIndicator.style.width = `${activeButton.offsetWidth}px`;
+        galleryIndicator.style.height = `${activeButton.offsetHeight}px`;
+        galleryIndicator.style.transform = `translateX(${activeButton.offsetLeft}px)`;
+      }
+      if (withMorph && hasImage) {
+        image.classList.remove("is-morphing");
+        void image.offsetWidth;
+        image.classList.add("is-morphing");
+      }
+    };
+    titleElement.textContent = project.title;
+    subtitle.textContent = project.subtitle || project.category;
+    tagsElement.replaceChildren(...project.tags.map((tag) => {
+      const item = document.createElement("li");
+      item.textContent = tag;
+      return item;
+    }));
+    description.textContent = project.description;
+    details.replaceChildren(...[
+      ["작업 기간", project.period],
+      ["나의 기여도", project.contribution.join(" · ")],
+      [project.documentLabel || "사용 툴", project.document ? "" : project.tools.join(project.toolsSeparator || "\n"), project.document],
+    ].map(([label, value, documentResource]) => {
+      const group = document.createElement("div");
+      const term = document.createElement("dt");
+      const definition = document.createElement("dd");
+      term.textContent = label;
+      if (documentResource) {
+        const button = document.createElement(documentResource.url ? "a" : "button");
+        const buttonLabel = document.createElement("span");
+        button.className = "video-project-modal__pdf-button";
+        buttonLabel.textContent = `${documentResource.label} ↗`;
+        if (documentResource.url) {
+          button.href = documentResource.url;
+          button.target = "_blank";
+          button.rel = "noopener noreferrer";
+        } else {
+          button.type = "button";
+          button.disabled = true;
+          button.setAttribute("aria-disabled", "true");
+        }
+        button.append(buttonLabel);
+        definition.append(button);
+      } else {
+        definition.textContent = value;
+      }
+      group.append(term, definition);
+      return group;
+    }));
+    gallery.replaceChildren(...project.images.map((galleryImage, index) => {
+      const button = document.createElement("button");
+      const thumbnail = document.createElement("img");
+      button.type = "button";
+      button.setAttribute("aria-label", `${index + 1}번 이미지 보기`);
+      thumbnail.src = galleryImage.src;
+      thumbnail.alt = "";
+      button.append(thumbnail);
+      button.addEventListener("click", () => {
+        imageIndex = index;
+        renderImage(true);
+      });
+      return button;
+    }), Object.assign(document.createElement("span"), { className: "video-project-modal__gallery-indicator", ariaHidden: "true" }));
+    resources.hidden = project.documentLinks.length === 0;
+    resourceLinks.replaceChildren(...project.documentLinks.map((link) => {
+      const anchor = document.createElement("a");
+      anchor.href = link.url;
+      anchor.target = "_blank";
+      anchor.rel = "noopener noreferrer";
+      anchor.textContent = `${link.label} ↗`;
+      return anchor;
+    }));
+    modal.hidden = false;
+    renderImage();
+    document.body.classList.add("is-video-project-modal-open");
+    window.requestAnimationFrame(() => modal.classList.add("is-open"));
+    modal.querySelector(".video-project-modal__close")?.focus();
+  };
+  const closeProjectModal = () => {
+    if (!modal || modal.hidden) return;
+    modal.classList.remove("is-open");
+    document.body.classList.remove("is-video-project-modal-open");
+    window.setTimeout(() => {
+      modal.hidden = true;
+      detailButton.focus();
+    }, 180);
+  };
+  detailButton.addEventListener("click", openProjectModal);
+  modal?.querySelectorAll("[data-video-modal-close]").forEach((element) => element.addEventListener("click", closeProjectModal));
+  document.addEventListener("keydown", (event) => {
+    if (!modal?.hidden && event.key === "Escape") closeProjectModal();
+  });
   const goTo = (nextIndex) => {
-    if (isTransitioning) return;
+    if (isTransitioning || nextIndex === currentIndex) return;
     const direction = nextIndex === wrapIndex(currentIndex + 1) ? 1 : -1;
     isTransitioning = true;
-    meta.classList.add("is-video-meta-changing");
+    pauseEmbeddedVideos();
     const timeline = window.gsap.timeline({ defaults: { duration: .72, ease: "power3.inOut", overwrite: "auto" } });
+    const metaOffset = direction > 0 ? -20 : 20;
     cards.forEach((card, cardIndex) => timeline.to(card, layoutFor(cardIndex, nextIndex), 0));
-    timeline.call(() => updateMeta(nextIndex), [], .2).to(meta, { opacity: 1, duration: .18 }, .2).call(() => {
-      currentIndex = nextIndex;
-      isTransitioning = false;
-    });
+    timeline
+      .to(projectInfo, { opacity: 0, x: metaOffset, duration: .18 }, 0)
+      .call(() => {
+        updateMeta(nextIndex);
+        window.gsap.set(projectInfo, { x: -metaOffset });
+      }, [], .18)
+      .to(projectInfo, { opacity: 1, x: 0, duration: .32, ease: "power3.out" }, .18)
+      .call(() => {
+        currentIndex = nextIndex;
+        isTransitioning = false;
+      });
     if (direction) carousel.dataset.direction = direction > 0 ? "next" : "previous";
   };
   paginationButtons.forEach((button, index) => {

@@ -8,7 +8,7 @@
     <link rel="icon" type="image/png" href="./assets/images/icons/favicon.png">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css">
     <link rel="stylesheet" href="https://unpkg.com/lenis@1.3.24/dist/lenis.css">
-    <link rel="stylesheet" href="./assets/css/styles.css?v=20260908-101">
+    <link rel="stylesheet" href="./assets/css/styles.css?v=20260908-107">
   </head>
   <body>
     <a class="skip-link" href="#main-content">본문 바로가기</a>
@@ -47,12 +47,12 @@
             <div class="site-nav__dropdown-menu" aria-label="포트폴리오 바로가기">
               <a href="#portfolio">
                 <span class="site-nav__dropdown-icon site-nav__dropdown-icon--monitor" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3.5" y="4.5" width="17" height="12" rx="1.5"></rect><path d="M9 20h6M12 16.5V20"></path></svg></span>
-                <span>Web Pages</span>
+                <span>Web Projects</span>
                 <svg class="site-nav__dropdown-arrow" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="m6 3 5 5-5 5"></path></svg>
               </a>
               <a href="#video-projects" data-scroll-align="content" data-scroll-bottom-space="20">
                 <span class="site-nav__dropdown-icon site-nav__dropdown-icon--play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m9 6 9 6-9 6V6Z"></path></svg></span>
-                <span>Videos</span>
+                <span>Video Projects</span>
                 <svg class="site-nav__dropdown-arrow" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="m6 3 5 5-5 5"></path></svg>
               </a>
             </div>
@@ -195,7 +195,7 @@
           <span class="portfolio-background__dots"></span>
           <p class="portfolio-background__note">SMALL IDEAS<br>MAKE BIG CHANGES.</p>
         </div>
-        <p class="tag project-feature" data-figma-variant="web-pages">Web Pages</p>
+        <p class="tag project-feature" data-figma-variant="web-pages">Web Projects</p>
         <h2 id="portfolio-title" class="section-title">PORTFOLIO</h2>
         <p class="portfolio-intro">사용자 경험을 고민하며<br>기획부터 디자인, 구현까지 완성한 반응형 웹 프로젝트입니다.</p>
         <article class="portfolio-project-card" aria-labelledby="portfolio-project-title">
@@ -233,8 +233,8 @@
           <svg class="video-projects__circle-path" viewBox="0 0 320 320"><defs><linearGradient id="video-circle-gradient" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#ffd2e3"></stop><stop offset="100%" stop-color="#ffc995"></stop></linearGradient></defs><path d="M160 12C241 12 308 78 308 160C308 242 241 308 160 308C78 308 12 242 12 160C12 78 78 12 160 12Z"></path></svg>
         </div>
         <img class="video-projects__top-wave" src="./assets/images/experience/bottom-wave.svg" alt="" aria-hidden="true" loading="lazy">
-        <p class="tag project-feature" data-figma-variant="videos">Videos</p>
-        <h2 id="video-projects-title" class="video-projects__title">VIDEO</h2>
+        <p class="tag project-feature" data-figma-variant="videos">Video Projects</p>
+        <h2 id="video-projects-title" class="section-title video-projects__title">PORTFOLIO</h2>
         <p>다양한 아이디어와 시각적 표현을 담아<br>기획하고 편집한 영상 프로젝트입니다.</p>
         <div class="video-projects__carousel" data-video-carousel role="region" aria-label="영상 프로젝트 슬라이더">
           <div class="video-projects__carousel-stage">
@@ -245,15 +245,17 @@
               </div>
             </div>
             <div class="video-projects__carousel-card" data-video-index="2">
-              <div class="video-projects__placeholder" role="img" aria-label="두 번째 영상 프로젝트 이미지 자리">
-                <svg viewBox="0 0 48 48" aria-hidden="true" focusable="false"><rect x="5" y="8" width="38" height="30" rx="3"></rect><path d="m11 32 9-9 6 6 5-5 6 8"></path><circle cx="16" cy="16" r="3"></circle></svg>
-                <span>Video Preview 02</span>
-              </div>
+              <img class="video-projects__thumbnail" src="./assets/images/video-projects/afree-day-short-form-thumbnail.png" alt="어프리데이 숏폼 광고 임시 썸네일" loading="lazy">
             </div>
             <div class="video-projects__carousel-card" data-video-index="3">
               <div class="video-projects__placeholder" role="img" aria-label="세 번째 영상 프로젝트 이미지 자리">
                 <svg viewBox="0 0 48 48" aria-hidden="true" focusable="false"><rect x="5" y="8" width="38" height="30" rx="3"></rect><path d="m11 32 9-9 6 6 5-5 6 8"></path><circle cx="16" cy="16" r="3"></circle></svg>
                 <span>Video Preview 03</span>
+              </div>
+            </div>
+            <div class="video-projects__carousel-card" data-video-index="4">
+              <div class="video-projects__embed">
+                <iframe src="https://www.youtube.com/embed/8Rj-7dw1iC4?rel=0&amp;enablejsapi=1" title="투명인간 친구 오프닝 애니메이션" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
               </div>
             </div>
           </div>
@@ -262,10 +264,10 @@
         </div>
         <div class="video-projects__meta" aria-label="영상 프로젝트 정보">
           <p><strong>01</strong><span>영상 프로젝트</span><small lang="en">Brand Film</small></p>
-          <ul aria-label="프로젝트 분류"><li>30 sec</li><li>Planning</li><li>Editing</li></ul>
+          <button type="button" class="video-projects__details-trigger" data-video-project-details>프로젝트 보기 <span aria-hidden="true">+</span></button>
           <div class="video-projects__pagination">
-            <div class="video-projects__dots" role="group" aria-label="영상 프로젝트 페이지"><button type="button" class="is-active" aria-label="1번 영상 보기" aria-current="true"></button><button type="button" aria-label="2번 영상 보기"></button><button type="button" aria-label="3번 영상 보기"></button></div>
-            <span>1 / 3</span>
+            <div class="video-projects__dots" role="group" aria-label="영상 프로젝트 페이지"><button type="button" class="is-active" aria-label="1번 영상 보기" aria-current="true"></button><button type="button" aria-label="2번 영상 보기"></button><button type="button" aria-label="3번 영상 보기"></button><button type="button" aria-label="4번 영상 보기"></button></div>
+            <span>1 / 4</span>
           </div>
         </div>
         <img class="video-projects__bottom-wave" src="./assets/images/contact/bottom-wave.svg" alt="" aria-hidden="true" loading="lazy">
@@ -279,7 +281,7 @@
         </div>
         <p class="tag project-feature" data-figma-variant="design-archives">Design Archives</p>
         <h2 id="works-title" class="section-title">WORKS</h2>
-        <p>다양한 분야에서 쌓아온 디자인 경험과 그 과정에서 완성된 작업을 소개합니다.</p>
+        <p>다양한 분야에서 쌓아온 디자인 경험과<br>그 과정에서 완성된 작업을 소개합니다.</p>
         <ul>
           <li>
             <article class="card">
@@ -402,11 +404,37 @@
       </section>
     </div>
 
+    <div id="video-project-modal" class="video-project-modal" role="presentation" hidden>
+      <div class="video-project-modal__backdrop" data-video-modal-close></div>
+      <section class="video-project-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="video-project-modal-title" aria-describedby="video-project-modal-description" tabindex="-1">
+        <button type="button" class="video-project-modal__close" data-video-modal-close aria-label="프로젝트 상세 정보 닫기">×</button>
+        <div class="video-project-modal__visual">
+          <div class="video-project-modal__image-frame">
+            <img data-video-modal-image alt="">
+            <p data-video-modal-empty-image hidden>등록된 프로젝트 이미지가 없습니다.</p>
+          </div>
+          <div class="video-project-modal__gallery" data-video-modal-gallery aria-label="프로젝트 이미지 갤러리"></div>
+          <p class="video-project-modal__image-count" data-video-modal-image-count></p>
+        </div>
+        <div class="video-project-modal__information">
+          <h2 id="video-project-modal-title" data-video-modal-title></h2>
+          <p class="video-project-modal__subtitle" data-video-modal-subtitle></p>
+          <ul class="video-project-modal__tags" data-video-modal-tags aria-label="프로젝트 분류"></ul>
+          <p id="video-project-modal-description" class="video-project-modal__description" data-video-modal-description></p>
+          <dl class="video-project-modal__details" data-video-modal-details></dl>
+          <div class="video-project-modal__resources" data-video-modal-resources hidden>
+            <p>관련 자료</p>
+            <div data-video-modal-resource-links></div>
+          </div>
+        </div>
+      </section>
+    </div>
+
     <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/MorphSVGPlugin.min.js"></script>
     <script src="https://unpkg.com/lenis@1.3.24/dist/lenis.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
-  <script src="./assets/js/main.js?v=20260908-68"></script>
+  <script src="./assets/js/main.js?v=20260908-73"></script>
   </body>
 </html>
