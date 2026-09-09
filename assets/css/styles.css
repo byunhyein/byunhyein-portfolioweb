@@ -1294,7 +1294,7 @@ button {
   grid-row: 1 / 3;
   width: 18.75rem;
   height: 39rem;
-  background: center / cover no-repeat url("../images/profile/about-photo.jpg");
+  background: center / cover no-repeat url("../images/profile/profile-update.jpg");
   border-radius: .75rem;
   transition: transform .26s cubic-bezier(.22, .8, .35, 1), box-shadow .26s ease;
 }
