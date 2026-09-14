@@ -587,9 +587,7 @@ const initializeVideoCarousel = () => {
   }
 
   const videoProjects = [
-    { id: "brand-film", title: "영상 프로젝트", category: "Brand Film", tags: ["30 sec", "Planning", "Editing"], description: "브랜드의 메시지를 짧고 명확한 영상으로 전달하기 위해 기획과 편집을 진행한 프로젝트입니다.", period: "준비 중", contribution: ["기획 · 편집"], documentLabel: "기획서", document: { label: "PDF 보기", url: "" }, images: [{ src: "./assets/images/works/video-thumbnail.jpg", alt: "영상 프로젝트 대표 이미지" }], documentLinks: [] },
     { id: "afree-day-short-form", title: "어프리데이 숏폼 광고", category: "Short-form Ad", tags: ["15 sec", "Short-form Ad", "AI Video", "Premiere Pro", "Advertising"], description: "논알콜 음료 브랜드 어프리데이(AfreeDay)의 특징을 직관적으로 전달하기 위해 제작한 숏폼 광고입니다.\n언제 어디서나 부담 없이 즐길 수 있다는 브랜드 메시지를 일상적인 상황과 반전 요소로 풀어내고, 짧은 호흡의 편집과 경쾌한 그래픽으로 표현했습니다.", period: "2026.09", contribution: ["100%"], documentLabel: "기획서", document: { label: "PDF 보기", url: "" }, images: [{ src: "./assets/images/video-projects/afree-day-short-form-thumbnail.png", alt: "어프리데이 숏폼 광고 대표 이미지" }], documentLinks: [] },
-    { id: "coming-soon-03", title: "업데이트 예정", category: "Coming Soon", tags: ["Coming Soon"], description: "새로운 영상 프로젝트를 준비하고 있습니다.", period: "준비 중", contribution: ["—"], documentLabel: "기획서", document: { label: "PDF 보기", url: "" }, images: [], documentLinks: [] },
     { id: "invisible-friend", title: "투명인간 친구", category: "Opening Animation", tags: ["30 sec", "2D Animation", "Procreate", "Premiere Pro", "Illustration"], description: "창작 낭독극 《투명인간 친구》를 주제로 제작한 오프닝 애니메이션입니다.\n작품의 분위기와 이야기의 흐름을 시각적으로 표현하기 위해 Procreate를 활용해 직접 드로잉하고 2D 애니메이션으로 구성했습니다.", period: "2025.10 (2주)", contribution: ["100%"], documentLabel: "기획서", document: { label: "PDF 보기", url: "" }, images: [{ src: "./assets/images/video-projects/invisible-friend-01.png", alt: "투명인간 친구 오프닝 애니메이션 장면 1" }, { src: "./assets/images/video-projects/invisible-friend-02.png", alt: "투명인간 친구 오프닝 애니메이션 장면 2" }, { src: "./assets/images/video-projects/invisible-friend-03.png", alt: "투명인간 친구 오프닝 애니메이션 장면 3" }, { src: "./assets/images/video-projects/invisible-friend-04.png", alt: "투명인간 친구 오프닝 애니메이션 대표 이미지" }], documentLinks: [] },
   ];
   const [number, title, category] = [meta.querySelector("strong"), meta.querySelector("p > span"), meta.querySelector("small")];
@@ -606,6 +604,10 @@ const initializeVideoCarousel = () => {
     const sideScale = isCompact ? .84 : .9;
     const sideY = isCompact ? 8 : 14;
     if (index === currentIndex) return { xPercent: 0, y: 0, z: 1, scale: 1, rotateY: 0, opacity: 1, filter: "blur(0px) brightness(1)", zIndex: 10, pointerEvents: "auto" };
+    if (cards.length === 2) {
+      const isNext = index === next;
+      return { xPercent: isNext ? sideOffset : -sideOffset, y: sideY, z: 0, scale: sideScale, rotateY: isNext ? -5 : 5, opacity: .58, filter: "blur(1px) brightness(.84)", zIndex: 1, pointerEvents: "none" };
+    }
     if (index === previous) return { xPercent: -sideOffset, y: sideY, z: 0, scale: sideScale, rotateY: 5, opacity: .58, filter: "blur(1px) brightness(.84)", zIndex: 1, pointerEvents: "none" };
     if (index === next) return { xPercent: sideOffset, y: sideY, z: 0, scale: sideScale, rotateY: -5, opacity: .58, filter: "blur(1px) brightness(.84)", zIndex: 1, pointerEvents: "none" };
     return { xPercent: 0, y: 22, z: -1, scale: .78, rotateY: 0, opacity: 0, filter: "blur(3px) brightness(.76)", zIndex: 0, pointerEvents: "none" };
