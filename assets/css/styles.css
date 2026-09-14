@@ -2625,6 +2625,11 @@ button {
   border: 0;
 }
 
+.video-projects__embed--shorts {
+  width: auto;
+  aspect-ratio: 9 / 16;
+}
+
 .video-projects__carousel-card[data-video-index="2"] .video-projects__placeholder {
   background: rgb(235 218 255 / 21%);
 }
@@ -3560,6 +3565,12 @@ button {
   .video-projects__embed {
     height: auto;
     aspect-ratio: 16 / 10;
+  }
+
+  .video-projects__embed--shorts {
+    width: auto;
+    height: 100%;
+    aspect-ratio: 9 / 16;
   }
 
   .video-projects__carousel-button--previous { left: .5rem; }
