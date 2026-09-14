@@ -1195,12 +1195,7 @@ button {
   transform-origin: center;
 }
 
-#home .hero-cta-button--resume {
-  border-color: var(--color-gray-200);
-  background: var(--color-white);
-  color: var(--color-gray-700);
-}
-
+#home .hero-cta-button--resume,
 #home .hero-cta-button--github {
   isolation: isolate;
   border-width: 0.125rem;
@@ -1209,6 +1204,7 @@ button {
   color: #aa84e4;
 }
 
+#home .hero-cta-button--resume::before,
 #home .hero-cta-button--github::before {
   position: absolute;
   z-index: 0;
@@ -1236,15 +1232,13 @@ button {
     box-shadow: 0 0 0.875rem rgb(255 255 255 / 82%), 0 0 1.75rem rgb(213 195 255 / 30%), 0 0.1875rem 0.3125rem rgb(151 162 237 / 30%);
   }
 
-  #home .hero-cta-button--resume:hover {
-    background: var(--color-gray-100);
-  }
-
+  #home .hero-cta-button--resume:hover,
   #home .hero-cta-button--github:hover {
     color: var(--color-text-inverse);
     transform: translateY(-0.125rem);
   }
 
+  #home .hero-cta-button--resume:hover::before,
   #home .hero-cta-button--github:hover::before {
     opacity: 1;
   }
