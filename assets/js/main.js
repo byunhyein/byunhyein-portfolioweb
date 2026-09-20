@@ -829,7 +829,7 @@ const initializePortfolioProjectCard = () => {
       title: "화방넷 메인페이지<br>리디자인",
       description: "상품 탐색과 콘텐츠 발견 경험을 재구성한<br>화방넷 웹 리디자인 프로젝트입니다.",
       details: ["진행 중", "100%", "HTML5<br>CSS3<br>JavaScript"],
-      links: ["", "", ""],
+      links: ["", "", "https://byunhyein.github.io/hwabangnet/"],
       image: "./assets/images/portfolio/hwabangnet-mainpage.png",
       imageLabel: "화방넷 메인페이지 리디자인 이미지",
     },
