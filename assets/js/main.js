@@ -822,7 +822,7 @@ const initializePortfolioProjectCard = () => {
       ],
       image: "./assets/images/portfolio/pulmuone-esg-mockup-v2.png",
       imageLabel: "풀무원 ESG 웹사이트 리디자인 목업 이미지",
-      imageTransform: "scale(1.1) translate(-4.5%, 2.5%)",
+      imageTransform: "scale(1.1) translate(-4.5%, 4%)",
     },
     {
       number: "02",
