@@ -831,7 +831,7 @@ const initializePortfolioProjectCard = () => {
       description: "상품 탐색과 콘텐츠 발견 경험을 재구성한<br>화방넷 웹 리디자인 프로젝트입니다.",
       details: ["진행 중", "100%", "HTML5<br>CSS3<br>JavaScript"],
       links: ["", "https://github.com/byunhyein/hwabangnet", "https://byunhyein.github.io/hwabangnet/"],
-      image: "./assets/images/portfolio/hwabangnet-mainpage.png",
+      image: "./assets/images/portfolio/hwabangnet-mainpage-mockup-v2.png",
       imageLabel: "화방넷 메인페이지 리디자인 이미지",
     },
   ];
@@ -924,9 +924,9 @@ const initializePortfolioProjectCard = () => {
     const exitingAnimations = Array.from(transitionElements, (element) => element.animate(
       [
         { opacity: 1, transform: "translateX(0)" },
-        { opacity: 0, transform: "translateX(-1.25rem)" },
+        { opacity: 0, transform: "translateX(-.5rem)" },
       ],
-      { duration: 120, easing: "cubic-bezier(.4, 0, 1, 1)", fill: "forwards" },
+      { duration: 180, easing: "cubic-bezier(.22, .8, .35, 1)", fill: "forwards" },
     ));
 
     Promise.all(exitingAnimations.map((animation) => animation.finished.catch(() => undefined))).then(() => {
@@ -935,10 +935,10 @@ const initializePortfolioProjectCard = () => {
 
       Array.from(transitionElements, (element) => element.animate(
         [
-          { opacity: 0, transform: "translateX(1.25rem)" },
+          { opacity: 0, transform: "translateX(.5rem)" },
           { opacity: 1, transform: "translateX(0)" },
         ],
-        { duration: 170, easing: "cubic-bezier(0, 0, .2, 1)" },
+        { duration: 240, easing: "cubic-bezier(.22, .8, .35, 1)" },
       ));
 
       window.setTimeout(() => {
@@ -947,7 +947,7 @@ const initializePortfolioProjectCard = () => {
         if (pendingIndex !== currentIndex) {
           renderProject(pendingIndex);
         }
-      }, 170);
+      }, 240);
     });
   };
 
