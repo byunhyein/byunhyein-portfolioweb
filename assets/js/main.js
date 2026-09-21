@@ -820,8 +820,9 @@ const initializePortfolioProjectCard = () => {
         "https://github.com/icerence/kiwik-project",
         "https://icerence.github.io/kiwik-project/",
       ],
-      image: "./assets/images/portfolio/pulmuone-kitchen-ipad-light.jpg",
+      image: "./assets/images/portfolio/pulmuone-esg-mockup-v2.png",
       imageLabel: "풀무원 ESG 웹사이트 리디자인 목업 이미지",
+      imageTransform: "scale(1.1) translate(-4.5%, 2.5%)",
     },
     {
       number: "02",
@@ -841,6 +842,7 @@ const initializePortfolioProjectCard = () => {
   const detailValues = card.querySelectorAll(".portfolio-project-card__details dd");
   const actionButtons = card.querySelectorAll("[data-project-link]");
   const placeholder = card.querySelector(".portfolio-project-card__image-placeholder");
+  const projectImage = card.querySelector(".portfolio-project-card__project-image");
   const placeholderLabel = placeholder?.querySelector("p");
   const page = card.querySelector(".portfolio-project-card__page");
   const dots = card.querySelectorAll(".portfolio-project-card__dots button");
@@ -884,8 +886,19 @@ const initializePortfolioProjectCard = () => {
 
     if (placeholder) {
       placeholder.classList.toggle("has-project-image", Boolean(project.image));
-      placeholder.style.backgroundImage = project.image ? `url("${project.image}")` : "";
       placeholder.setAttribute("aria-label", project.imageLabel);
+    }
+
+    if (projectImage) {
+      projectImage.hidden = !project.image;
+      projectImage.style.transform = project.imageTransform || "";
+      if (project.image) {
+        projectImage.src = project.image;
+        projectImage.alt = project.imageLabel;
+      } else {
+        projectImage.removeAttribute("src");
+        projectImage.alt = "";
+      }
     }
 
     if (placeholderLabel) {

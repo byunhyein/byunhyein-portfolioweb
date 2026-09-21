@@ -2160,10 +2160,21 @@ button {
 
 .portfolio-project-card__image-placeholder.has-project-image {
   border: 0;
-  background-repeat: no-repeat;
-  background-position: center 56%;
-  background-size: 112% auto;
   box-shadow: 0 .25rem .75rem rgb(42 44 57 / 18%);
+}
+
+.portfolio-project-card__project-image {
+  position: absolute;
+  z-index: 0;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  pointer-events: none;
+  transform: var(--project-image-transform, none);
+  transform-origin: center;
+  transition: transform .35s ease;
 }
 
 .portfolio-project-card__image-placeholder > span,
@@ -3748,6 +3759,7 @@ button {
 
   .portfolio-project-card__image-placeholder {
     order: 5;
+    position: relative;
     width: 100%;
     height: auto;
     aspect-ratio: 523.546 / 317.378;
