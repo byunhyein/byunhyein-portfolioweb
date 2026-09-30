@@ -2174,7 +2174,6 @@ button {
   pointer-events: none;
   transform: var(--project-image-transform, none);
   transform-origin: center;
-  transition: transform .35s ease;
 }
 
 .portfolio-project-card__image-placeholder > span,
