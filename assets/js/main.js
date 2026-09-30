@@ -358,7 +358,7 @@ const initializePortfolioButtonConfetti = () => {
 initializePortfolioButtonConfetti();
 
 const initializeWorksPdfButtonConfetti = () => {
-  const pdfButtons = document.querySelectorAll("button[data-portfolio-pdf]");
+  const pdfButtons = document.querySelectorAll("#works .works-card__pdf-button:not(:disabled)");
 
   if (!pdfButtons.length) {
     return;
@@ -587,6 +587,7 @@ const initializeVideoCarousel = () => {
   }
 
   const videoProjects = [
+    { id: "cu-brand-commercial", title: "이번엔 내가 픽업!", category: "CU Brand Commercial", tags: ["30 sec", "Brand Commercial", "AI Video", "Motion Graphic", "Team Project"], description: "팀 프로젝트로 제작한 CU 브랜드 광고 영상입니다. 배달기사가 상품 픽업을 위해 CU에 방문했다가 치킨에 이끌려 직접 구매하게 되는 과정을 유쾌하게 담았습니다.\n\nHiggsfield의 Seedance 2.5를 활용해 영상 소스를 제작했으며, 기획 및 편집과 장면별 자막 디자인·모션그래픽을 담당했습니다. 배달기사의 시선을 따라 제품에 관심을 갖는 흐름과 마지막 반전이 짧은 광고 안에서 효과적으로 전달되도록 구성했습니다.", period: "2026.09", contribution: ["100%"], documentLabel: "기획서", document: { label: "PDF 보기", url: "" }, images: [{ src: "./assets/images/video-projects/cu-commercial-01.jpg", alt: "CU 브랜드 광고 프로젝트 컷 1" }, { src: "./assets/images/video-projects/cu-commercial-02.jpg", alt: "CU 브랜드 광고 프로젝트 컷 2" }, { src: "./assets/images/video-projects/cu-commercial-03.jpg", alt: "CU 브랜드 광고 프로젝트 컷 3" }, { src: "./assets/images/video-projects/cu-commercial-05.jpg", alt: "CU 브랜드 광고 프로젝트 컷 5" }, { src: "./assets/images/video-projects/cu-commercial-06.jpg", alt: "CU 브랜드 광고 프로젝트 컷 6" }], documentLinks: [] },
     { id: "afree-day-short-form", title: "어프리데이 숏폼 광고", category: "Short-form Ad", tags: ["15 sec", "Short-form Ad", "AI Video", "Premiere Pro", "Advertising"], description: "논알콜 음료 브랜드 어프리데이(AfreeDay)의 특징을 직관적으로 전달하기 위해 제작한 숏폼 광고입니다.\n언제 어디서나 부담 없이 즐길 수 있다는 브랜드 메시지를 일상적인 상황과 반전 요소로 풀어내고, 짧은 호흡의 편집과 경쾌한 그래픽으로 표현했습니다.", period: "2026.09", contribution: ["100%"], documentLabel: "기획서", document: { label: "PDF 보기", url: "" }, images: [{ src: "./assets/images/video-projects/afree-day-short-form-thumbnail.png", alt: "어프리데이 숏폼 광고 대표 이미지" }], documentLinks: [] },
     { id: "invisible-friend", title: "투명인간 친구", category: "Opening Animation", tags: ["30 sec", "2D Animation", "Procreate", "Premiere Pro", "Illustration"], description: "창작 낭독극 《투명인간 친구》를 주제로 제작한 오프닝 애니메이션입니다.\n작품의 분위기와 이야기의 흐름을 시각적으로 표현하기 위해 Procreate를 활용해 직접 드로잉하고 2D 애니메이션으로 구성했습니다.", period: "2025.10 (2주)", contribution: ["100%"], documentLabel: "기획서", document: { label: "PDF 보기", url: "" }, images: [{ src: "./assets/images/video-projects/invisible-friend-01.png", alt: "투명인간 친구 오프닝 애니메이션 장면 1" }, { src: "./assets/images/video-projects/invisible-friend-02.png", alt: "투명인간 친구 오프닝 애니메이션 장면 2" }, { src: "./assets/images/video-projects/invisible-friend-03.png", alt: "투명인간 친구 오프닝 애니메이션 장면 3" }, { src: "./assets/images/video-projects/invisible-friend-04.png", alt: "투명인간 친구 오프닝 애니메이션 대표 이미지" }], documentLinks: [] },
   ];
@@ -608,6 +609,16 @@ const initializeVideoCarousel = () => {
       const isNext = index === next;
       return { xPercent: isNext ? sideOffset : -sideOffset, y: sideY, z: 0, scale: sideScale, rotateY: isNext ? -5 : 5, opacity: .58, filter: "blur(1px) brightness(.84)", zIndex: 1, pointerEvents: "none" };
     }
+    if (index === 1) {
+      const isNext = index === next;
+      const carouselWidth = Math.max(1, carousel.clientWidth);
+      const portraitWidth = cards[index].querySelector(".video-projects__embed--shorts")?.offsetWidth || carouselWidth * .28;
+      const portraitSideOffset = Math.max(
+        sideOffset + (48 / carouselWidth) * 100,
+        (((carouselWidth - portraitWidth * sideScale) / 2 + 48) / carouselWidth) * 100,
+      );
+      return { xPercent: isNext ? portraitSideOffset : -portraitSideOffset, y: sideY, z: 0, scale: sideScale, rotateY: isNext ? -5 : 5, opacity: .58, filter: "blur(1px) brightness(.84)", zIndex: 1, pointerEvents: "none" };
+    }
     if (index === previous) return { xPercent: -sideOffset, y: sideY, z: 0, scale: sideScale, rotateY: 5, opacity: .58, filter: "blur(1px) brightness(.84)", zIndex: 1, pointerEvents: "none" };
     if (index === next) return { xPercent: sideOffset, y: sideY, z: 0, scale: sideScale, rotateY: -5, opacity: .58, filter: "blur(1px) brightness(.84)", zIndex: 1, pointerEvents: "none" };
     return { xPercent: 0, y: 22, z: -1, scale: .78, rotateY: 0, opacity: 0, filter: "blur(3px) brightness(.76)", zIndex: 0, pointerEvents: "none" };
@@ -624,7 +635,7 @@ const initializeVideoCarousel = () => {
     const project = videoProjects[index];
     number.textContent = String(index + 1).padStart(2, "0");
     title.textContent = project.title;
-    category.textContent = project.category;
+    category.innerHTML = project.category.replace(" · ", "<br>· ");
     detailButton.dataset.videoProjectIndex = String(index);
     detailButton.setAttribute("aria-label", `${project.title} 프로젝트 상세 보기`);
     page.textContent = `${index + 1} / ${cards.length}`;
