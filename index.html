@@ -40,32 +40,30 @@
         <button type="button" class="site-nav__menu-toggle" aria-controls="site-nav-mobile-menu" aria-expanded="false" aria-label="메뉴 열기">
           <span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span>
         </button>
-        <div class="site-nav__menu" id="site-nav-mobile-menu">
-          <ul class="site-nav__links">
-            <li><a href="#about">ABOUT ME</a></li>
-            <li class="site-nav__dropdown">
-              <a class="site-nav__dropdown-trigger" href="#portfolio" aria-haspopup="true" aria-expanded="false">
+        <ul class="site-nav__links" id="site-nav-mobile-menu">
+          <li><a href="#about">ABOUT ME</a></li>
+          <li class="site-nav__dropdown">
+            <a class="site-nav__dropdown-trigger" href="#portfolio" aria-haspopup="true" aria-expanded="false">
                 PORTFOLIO
                 <svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="m6 3 5 5-5 5"></path></svg>
+            </a>
+            <div class="site-nav__dropdown-menu" aria-label="포트폴리오 바로가기">
+              <a href="#portfolio">
+                <span class="site-nav__dropdown-icon site-nav__dropdown-icon--monitor" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3.5" y="4.5" width="17" height="12" rx="1.5"></rect><path d="M9 20h6M12 16.5V20"></path></svg></span>
+                <span>Web Projects</span>
+                <svg class="site-nav__dropdown-arrow" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="m6 3 5 5-5 5"></path></svg>
               </a>
-              <div class="site-nav__dropdown-menu" aria-label="포트폴리오 바로가기">
-                <a href="#portfolio">
-                  <span class="site-nav__dropdown-icon site-nav__dropdown-icon--monitor" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3.5" y="4.5" width="17" height="12" rx="1.5"></rect><path d="M9 20h6M12 16.5V20"></path></svg></span>
-                  <span>Web Projects</span>
-                  <svg class="site-nav__dropdown-arrow" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="m6 3 5 5-5 5"></path></svg>
-                </a>
-                <a href="#video-projects" data-scroll-align="content" data-scroll-bottom-space="20">
-                  <span class="site-nav__dropdown-icon site-nav__dropdown-icon--play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m9 6 9 6-9 6V6Z"></path></svg></span>
-                  <span>Video Projects</span>
-                  <svg class="site-nav__dropdown-arrow" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="m6 3 5 5-5 5"></path></svg>
-                </a>
-              </div>
-            </li>
-            <li><a href="#works">WORKS</a></li>
-            <li><a href="#skills">SKILLS</a></li>
-          </ul>
-          <a class="button button--compact site-nav__contact" href="#contact"><span>CONTACT</span></a>
-        </div>
+              <a href="#video-projects" data-scroll-align="content" data-scroll-bottom-space="20">
+                <span class="site-nav__dropdown-icon site-nav__dropdown-icon--play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m9 6 9 6-9 6V6Z"></path></svg></span>
+                <span>Video Projects</span>
+                <svg class="site-nav__dropdown-arrow" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="m6 3 5 5-5 5"></path></svg>
+              </a>
+            </div>
+          </li>
+          <li><a href="#works">WORKS</a></li>
+          <li><a href="#skills">SKILLS</a></li>
+        </ul>
+        <a class="button button--compact site-nav__contact" href="#contact"><span>CONTACT</span></a>
       </nav>
     </header>
 

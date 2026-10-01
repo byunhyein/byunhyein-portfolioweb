@@ -776,15 +776,13 @@ button {
   transform: translateX(.15rem);
 }
 
-.site-nav > .button,
-.site-nav__menu > .button {
+.site-nav > .button {
   justify-self: end;
   width: 6.875rem;
   justify-content: center;
 }
 
-.site-nav > .site-nav__contact,
-.site-nav__menu > .site-nav__contact {
+.site-nav > .site-nav__contact {
   position: relative;
   isolation: isolate;
   overflow: hidden;
@@ -813,8 +811,7 @@ button {
 }
 
 @media (hover: hover) and (pointer: fine) {
-  .site-nav > .site-nav__contact:hover,
-  .site-nav__menu > .site-nav__contact:hover {
+  .site-nav > .site-nav__contact:hover {
     box-shadow: 0 0 0.875rem rgb(255 255 255 / 82%), 0 0 1.25rem rgb(213 195 255 / 28%), 0 0.1875rem 0.3125rem rgb(151 162 237 / 24%);
     color: var(--color-text-inverse);
     transform: translateY(-0.125rem);
@@ -3911,10 +3908,6 @@ button {
 
 /* Mobile composition follows the supplied 390px Figma wireframe while reusing
    the desktop page's existing content, assets, colors, and components. */
-.site-nav__menu {
-  display: contents;
-}
-
 .site-nav__menu-toggle {
   display: none;
 }
@@ -3942,6 +3935,33 @@ button {
     padding: 0;
     grid-template-columns: 1fr auto;
     grid-template-rows: 1fr;
+  }
+
+  .site-nav::after {
+    position: absolute;
+    z-index: 119;
+    top: calc(100% + .5rem);
+    right: 0;
+    left: 0;
+    height: 23rem;
+    border: 1px solid rgb(255 255 255 / 84%);
+    border-radius: 1rem;
+    background: rgb(255 255 255 / 96%);
+    box-shadow: 0 .75rem 2rem rgb(95 73 125 / 16%);
+    content: "";
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-.4rem);
+    transition: opacity .2s ease, transform .2s ease, visibility .2s ease;
+    visibility: hidden;
+    backdrop-filter: blur(16px);
+  }
+
+  .site-nav.is-mobile-menu-open::after {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+    visibility: visible;
   }
 
   .site-nav__logo {
@@ -3986,44 +4006,30 @@ button {
     transform: translateY(-.425rem) rotate(-45deg);
   }
 
-  .site-nav__menu {
+  .site-nav__links {
     position: absolute;
     z-index: 120;
     top: calc(100% + .5rem);
     right: 0;
     left: 0;
     display: grid;
-    padding: .75rem;
-    gap: .65rem;
-    border: 1px solid rgb(255 255 255 / 84%);
-    border-radius: 1rem;
-    background: rgb(255 255 255 / 96%);
-    box-shadow: 0 .75rem 2rem rgb(95 73 125 / 16%);
+    padding: .75rem .75rem 4rem;
+    gap: .15rem;
+    color: #4b5563;
+    font-size: .9375rem;
+    line-height: 1.35;
     opacity: 0;
     pointer-events: none;
     transform: translateY(-.4rem);
     transition: opacity .2s ease, transform .2s ease, visibility .2s ease;
     visibility: hidden;
-    backdrop-filter: blur(16px);
   }
 
-  .site-nav.is-mobile-menu-open .site-nav__menu {
+  .site-nav.is-mobile-menu-open .site-nav__links {
     opacity: 1;
     pointer-events: auto;
     transform: translateY(0);
     visibility: visible;
-  }
-
-  .site-nav__links {
-    display: grid;
-    grid-column: auto;
-    grid-row: auto;
-    overflow: visible;
-    padding: 0;
-    gap: .15rem;
-    color: #4b5563;
-    font-size: .9375rem;
-    line-height: 1.35;
   }
 
   .site-nav__links > li > a {
@@ -4032,12 +4038,7 @@ button {
     padding: 0 .75rem;
   }
 
-  .site-nav__dropdown-trigger {
-    width: 100%;
-    justify-content: space-between;
-  }
-
-  .site-nav__dropdown-menu {
+  .site-nav__links .site-nav__dropdown-menu {
     position: static;
     display: grid;
     width: auto;
@@ -4054,27 +4055,52 @@ button {
     visibility: visible;
   }
 
-  .site-nav__dropdown-menu::before {
+  .site-nav__links .site-nav__dropdown-menu::before {
     display: none;
   }
 
-  .site-nav__dropdown-menu a {
+  .site-nav__links .site-nav__dropdown-menu a {
     min-height: 2.8rem;
     grid-template-columns: 2rem 1fr 1rem;
     font-size: .875rem;
   }
 
-  .site-nav__dropdown-icon {
+  .site-nav__links .site-nav__dropdown-icon {
     width: 2rem;
     height: 2rem;
   }
 
-  .site-nav__menu > .site-nav__contact {
-    display: grid;
+  .site-nav__dropdown-trigger {
     width: 100%;
+    justify-content: space-between;
+  }
+
+  .site-nav > .site-nav__contact {
+    position: absolute;
+    z-index: 121;
+    top: calc(100% + 20.75rem);
+    right: .75rem;
+    display: grid;
+    width: calc(100% - 1.5rem);
     min-height: 2.75rem;
     justify-self: stretch;
     place-items: center;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-.4rem);
+    transition: opacity .2s ease, transform .2s ease, visibility .2s ease;
+    visibility: hidden;
+  }
+
+  .site-nav.is-mobile-menu-open > .site-nav__contact {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+    visibility: visible;
+  }
+
+  .site-nav__links {
+    overflow: visible;
   }
 
   #home {

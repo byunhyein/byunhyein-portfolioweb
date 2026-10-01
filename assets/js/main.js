@@ -509,9 +509,7 @@ initializePortfolioDropdown();
 const initializeMobileNavigation = () => {
   const nav = document.querySelector(".site-nav");
   const toggle = nav?.querySelector(".site-nav__menu-toggle");
-  const menu = nav?.querySelector(".site-nav__menu");
-
-  if (!nav || !toggle || !menu) return;
+  if (!nav || !toggle) return;
 
   const setOpen = (isOpen) => {
     nav.classList.toggle("is-mobile-menu-open", isOpen);
@@ -522,7 +520,9 @@ const initializeMobileNavigation = () => {
   toggle.addEventListener("click", () => {
     setOpen(toggle.getAttribute("aria-expanded") !== "true");
   });
-  menu.querySelectorAll("a").forEach((link) => link.addEventListener("click", () => setOpen(false)));
+  nav.querySelectorAll(".site-nav__links a, .site-nav__contact").forEach((link) => {
+    link.addEventListener("click", () => setOpen(false));
+  });
   document.addEventListener("pointerdown", (event) => {
     if (!nav.contains(event.target)) setOpen(false);
   });
