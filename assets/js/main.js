@@ -506,6 +506,37 @@ const initializePortfolioDropdown = () => {
 
 initializePortfolioDropdown();
 
+const initializeMobileNavigation = () => {
+  const nav = document.querySelector(".site-nav");
+  const toggle = nav?.querySelector(".site-nav__menu-toggle");
+  const menu = nav?.querySelector(".site-nav__menu");
+
+  if (!nav || !toggle || !menu) return;
+
+  const setOpen = (isOpen) => {
+    nav.classList.toggle("is-mobile-menu-open", isOpen);
+    toggle.setAttribute("aria-expanded", String(isOpen));
+    toggle.setAttribute("aria-label", isOpen ? "메뉴 닫기" : "메뉴 열기");
+  };
+
+  toggle.addEventListener("click", () => {
+    setOpen(toggle.getAttribute("aria-expanded") !== "true");
+  });
+  menu.querySelectorAll("a").forEach((link) => link.addEventListener("click", () => setOpen(false)));
+  document.addEventListener("pointerdown", (event) => {
+    if (!nav.contains(event.target)) setOpen(false);
+  });
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && toggle.getAttribute("aria-expanded") === "true") {
+      setOpen(false);
+      toggle.focus();
+    }
+  });
+  window.matchMedia("(min-width: 48.0625rem)").addEventListener("change", () => setOpen(false));
+};
+
+initializeMobileNavigation();
+
 const initializeHeaderAnchorNavigation = () => {
   const header = document.querySelector(".site-header");
 
