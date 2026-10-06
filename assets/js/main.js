@@ -728,11 +728,16 @@ const initializeVideoCarousel = () => {
       return item;
     }));
     description.textContent = project.description;
-    details.replaceChildren(...[
+    const detailRows = [
       ["작업 기간", project.period],
       ["나의 기여도", project.contribution.join(" · ")],
-      [project.documentLabel || "사용 툴", project.document ? "" : project.tools.join(project.toolsSeparator || "\n"), project.document],
-    ].map(([label, value, documentResource]) => {
+    ];
+    if (project.document?.url) {
+      detailRows.push([project.documentLabel || "기획서", "", project.document]);
+    } else if (!project.document && project.tools?.length) {
+      detailRows.push([project.documentLabel || "사용 툴", project.tools.join(project.toolsSeparator || "\n")]);
+    }
+    details.replaceChildren(...detailRows.map(([label, value, documentResource]) => {
       const group = document.createElement("div");
       const term = document.createElement("dt");
       const definition = document.createElement("dd");
@@ -922,6 +927,7 @@ const initializePortfolioProjectCard = () => {
     actionButtons.forEach((button, index) => {
       const link = project.links[index];
       button.disabled = !link;
+      button.hidden = index === 0 && !link;
       button.dataset.projectLink = link;
       button.setAttribute("aria-disabled", String(!link));
     });
