@@ -469,6 +469,7 @@ initializeContentReveal();
 const initializePortfolioDropdown = () => {
   const dropdown = document.querySelector(".site-nav__dropdown");
   const trigger = dropdown?.querySelector(".site-nav__dropdown-trigger");
+  const isMobile = () => window.matchMedia("(max-width: 48rem)").matches;
 
   if (!dropdown || !trigger) {
     return;
@@ -479,25 +480,43 @@ const initializePortfolioDropdown = () => {
   };
 
   dropdown.addEventListener("pointerenter", () => {
+    if (isMobile()) return;
     dropdown.classList.remove("is-dropdown-click-closed");
     setExpanded(true);
   });
   dropdown.addEventListener("pointerleave", () => {
+    if (isMobile()) return;
     dropdown.classList.remove("is-dropdown-click-closed");
     setExpanded(false);
   });
   dropdown.addEventListener("focusin", () => {
+    if (isMobile()) return;
     dropdown.classList.remove("is-dropdown-click-closed");
     setExpanded(true);
   });
   dropdown.addEventListener("focusout", () => {
+    if (isMobile()) return;
     window.requestAnimationFrame(() => {
       setExpanded(dropdown.contains(document.activeElement));
     });
   });
-  dropdown.querySelectorAll("a").forEach((link) => {
+  trigger.addEventListener("click", (event) => {
+    if (isMobile()) {
+      event.preventDefault();
+      const isExpanded = trigger.getAttribute("aria-expanded") !== "true";
+      dropdown.classList.toggle("is-mobile-dropdown-open", isExpanded);
+      setExpanded(isExpanded);
+      return;
+    }
+
+    dropdown.classList.add("is-dropdown-click-closed");
+    setExpanded(false);
+    window.requestAnimationFrame(() => trigger.blur());
+  });
+  dropdown.querySelectorAll(".site-nav__dropdown-menu a").forEach((link) => {
     link.addEventListener("click", () => {
       dropdown.classList.add("is-dropdown-click-closed");
+      dropdown.classList.remove("is-mobile-dropdown-open");
       setExpanded(false);
       window.requestAnimationFrame(() => link.blur());
     });
@@ -515,13 +534,22 @@ const initializeMobileNavigation = () => {
     nav.classList.toggle("is-mobile-menu-open", isOpen);
     toggle.setAttribute("aria-expanded", String(isOpen));
     toggle.setAttribute("aria-label", isOpen ? "메뉴 닫기" : "메뉴 열기");
+    document.documentElement.classList.toggle("is-mobile-menu-open", isOpen);
+    if (!isOpen) {
+      const dropdown = nav.querySelector(".site-nav__dropdown");
+      dropdown?.classList.remove("is-mobile-dropdown-open");
+      dropdown?.querySelector(".site-nav__dropdown-trigger")?.setAttribute("aria-expanded", "false");
+    }
   };
 
   toggle.addEventListener("click", () => {
     setOpen(toggle.getAttribute("aria-expanded") !== "true");
   });
   nav.querySelectorAll(".site-nav__links a, .site-nav__contact").forEach((link) => {
-    link.addEventListener("click", () => setOpen(false));
+    link.addEventListener("click", () => {
+      if (link.matches(".site-nav__dropdown-trigger") && window.matchMedia("(max-width: 48rem)").matches) return;
+      setOpen(false);
+    });
   });
   document.addEventListener("pointerdown", (event) => {
     if (!nav.contains(event.target)) setOpen(false);

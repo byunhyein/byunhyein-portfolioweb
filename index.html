@@ -8,7 +8,7 @@
     <link rel="icon" type="image/png" href="./assets/images/icons/favicon.png">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css">
     <link rel="stylesheet" href="https://unpkg.com/lenis@1.3.24/dist/lenis.css">
-    <link rel="stylesheet" href="./assets/css/styles.css?v=20260908-107">
+    <link rel="stylesheet" href="./assets/css/styles.css?v=20261012-149">
   </head>
   <body>
     <a class="skip-link" href="#main-content">본문 바로가기</a>
@@ -40,6 +40,7 @@
         <button type="button" class="site-nav__menu-toggle" aria-controls="site-nav-mobile-menu" aria-expanded="false" aria-label="메뉴 열기">
           <span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span>
         </button>
+        <div class="site-nav__mobile-panel">
         <ul class="site-nav__links" id="site-nav-mobile-menu">
           <li><a href="#about">ABOUT ME</a></li>
           <li class="site-nav__dropdown">
@@ -64,6 +65,7 @@
           <li><a href="#skills">SKILLS</a></li>
         </ul>
         <a class="button button--compact site-nav__contact" href="#contact"><span>CONTACT</span></a>
+        </div>
       </nav>
     </header>
 
@@ -199,7 +201,7 @@
         </div>
         <p class="tag project-feature" data-figma-variant="web-pages">Web Projects</p>
         <h2 id="portfolio-title" class="section-title">PORTFOLIO</h2>
-        <p class="portfolio-intro">사용자 경험을 고민하며<br>기획부터 디자인, 구현까지 완성한 반응형 웹 프로젝트입니다.</p>
+        <p class="portfolio-intro">사용자 경험을 고민하며<br>기획부터 디자인, 구현까지 완성한<br class="portfolio-intro__mobile-break">반응형 웹 프로젝트입니다.</p>
         <article class="portfolio-project-card" aria-labelledby="portfolio-project-title">
           <p class="portfolio-project-card__number">01</p>
           <p class="portfolio-project-card__category">WEB · TEAM PROJECT</p>
@@ -220,12 +222,16 @@
             <span aria-hidden="true">▧</span>
             <p>Image</p>
           </div>
-          <p class="portfolio-project-card__page">1 / 2</p>
-          <div class="portfolio-project-card__dots" role="group" aria-label="프로젝트 페이지"><button type="button" class="is-active" aria-label="1번 프로젝트 보기" aria-current="true"></button><button type="button" aria-label="2번 프로젝트 보기"></button></div>
-          <nav class="portfolio-project-card__navigation" aria-label="프로젝트 이동">
-            <button type="button" data-project-direction="previous" aria-label="이전 프로젝트"><img src="./assets/images/portfolio/prev-button.svg" alt=""></button>
-            <button type="button" data-project-direction="next" aria-label="다음 프로젝트"><img src="./assets/images/portfolio/next-button.svg" alt=""></button>
-          </nav>
+          <div class="portfolio-project-card__pagination">
+            <div class="portfolio-project-card__page-indicator">
+              <p class="portfolio-project-card__page">1 / 2</p>
+              <div class="portfolio-project-card__dots" role="group" aria-label="프로젝트 페이지"><button type="button" class="is-active" aria-label="1번 프로젝트 보기" aria-current="true"></button><button type="button" aria-label="2번 프로젝트 보기"></button></div>
+            </div>
+            <nav class="portfolio-project-card__navigation" aria-label="프로젝트 이동">
+              <button type="button" data-project-direction="previous" aria-label="이전 프로젝트"><img src="./assets/images/portfolio/prev-button.svg" alt=""></button>
+              <button type="button" data-project-direction="next" aria-label="다음 프로젝트"><img src="./assets/images/portfolio/next-button.svg" alt=""></button>
+            </nav>
+          </div>
           <span class="portfolio-project-card__mint-dot" aria-hidden="true"></span>
         </article>
       </section>
