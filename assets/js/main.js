@@ -469,7 +469,7 @@ initializeContentReveal();
 const initializePortfolioDropdown = () => {
   const dropdown = document.querySelector(".site-nav__dropdown");
   const trigger = dropdown?.querySelector(".site-nav__dropdown-trigger");
-  const isMobile = () => window.matchMedia("(max-width: 48rem)").matches;
+  const isMobile = () => window.matchMedia("(max-width: 75rem)").matches;
 
   if (!dropdown || !trigger) {
     return;
@@ -547,7 +547,7 @@ const initializeMobileNavigation = () => {
   });
   nav.querySelectorAll(".site-nav__links a, .site-nav__contact").forEach((link) => {
     link.addEventListener("click", () => {
-      if (link.matches(".site-nav__dropdown-trigger") && window.matchMedia("(max-width: 48rem)").matches) return;
+      if (link.matches(".site-nav__dropdown-trigger") && window.matchMedia("(max-width: 75rem)").matches) return;
       setOpen(false);
     });
   });
@@ -560,7 +560,7 @@ const initializeMobileNavigation = () => {
       toggle.focus();
     }
   });
-  window.matchMedia("(min-width: 48.0625rem)").addEventListener("change", () => setOpen(false));
+  window.matchMedia("(min-width: 75.0625rem)").addEventListener("change", () => setOpen(false));
 };
 
 initializeMobileNavigation();
@@ -659,10 +659,11 @@ const initializeVideoCarousel = () => {
   const layoutFor = (index, currentIndex) => {
     const previous = wrapIndex(currentIndex - 1);
     const next = wrapIndex(currentIndex + 1);
-    const isCompact = window.matchMedia("(max-width: 48rem)").matches;
-    const sideOffset = isCompact ? 16 : 29;
-    const sideScale = isCompact ? .84 : .9;
-    const sideY = isCompact ? 8 : 14;
+    const isMobile = window.matchMedia("(max-width: 75rem)").matches;
+    const isTablet = window.matchMedia("(min-width: 75.0625rem) and (max-width: 85rem)").matches;
+    const sideOffset = isMobile ? 16 : isTablet ? 22 : 29;
+    const sideScale = isMobile ? .84 : isTablet ? .88 : .9;
+    const sideY = isMobile ? 8 : isTablet ? 12 : 14;
     if (index === currentIndex) return { xPercent: 0, y: 0, z: 1, scale: 1, rotateY: 0, opacity: 1, filter: "blur(0px) brightness(1)", zIndex: 10, pointerEvents: "auto" };
     if (cards.length === 2) {
       const isNext = index === next;
@@ -670,12 +671,10 @@ const initializeVideoCarousel = () => {
     }
     if (index === 1) {
       const isNext = index === next;
-      const carouselWidth = Math.max(1, carousel.clientWidth);
+      const carouselWidth = Math.max(1, cards[index].clientWidth);
       const portraitWidth = cards[index].querySelector(".video-projects__embed--shorts")?.offsetWidth || carouselWidth * .28;
-      const portraitSideOffset = Math.max(
-        sideOffset + (48 / carouselWidth) * 100,
-        (((carouselWidth - portraitWidth * sideScale) / 2 + 48) / carouselWidth) * 100,
-      );
+      const visibleSidePeek = carouselWidth * Math.max(0, sideOffset - ((1 - sideScale) * 50)) / 100;
+      const portraitSideOffset = (((carouselWidth - portraitWidth * sideScale) / 2 + visibleSidePeek) / carouselWidth) * 100;
       return { xPercent: isNext ? portraitSideOffset : -portraitSideOffset, y: sideY, z: 0, scale: sideScale, rotateY: isNext ? -5 : 5, opacity: .58, filter: "blur(1px) brightness(.84)", zIndex: 1, pointerEvents: "none" };
     }
     if (index === previous) return { xPercent: -sideOffset, y: sideY, z: 0, scale: sideScale, rotateY: 5, opacity: .58, filter: "blur(1px) brightness(.84)", zIndex: 1, pointerEvents: "none" };
@@ -684,11 +683,6 @@ const initializeVideoCarousel = () => {
   };
   let currentIndex = 0;
   let isTransitioning = false;
-  const pauseEmbeddedVideos = () => {
-    carousel.querySelectorAll(".video-projects__embed iframe").forEach((iframe) => {
-      iframe.contentWindow?.postMessage('{"event":"command","func":"pauseVideo","args":""}', "*");
-    });
-  };
   const applyLayout = (index) => cards.forEach((card, cardIndex) => window.gsap.set(card, { transformPerspective: 1000, ...layoutFor(cardIndex, index) }));
   const updateMeta = (index) => {
     const project = videoProjects[index];
@@ -839,7 +833,6 @@ const initializeVideoCarousel = () => {
     if (isTransitioning || nextIndex === currentIndex) return;
     const direction = nextIndex === wrapIndex(currentIndex + 1) ? 1 : -1;
     isTransitioning = true;
-    pauseEmbeddedVideos();
     const timeline = window.gsap.timeline({ defaults: { duration: .72, ease: "power3.inOut", overwrite: "auto" } });
     const metaOffset = direction > 0 ? -20 : 20;
     cards.forEach((card, cardIndex) => timeline.to(card, layoutFor(cardIndex, nextIndex), 0));
@@ -904,7 +897,7 @@ const initializePortfolioProjectCard = () => {
       category: "WEB · REDESIGN",
       title: "화방넷 메인페이지<br>리디자인",
       description: "상품 탐색과 콘텐츠 발견 경험을 재구성한<br>화방넷 웹 리디자인 프로젝트입니다.",
-      details: ["진행 중", "100%", "HTML5<br>CSS3<br>JavaScript"],
+      details: ["진행 중", "100%", "Codex<br>HTML · CSS<br>JavaScript"],
       links: ["", "https://github.com/byunhyein/hwabangnet", "https://byunhyein.github.io/hwabangnet/"],
       image: "./assets/images/portfolio/hwabangnet-mainpage-mockup-v2.png",
       imageLabel: "화방넷 메인페이지 리디자인 이미지",

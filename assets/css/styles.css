@@ -780,6 +780,12 @@ button {
   transform: translateX(.15rem);
 }
 
+@media (min-width: 75.0625rem) {
+  .site-nav__dropdown-menu .site-nav__dropdown-arrow {
+    display: none;
+  }
+}
+
 .site-nav > .button,
 .site-nav__mobile-panel > .button {
   justify-self: end;
@@ -2643,6 +2649,48 @@ button {
   border: 0;
 }
 
+.video-projects__embed--link {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: inherit;
+}
+
+.video-projects__embed--link > img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.video-projects__play-icon {
+  position: absolute;
+  width: 4.25rem;
+  height: 3rem;
+  border-radius: .9rem;
+  background: #ff0033;
+  box-shadow: 0 .4rem 1rem rgb(0 0 0 / 24%);
+}
+
+.video-projects__play-icon::after {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-top: .65rem solid transparent;
+  border-bottom: .65rem solid transparent;
+  border-left: 1rem solid #fff;
+  content: "";
+  transform: translate(-42%, -50%);
+}
+
+.video-projects__embed--link:focus-visible {
+  outline: .2rem solid #fff;
+  outline-offset: .2rem;
+}
+
 .video-projects__embed--shorts {
   width: auto;
   aspect-ratio: 9 / 16;
@@ -2952,7 +3000,7 @@ button {
 .video-project-modal__resources > div { display: flex; flex-wrap: wrap; gap: var(--space-2); margin-top: var(--space-2); }
 .video-project-modal__resources a { padding: .45rem .75rem; border-radius: var(--radius-pill); background: var(--color-periwinkle-50); color: var(--color-primary); font-size: var(--font-size-12); font-weight: var(--font-weight-semibold); }
 
-@media (max-width: 48rem) {
+@media (max-width: 75rem) {
   .video-projects__details-trigger { justify-self: start; }
   .video-project-modal { padding: var(--space-3); }
   .video-project-modal__dialog { grid-template-columns: 1fr; gap: var(--space-5); max-height: calc(100dvh - var(--space-6)); padding: var(--space-6); }
@@ -3047,7 +3095,7 @@ button {
   animation-delay: -4.6s;
 }
 
-@media (max-width: 48rem) {
+@media (max-width: 75rem) {
   .works-morph--left {
     top: 4.5rem;
     left: -1.5rem;
@@ -3091,7 +3139,8 @@ button {
 
 #works .card > img {
   width: 100%;
-  height: 12.5rem;
+  height: auto;
+  aspect-ratio: 16 / 9;
   margin-bottom: var(--space-5);
   border-radius: var(--radius-button);
   object-fit: cover;
@@ -3547,7 +3596,7 @@ button {
   }
 }
 
-@media (min-width: 48.0625rem) and (max-width: 70rem) {
+@media (min-width: 75.0625rem) and (max-width: 85rem) {
   #works > ul {
     align-items: stretch;
   }
@@ -3559,7 +3608,7 @@ button {
   }
 
   #works .card > img {
-    flex: 0 0 12.5rem;
+    flex: 0 0 auto;
   }
 
   #works .works-card__footer {
@@ -3578,7 +3627,7 @@ button {
   }
 }
 
-@media (max-width: 48rem) {
+@media (max-width: 75rem) {
   .video-projects__side-preview {
     display: none;
   }
@@ -3945,7 +3994,7 @@ button {
   display: none;
 }
 
-@media (max-width: 48rem) {
+@media (max-width: 75rem) {
   :root {
     --layout-header-height: 4rem;
   }
@@ -4802,7 +4851,8 @@ button {
   #works .card > img {
     width: 100%;
     height: auto;
-    object-fit: contain;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
   }
 
   #works .card h3 {
@@ -5030,5 +5080,60 @@ button {
 
   .portfolio-project-card__actions button {
     flex: 1 1 0;
+  }
+}
+
+@media (min-width: 75.0625rem) and (max-width: 85rem) {
+  #video-projects .video-projects__carousel {
+    width: min(70vw, 51.875rem);
+    height: auto;
+  }
+
+  #video-projects .video-projects__carousel-stage {
+    height: auto;
+    aspect-ratio: 2 / 1;
+  }
+
+  #video-projects .video-projects__embed {
+    height: 100%;
+  }
+}
+
+@media (max-width: 75rem) {
+  #video-projects .video-projects__carousel {
+    width: min(86vw, 100%);
+  }
+}
+
+@media (min-width: 48.0625rem) and (max-width: 75rem) {
+  #about,
+  #experience,
+  #portfolio,
+  #video-projects,
+  #works,
+  #skills,
+  #contact {
+    padding-right: max(1.5rem, calc((100vw - 40rem) / 2));
+    padding-left: max(1.5rem, calc((100vw - 40rem) / 2));
+  }
+
+  #home > .hero-cta-buttons {
+    right: auto;
+    left: 50%;
+    width: min(calc(100vw - 3rem), 40rem);
+    transform: translateX(-50%);
+  }
+
+  #video-projects .video-projects__carousel {
+    width: min(calc(100vw - 3rem), 40rem);
+  }
+}
+
+@media (max-width: 48rem) {
+  #home > .hero-cta-buttons {
+    right: max(1.25rem, calc((100vw - 26.875rem) / 2));
+    left: max(1.25rem, calc((100vw - 26.875rem) / 2));
+    width: auto;
+    transform: none;
   }
 }
