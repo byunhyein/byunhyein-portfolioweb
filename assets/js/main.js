@@ -892,17 +892,8 @@ const initializePortfolioProjectCard = () => {
       imageLabel: "풀무원 ESG 웹사이트 리디자인 목업 이미지",
       imageTransform: "scale(1.1) translate(-4.5%, 4%)",
     },
-    {
-      number: "02",
-      category: "WEB · REDESIGN",
-      title: "화방넷 메인페이지<br>리디자인",
-      description: "상품 탐색과 콘텐츠 발견 경험을 재구성한<br>화방넷 웹 리디자인 프로젝트입니다.",
-      details: ["진행 중", "100%", "Codex<br>HTML · CSS<br>JavaScript"],
-      links: ["", "https://github.com/byunhyein/hwabangnet", "https://byunhyein.github.io/hwabangnet/"],
-      image: "./assets/images/portfolio/hwabangnet-mainpage-mockup-v2.png",
-      imageLabel: "화방넷 메인페이지 리디자인 이미지",
-    },
   ];
+  card.classList.toggle("is-single-project", projects.length < 2);
   const number = card.querySelector(".portfolio-project-card__number");
   const category = card.querySelector(".portfolio-project-card__category");
   const title = card.querySelector("#portfolio-project-title");

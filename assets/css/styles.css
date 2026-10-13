@@ -5137,3 +5137,7 @@ button {
     transform: none;
   }
 }
+
+.portfolio-project-card.is-single-project .portfolio-project-card__pagination {
+  display: none;
+}
