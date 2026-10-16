@@ -892,6 +892,16 @@ const initializePortfolioProjectCard = () => {
       imageLabel: "풀무원 ESG 웹사이트 리디자인 목업 이미지",
       imageTransform: "scale(1.1) translate(-4.5%, 4%)",
     },
+    {
+      number: "02",
+      category: "AI · PYTHON PROJECT",
+      title: "Python 챗봇<br>AI 프로토타입",
+      description: "Python으로 질문에 답하는<br>AI 챗봇 프로토타입입니다.",
+      details: ["추후 입력", "추후 입력", "Python<br>AI 챗봇<br>세부 내용 추후 추가"],
+      links: ["", "", ""],
+      image: "",
+      imageLabel: "Python 챗봇 AI 화면 목업 (추후 추가)",
+    },
   ];
   card.classList.toggle("is-single-project", projects.length < 2);
   const number = card.querySelector(".portfolio-project-card__number");
