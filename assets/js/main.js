@@ -882,7 +882,7 @@ const initializePortfolioProjectCard = () => {
       category: "WEB · TEAM PROJECT",
       title: "풀무원 ESG<br>웹사이트 리디자인",
       description: "풀무원의 ESG 활동과 지속가능성을 담아낸<br>웹 리디자인 프로젝트입니다.",
-      details: ["4주", "20%", "Figma<br>Claude Code<br>Codex"],
+      details: ["2주", "100%", "Figma<br>Claude Code<br>Codex"],
       links: [
         "https://drive.google.com/file/d/1l7YmsGm8vdxcaeGnxoz9syCf4INybTDD/view?usp=sharing",
         "https://github.com/icerence/kiwik-project",
@@ -894,13 +894,13 @@ const initializePortfolioProjectCard = () => {
     },
     {
       number: "02",
-      category: "AI · PYTHON PROJECT",
-      title: "Python 챗봇<br>AI 프로토타입",
-      description: "Python으로 질문에 답하는<br>AI 챗봇 프로토타입입니다.",
-      details: ["추후 입력", "추후 입력", "Python<br>AI 챗봇<br>세부 내용 추후 추가"],
-      links: ["", "", ""],
-      image: "",
-      imageLabel: "Python 챗봇 AI 화면 목업 (추후 추가)",
+      category: "AI · FULL-STACK PROJECT",
+      title: "LLM을 활용한<br>Python CRUD 미니 웹앱",
+      description: "Python 백엔드와 React 프론트엔드를 연결하고,<br>LLM 연동과 데이터 CRUD 기능을 구현한 미니 웹앱입니다.",
+      details: ["추후 입력", "추후 입력", "React · Vite<br>FastAPI · SQLite<br>Hugging Face API"],
+      links: ["", "https://github.com/byunhyein/chattbot", "https://chattbot-front.onrender.com/"],
+      image: "./assets/images/portfolio/chatbot-mockup.jpg",
+      imageLabel: "LLM 기반 Python CRUD 미니 웹앱 목업",
     },
   ];
   card.classList.toggle("is-single-project", projects.length < 2);
