@@ -646,7 +646,7 @@ const initializeVideoCarousel = () => {
   }
 
   const videoProjects = [
-    { id: "cu-brand-commercial", title: "이번엔 내가 픽업!", category: "CU Brand Commercial", tags: ["30 sec", "Brand Commercial", "AI Video", "Motion Graphic", "Team Project"], description: "팀 프로젝트로 제작한 CU 브랜드 광고 영상입니다. 배달기사가 상품 픽업을 위해 CU에 방문했다가 치킨에 이끌려 직접 구매하게 되는 과정을 유쾌하게 담았습니다.\n\nHiggsfield의 Seedance 2.5를 활용해 영상 소스를 제작했으며, 기획 및 편집과 장면별 자막 디자인·모션그래픽을 담당했습니다. 배달기사의 시선을 따라 제품에 관심을 갖는 흐름과 마지막 반전이 짧은 광고 안에서 효과적으로 전달되도록 구성했습니다.", period: "2026.09", contribution: ["100%"], documentLabel: "기획서", document: { label: "PDF 보기", url: "https://drive.google.com/file/d/1SwGWVoNYpGNiRxOIQdqu54Yj8leuGTiO/view?usp=sharing" }, images: [{ src: "./assets/images/video-projects/cu-commercial-01.jpg", alt: "CU 브랜드 광고 프로젝트 컷 1" }, { src: "./assets/images/video-projects/cu-commercial-02.jpg", alt: "CU 브랜드 광고 프로젝트 컷 2" }, { src: "./assets/images/video-projects/cu-commercial-03.jpg", alt: "CU 브랜드 광고 프로젝트 컷 3" }, { src: "./assets/images/video-projects/cu-commercial-05.jpg", alt: "CU 브랜드 광고 프로젝트 컷 5" }, { src: "./assets/images/video-projects/cu-commercial-06.jpg", alt: "CU 브랜드 광고 프로젝트 컷 6" }], documentLinks: [] },
+    { id: "cu-brand-commercial", title: "이번엔 내가 픽업!", category: "CU Brand Commercial", tags: ["30 sec", "Brand Commercial", "AI Video", "Motion Graphic", "Team Project"], description: "팀 프로젝트로 제작한 CU 브랜드 광고 영상입니다. 배달기사가 상품 픽업을 위해 CU에 방문했다가 치킨에 이끌려 직접 구매하게 되는 과정을 유쾌하게 담았습니다.\n\nHiggsfield의 Seedance 2.5를 활용해 영상 소스를 제작했으며, 기획 및 편집과 장면별 자막 디자인·모션그래픽을 담당했습니다. 배달기사의 시선을 따라 제품에 관심을 갖는 흐름과 마지막 반전이 짧은 광고 안에서 효과적으로 전달되도록 구성했습니다.", period: "2026.09", contribution: ["100%"], documentLabel: "기획서", document: { label: "PDF 보기", url: "https://drive.google.com/file/d/1SwGWVoNYpGNiRxOIQdqu54Yj8leuGTiO/view?usp=sharing" }, images: [{ src: "./assets/images/video-projects/cu-commercial-chapter2.jpg", alt: "CU 브랜드 광고 챕터 2 타이틀 장면" }, { src: "./assets/images/video-projects/cu-commercial-02.jpg", alt: "CU 브랜드 광고 프로젝트 컷 2" }, { src: "./assets/images/video-projects/cu-commercial-03.jpg", alt: "CU 브랜드 광고 프로젝트 컷 3" }, { src: "./assets/images/video-projects/cu-commercial-05.jpg", alt: "CU 브랜드 광고 프로젝트 컷 5" }, { src: "./assets/images/video-projects/cu-commercial-06.jpg", alt: "CU 브랜드 광고 프로젝트 컷 6" }], documentLinks: [] },
     { id: "afree-day-short-form", title: "어프리데이 숏폼 광고", category: "Short-form Ad", tags: ["15 sec", "Short-form Ad", "AI Video", "Premiere Pro", "Advertising"], description: "논알콜 음료 브랜드 어프리데이(AfreeDay)의 특징을 직관적으로 전달하기 위해 제작한 숏폼 광고입니다.\n언제 어디서나 부담 없이 즐길 수 있다는 브랜드 메시지를 일상적인 상황과 반전 요소로 풀어내고, 짧은 호흡의 편집과 경쾌한 그래픽으로 표현했습니다.", period: "2026.09", contribution: ["100%"], documentLabel: "기획서", document: { label: "PDF 보기", url: "https://drive.google.com/file/d/1qV_V-Lm5KV_pCqolzX5teRUD4GjxvfEJ/view?usp=sharing" }, images: [{ src: "./assets/images/video-projects/afree-day-short-form-thumbnail.png", alt: "어프리데이 숏폼 광고 대표 이미지" }, { src: "./assets/images/video-projects/SC03.jpg", alt: "어프리데이 광고 장면 SC03 — 친구 없는데" }, { src: "./assets/images/video-projects/SC04.jpg", alt: "어프리데이 광고 장면 SC04 — 차분하게 혼자 집에" }, { src: "./assets/images/video-projects/SC05.jpg", alt: "어프리데이 광고 장면 SC05 — 집 없는데" }, { src: "./assets/images/video-projects/SC06.jpg", alt: "어프리데이 광고 장면 SC06 — 밖에서 여유롭게" }], documentLinks: [] },
     { id: "invisible-friend", title: "투명인간 친구", category: "Opening Animation", tags: ["30 sec", "2D Animation", "Procreate", "Premiere Pro", "Illustration"], description: "창작 낭독극 《투명인간 친구》를 주제로 제작한 오프닝 애니메이션입니다.\n작품의 분위기와 이야기의 흐름을 시각적으로 표현하기 위해 Procreate를 활용해 직접 드로잉하고 2D 애니메이션으로 구성했습니다.", period: "2025.10 (2주)", contribution: ["100%"], documentLabel: "기획서", document: { label: "PDF 보기", url: "" }, images: [{ src: "./assets/images/video-projects/invisible-friend-01.png", alt: "투명인간 친구 오프닝 애니메이션 장면 1" }, { src: "./assets/images/video-projects/invisible-friend-02.png", alt: "투명인간 친구 오프닝 애니메이션 장면 2" }, { src: "./assets/images/video-projects/invisible-friend-03.png", alt: "투명인간 친구 오프닝 애니메이션 장면 3" }, { src: "./assets/images/video-projects/invisible-friend-04.png", alt: "투명인간 친구 오프닝 애니메이션 대표 이미지" }], documentLinks: [] },
   ];
@@ -699,6 +699,63 @@ const initializeVideoCarousel = () => {
     });
   };
   const modal = document.querySelector("#video-project-modal");
+  const imageTrigger = modal?.querySelector("[data-video-modal-image]");
+  const imageLightbox = document.createElement("div");
+  imageLightbox.className = "video-project-lightbox";
+  imageLightbox.hidden = true;
+  imageLightbox.setAttribute("role", "dialog");
+  imageLightbox.setAttribute("aria-modal", "true");
+  imageLightbox.setAttribute("aria-label", "프로젝트 이미지 크게 보기");
+  const imageLightboxBackdrop = document.createElement("div");
+  imageLightboxBackdrop.className = "video-project-lightbox__backdrop";
+  const imageLightboxClose = document.createElement("button");
+  imageLightboxClose.type = "button";
+  imageLightboxClose.className = "video-project-lightbox__close";
+  imageLightboxClose.setAttribute("aria-label", "이미지 크게 보기 닫기");
+  imageLightboxClose.textContent = "×";
+  const imageLightboxImage = document.createElement("img");
+  imageLightboxImage.className = "video-project-lightbox__image";
+  imageLightboxImage.alt = "";
+  imageLightbox.append(imageLightboxBackdrop, imageLightboxImage, imageLightboxClose);
+  document.body.append(imageLightbox);
+  imageTrigger?.setAttribute("role", "button");
+  imageTrigger?.setAttribute("tabindex", "0");
+  imageTrigger?.setAttribute("aria-label", "현재 프로젝트 이미지 크게 보기");
+  const closeImageLightbox = () => {
+    if (imageLightbox.hidden) return;
+    imageLightbox.classList.remove("is-open");
+    window.setTimeout(() => {
+      imageLightbox.hidden = true;
+      imageTrigger?.focus();
+    }, 180);
+  };
+  const openImageLightbox = () => {
+    if (!imageTrigger || imageTrigger.hidden || !imageTrigger.src) return;
+    imageLightboxImage.src = imageTrigger.currentSrc || imageTrigger.src;
+    imageLightboxImage.alt = imageTrigger.alt;
+    imageLightbox.hidden = false;
+    window.requestAnimationFrame(() => imageLightbox.classList.add("is-open"));
+    imageLightboxClose.focus();
+  };
+  imageTrigger?.addEventListener("click", openImageLightbox);
+  imageTrigger?.addEventListener("keydown", (event) => {
+    if (event.key === "Enter" || event.key === " ") {
+      event.preventDefault();
+      openImageLightbox();
+    }
+  });
+  imageLightboxBackdrop.addEventListener("click", closeImageLightbox);
+  imageLightboxClose.addEventListener("click", closeImageLightbox);
+  imageLightbox.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") {
+      event.preventDefault();
+      event.stopPropagation();
+      closeImageLightbox();
+    } else if (event.key === "Tab") {
+      event.preventDefault();
+      imageLightboxClose.focus();
+    }
+  });
   const openProjectModal = () => {
     if (!modal) return;
     const project = videoProjects[currentIndex];
